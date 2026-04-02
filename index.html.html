@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Usman — Leads · Web · LinkedIn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════
+   TOKENS — LIGHT & DARK
+═══════════════════════════════════════ */
+:root{
+  --bg:#f2f2f4; --bg-card:#ffffff;
+  --surface:rgba(255,255,255,0.76); --surface-hi:rgba(255,255,255,0.95);
+  --border:rgba(0,0,0,0.07); --border-med:rgba(0,0,0,0.11);
+  --txt:#1a1a1c; --txt2:#6a6a70; --txt3:#b0b0b8;
+  --accent:#0066cc; --accent2:#5751e1; --accent-bg:rgba(0,102,204,0.09);
+  --green:#28c76f; --orange:#ff9500; --gold:#ffd60a;
+  --shadow-sm:0 1px 8px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.04);
+  --shadow-md:0 4px 24px rgba(0,0,0,.09),0 0 0 1px rgba(0,0,0,.04);
+  --shadow-lg:0 12px 48px rgba(0,0,0,.14),0 0 0 1px rgba(0,0,0,.05);
+  --blur:blur(24px) saturate(160%);
+  --ease:cubic-bezier(.22,.68,0,1.2);
+  --r-xs:8px;--r-sm:14px;--r-md:20px;--r-lg:28px;--r-xl:40px;--r-p:999px;
+  --nav-h:68px;
+}
+[data-theme="dark"]{
+  --bg:#080808; --bg-card:#141416;
+  --surface:rgba(22,22,26,.82); --surface-hi:rgba(32,32,38,.96);
+  --border:rgba(255,255,255,.08); --border-med:rgba(255,255,255,.13);
+  --txt:#f0f0f2; --txt2:#909098; --txt3:#505058;
+  --accent:#3b9eff; --accent2:#7b76ff; --accent-bg:rgba(59,158,255,.12);
+  --green:#30d158;
+  --shadow-sm:0 1px 8px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.05);
+  --shadow-md:0 4px 24px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.06);
+  --shadow-lg:0 12px 48px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.07);
+}
+
+/* ═══════════════════════════════════════
+   RESET
+═══════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{font-family:'DM Sans',-apple-system,sans-serif;background:var(--bg);color:var(--txt);overflow-x:hidden;transition:background .45s,color .45s}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+/* ═══════════════════════════════════════
+   AMBIENT ORBS
+═══════════════════════════════════════ */
+#ambient{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);animation:orbFloat 22s ease-in-out infinite alternate}
+.o1{width:700px;height:700px;background:radial-gradient(circle,rgba(0,102,204,.20),transparent 65%);top:-260px;left:-180px}
+.o2{width:550px;height:550px;background:radial-gradient(circle,rgba(40,199,111,.15),transparent 65%);bottom:-160px;right:-130px;animation-delay:-8s}
+.o3{width:380px;height:380px;background:radial-gradient(circle,rgba(87,81,225,.16),transparent 65%);top:40%;left:54%;animation-delay:-15s}
+[data-theme="dark"] .o1{background:radial-gradient(circle,rgba(0,80,160,.38),transparent 65%)}
+[data-theme="dark"] .o2{background:radial-gradient(circle,rgba(20,100,60,.32),transparent 65%)}
+[data-theme="dark"] .o3{background:radial-gradient(circle,rgba(60,50,180,.28),transparent 65%)}
+@keyframes orbFloat{0%{transform:translate(0,0) scale(1)}100%{transform:translate(48px,34px) scale(1.1)}}
+
+/* ═══════════════════════════════════════
+   NAV
+═══════════════════════════════════════ */
+#nav{
+  position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:300;
+  display:flex;align-items:center;
+  background:var(--surface);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+  border:1px solid var(--border);border-radius:var(--r-p);
+  height:50px;padding:0 8px 0 20px;gap:2px;
+  box-shadow:var(--shadow-md);animation:navIn .7s var(--ease) both;
+  transition:background .4s,border-color .4s;white-space:nowrap;max-width:calc(100vw - 28px);
+}
+@keyframes navIn{from{opacity:0;transform:translateX(-50%) translateY(-18px)}}
+.n-logo{font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--txt);letter-spacing:-.4px;margin-right:12px;flex-shrink:0;cursor:pointer}
+.n-links{display:flex;gap:2px}
+.n-link{font-size:13px;font-weight:500;color:var(--txt2);padding:6px 11px;border-radius:var(--r-p);transition:background .2s,color .2s;cursor:pointer;user-select:none}
+.n-link:hover,.n-link.on{background:rgba(0,0,0,.06);color:var(--txt)}
+[data-theme="dark"] .n-link:hover,[data-theme="dark"] .n-link.on{background:rgba(255,255,255,.08)}
+.n-right{display:flex;align-items:center;gap:6px;margin-left:6px}
+/* ── Slider Theme Toggle ── */
+.n-theme{
+  position:relative;
+  width:64px;height:28px;
+  border-radius:100px;
+  border:none;cursor:pointer;padding:0;
+  flex-shrink:0;
+  background:#e8e4de;
+  box-shadow:inset 2px 2px 5px rgba(0,0,0,.12),inset -2px -2px 4px rgba(255,255,255,.9);
+  transition:background .4s,box-shadow .4s;
+  outline:none;
+}
+[data-theme="dark"] .n-theme{
+  background:#2a2a2c;
+  box-shadow:inset 2px 2px 5px rgba(0,0,0,.5),inset -2px -2px 4px rgba(255,255,255,.04);
+}
+/* sliding knob */
+.n-theme-knob{
+  position:absolute;
+  top:2px;left:2px;
+  width:24px;height:24px;
+  border-radius:50%;
+  background:linear-gradient(145deg,#ffb830,#f08000);
+  box-shadow:1px 1px 5px rgba(0,0,0,.25),0 0 8px rgba(240,140,0,.3);
+  transition:transform .42s cubic-bezier(.34,1.56,.64,1),background .35s,box-shadow .35s;
+  display:flex;align-items:center;justify-content:center;
+  pointer-events:none;
+}
+[data-theme="dark"] .n-theme-knob{
+  transform:translateX(36px);
+  background:linear-gradient(145deg,#4a4a52,#2c2c34);
+  box-shadow:1px 1px 5px rgba(0,0,0,.6),0 0 8px rgba(180,180,220,.15);
+}
+/* icon inside knob */
+.n-theme-knob .nt-sun{opacity:1;transition:opacity .3s}
+.n-theme-knob .nt-moon{opacity:0;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);transition:opacity .3s}
+[data-theme="dark"] .n-theme-knob .nt-sun{opacity:0}
+[data-theme="dark"] .n-theme-knob .nt-moon{opacity:1}
+/* ghost icons on track */
+.n-theme-ghost{position:absolute;top:50%;transform:translateY(-50%);pointer-events:none;transition:opacity .3s}
+.n-theme-ghost.ghost-sun{left:8px;opacity:0}
+.n-theme-ghost.ghost-moon{right:7px;opacity:.35}
+[data-theme="dark"] .n-theme-ghost.ghost-sun{opacity:.3}
+[data-theme="dark"] .n-theme-ghost.ghost-moon{opacity:0}
+.n-cta{font-size:13px;font-weight:600;background:var(--txt);color:var(--bg);padding:8px 18px;border-radius:var(--r-p);transition:opacity .2s,transform .15s;flex-shrink:0;cursor:pointer}
+.n-cta:hover{opacity:.80;transform:scale(.96)}
+.n-burger{display:none;flex-direction:column;gap:4.5px;width:34px;height:34px;align-items:center;justify-content:center;border-radius:50%;background:rgba(0,0,0,.05)}
+[data-theme="dark"] .n-burger{background:rgba(255,255,255,.07)}
+.n-burger span{width:17px;height:1.5px;background:var(--txt);border-radius:2px;transition:.3s}
+#mob-menu{
+  position:fixed;top:76px;left:14px;right:14px;z-index:290;
+  background:var(--surface-hi);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+  border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:12px;box-shadow:var(--shadow-lg);
+  flex-direction:column;gap:3px;
+  display:none;opacity:0;transform:translateY(-8px);
+  transition:opacity .3s,transform .3s;pointer-events:none;
+}
+#mob-menu.open{display:flex;opacity:1;transform:translateY(0);pointer-events:auto}
+#mob-menu .n-link{font-size:15px;padding:12px 16px;border-radius:var(--r-md)}
+
+/* ═══════════════════════════════════════
+   PAGE SYSTEM
+═══════════════════════════════════════ */
+.page{display:none;position:relative;z-index:1;min-height:100vh}
+.page.on{display:block;animation:pgIn .5s var(--ease) both}
+@keyframes pgIn{from{opacity:0;transform:translateY(20px)}}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+
+/* ═══════════════════════════════════════
+   SHARED ATOMS
+═══════════════════════════════════════ */
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--txt3);display:block;margin-bottom:12px}
+.h-display{font-family:'Fraunces',serif;font-size:clamp(44px,9vw,96px);line-height:.98;letter-spacing:-2.5px;color:var(--txt)}
+.h-display em{font-style:italic;color:var(--accent)}
+.h-section{font-family:'Fraunces',serif;font-size:clamp(32px,5.5vw,58px);line-height:1.02;letter-spacing:-1.5px;color:var(--txt)}
+.h-section em{font-style:italic;color:var(--accent)}
+.h-med{font-family:'Fraunces',serif;font-size:clamp(24px,3.5vw,38px);letter-spacing:-1px;color:var(--txt);line-height:1.1}
+.h-med em{font-style:italic;color:var(--accent)}
+.body-lg{font-size:clamp(15px,1.8vw,18px);color:var(--txt2);line-height:1.65}
+.body-sm{font-size:13.5px;color:var(--txt2);line-height:1.65}
+.h-sub{font-size:clamp(15px,1.8vw,18px);color:var(--txt2);line-height:1.65}
+.stars{color:var(--gold);letter-spacing:1px;font-size:13px}
+.gc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);box-shadow:var(--shadow-sm);transition:transform .28s var(--ease),box-shadow .28s}
+.gc:hover{transform:translateY(-5px) scale(1.008);box-shadow:var(--shadow-lg)}
+.gc-flat{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);backdrop-filter:var(--blur);box-shadow:var(--shadow-sm)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;padding:14px 28px;border-radius:var(--r-p);transition:opacity .2s,transform .15s;cursor:pointer}
+.btn-fill{background:var(--txt);color:var(--bg)}
+.btn-fill:hover{opacity:.82;transform:scale(.97)}
+.btn-outline{background:var(--surface);color:var(--txt);border:1px solid var(--border-med);backdrop-filter:var(--blur);box-shadow:var(--shadow-sm)}
+.btn-outline:hover{background:var(--surface-hi);transform:scale(.97);box-shadow:var(--shadow-md)}
+.btn-ghost{font-size:14px;font-weight:500;color:var(--accent);padding:6px 0;gap:5px;display:inline-flex;align-items:center;transition:gap .2s}
+.btn-ghost:hover{gap:9px}
+.chip{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-p);padding:7px 16px;font-size:13px;font-weight:500;color:var(--txt);backdrop-filter:var(--blur);box-shadow:var(--shadow-sm);transition:transform .22s var(--ease),box-shadow .22s;cursor:default}
+.chip:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.chip-sm{font-size:12px;padding:5px 12px}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(40,199,111,.2);animation:livePulse 2.6s ease-in-out infinite}
+@keyframes livePulse{0%,100%{box-shadow:0 0 0 3px rgba(40,199,111,.2)}50%{box-shadow:0 0 0 7px rgba(40,199,111,.06)}}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.rv.vis{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}.rv.d5{transition-delay:.40s}
+
+/* ═══════════════════════════════════════
+   SHARED FOOTER
+═══════════════════════════════════════ */
+.hero-footer{position:relative;overflow:hidden;background:var(--surface);border-top:1px solid var(--border);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);padding:56px 0 80px;min-height:240px;transition:background .45s,border-color .45s}
+.hf-bg-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Fraunces',serif;font-weight:700;letter-spacing:-.02em;line-height:1;white-space:nowrap;user-select:none;pointer-events:none;font-size:clamp(100px,22vw,260px);color:var(--txt);opacity:.055;transition:color .45s,opacity .45s}
+[data-theme="dark"] .hf-bg-text{opacity:.07}
+.hf-orb{position:absolute;bottom:-120px;right:-80px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,var(--accent-bg),transparent 68%);filter:blur(70px);pointer-events:none;animation:orbFloat 18s ease-in-out infinite alternate}
+.hf-orb2{position:absolute;top:-80px;left:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(87,81,225,.06),transparent 68%);filter:blur(60px);pointer-events:none;animation:orbFloat 24s ease-in-out infinite alternate-reverse}
+.hf-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:28px 24px 0;gap:0}
+.hf-socials{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:22px}
+.hf-soc{position:relative;display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--surface-hi);border:1px solid var(--border-med);color:var(--txt2);box-shadow:var(--shadow-sm);overflow:hidden;transition:color .22s,border-color .22s,transform .28s var(--ease),box-shadow .28s}
+.hf-soc::before{content:'';position:absolute;inset:0;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));opacity:0;transition:opacity .25s var(--ease)}
+.hf-soc svg{position:relative;z-index:1}
+.hf-soc:hover{color:#fff;border-color:transparent;transform:translateY(-5px) scale(1.1);box-shadow:var(--shadow-md)}
+.hf-soc:hover::before{opacity:1}
+[data-theme="dark"] .hf-soc{border-color:rgba(255,255,255,.11)}
+.hf-email{font-family:'Fraunces',serif;font-size:clamp(15px,2vw,22px);font-weight:500;font-style:italic;letter-spacing:-.25px;color:var(--txt);position:relative;transition:color .22s}
+.hf-email::after{content:'';position:absolute;left:0;bottom:-3px;width:0;height:1.5px;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:var(--r-p);transition:width .35s var(--ease)}
+.hf-email:hover{color:var(--accent)}
+.hf-email:hover::after{width:100%}
+.hf-bottom{position:absolute;bottom:0;left:0;right:0;z-index:2;display:flex;flex-direction:column;align-items:center;gap:5px;padding:0 24px 20px;background:linear-gradient(to bottom,transparent 0%,var(--surface) 40%)}
+.hf-bottom-divider{width:36px;height:1px;background:var(--border-med);border-radius:var(--r-p);margin-bottom:10px}
+.hf-crafted{font-size:12.5px;color:var(--txt3);font-weight:500;letter-spacing:.02em;display:flex;align-items:center;gap:5px}
+.hf-crafted .heart{color:#ff3b30;font-style:normal;display:inline-block;animation:heartBeat 2.4s ease-in-out infinite}
+@keyframes heartBeat{0%,100%{transform:scale(1)}14%{transform:scale(1.28)}28%{transform:scale(1)}42%{transform:scale(1.18)}56%{transform:scale(1)}}
+.hf-copy{font-size:12px;color:var(--txt3);font-weight:400;letter-spacing:.02em}
+@media(max-width:640px){.hf-bg-text{font-size:clamp(72px,18vw,130px)}.hf-soc{width:46px;height:46px}.hf-soc svg{width:18px;height:18px}.hero-footer{padding:44px 0 72px;min-height:200px}.hf-content{padding-top:18px}.hf-socials{gap:10px}}
+@media(max-width:380px){.hf-bg-text{font-size:68px}.hf-soc{width:42px;height:42px}.hf-soc svg{width:16px;height:16px}.hero-footer{min-height:180px}}
+
+/* ═══════════════════════════════════════
+   PAGE 1: HERO
+═══════════════════════════════════════ */
+#pg-hero{padding-top:var(--nav-h)}
+.hero-section{padding:92px 24px 72px;display:flex;flex-direction:column;align-items:center;text-align:center;max-width:980px;margin:0 auto}
+.hero-avail{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-p);padding:7px 16px 7px 10px;font-size:13px;font-weight:500;color:var(--txt2);box-shadow:var(--shadow-sm);backdrop-filter:var(--blur);margin-bottom:36px;animation:fadeUp .6s .1s var(--ease) both}
+.hero-title{margin-bottom:20px;animation:fadeUp .6s .2s var(--ease) both}
+.hero-subtitle{max-width:540px;margin-bottom:40px;animation:fadeUp .6s .3s var(--ease) both}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:44px;animation:fadeUp .6s .4s var(--ease) both}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;animation:fadeUp .6s .5s var(--ease) both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}}
+.metrics{max-width:980px;margin:0 auto 24px;padding:0 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.metric-card{padding:32px 28px}
+.m-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:20px}
+.m-blue{background:rgba(0,102,204,.10)} [data-theme="dark"] .m-blue{background:rgba(59,158,255,.14)}
+.m-green{background:rgba(40,199,111,.10)} [data-theme="dark"] .m-green{background:rgba(48,209,88,.12)}
+.m-purple{background:rgba(87,81,225,.10)} [data-theme="dark"] .m-purple{background:rgba(123,118,255,.14)}
+.m-num{font-family:'Fraunces',serif;font-size:40px;letter-spacing:-1.5px;color:var(--txt);line-height:1;margin-top:20px}
+.m-unit{font-size:13px;font-family:'DM Sans',sans-serif;font-weight:400;color:var(--txt3)}
+.m-label{font-size:15px;font-weight:600;color:var(--txt);margin-bottom:6px;letter-spacing:-.2px}
+.m-desc{font-size:13px;color:var(--txt2);line-height:1.6}
+.trust-strip{max-width:980px;margin:0 auto 52px;padding:0 24px}
+.trust-inner{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-xl);backdrop-filter:var(--blur);padding:28px 36px;display:flex;align-items:center;gap:32px;flex-wrap:wrap;box-shadow:var(--shadow-sm)}
+.trust-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--txt3);white-space:nowrap}
+.trust-divider{width:1px;height:32px;background:var(--border);flex-shrink:0}
+.trust-logos{display:flex;align-items:center;gap:28px;flex-wrap:wrap;flex:1}
+.trust-logo{font-size:13.5px;font-weight:600;color:var(--txt3);letter-spacing:-.2px;white-space:nowrap}
+.social-row{max-width:980px;margin:0 auto 96px;padding:0 24px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.soc-btn{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-p);padding:10px 20px;font-size:13px;font-weight:500;color:var(--txt2);backdrop-filter:var(--blur);box-shadow:var(--shadow-sm);transition:color .2s,transform .22s var(--ease),box-shadow .22s}
+.soc-btn:hover{color:var(--txt);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.soc-btn svg{width:15px;height:15px;fill:currentColor;flex-shrink:0}
+
+/* ═══════════════════════════════════════
+   PAGE 2: ABOUT
+═══════════════════════════════════════ */
+#pg-about{padding-top:calc(var(--nav-h)+24px)}
+.about-hero{max-width:980px;margin:0 auto;padding:64px 24px 80px;display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:center}
+.about-visual{position:relative}
+.av-card{aspect-ratio:.88;border-radius:var(--r-xl);background:linear-gradient(145deg,var(--accent-bg) 0%,rgba(87,81,225,.06) 50%,rgba(40,199,111,.05) 100%);border:1px solid var(--border);box-shadow:var(--shadow-lg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;position:relative;overflow:hidden}
+.av-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,transparent 60%);pointer-events:none}
+.av-emoji{font-size:88px;line-height:1}
+.av-name{font-family:'Fraunces',serif;font-size:22px;color:var(--txt);letter-spacing:-.5px}
+.av-role{font-size:13px;color:var(--txt3);font-weight:500;margin-top:-8px}
+.av-badge{position:absolute;bottom:-18px;right:-18px;background:var(--surface-hi);border:1px solid var(--border);border-radius:var(--r-md);padding:14px 18px;box-shadow:var(--shadow-md);backdrop-filter:var(--blur);display:flex;align-items:center;gap:12px;animation:badgeFloat 4s ease-in-out infinite}
+@keyframes badgeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.ab-num{font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--txt);letter-spacing:-1px;line-height:1}
+.ab-lbl{font-size:11px;color:var(--txt3);line-height:1.4;max-width:60px}
+.about-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.about-btns{display:flex;gap:12px;flex-wrap:wrap}
+.values-sec{max-width:980px;margin:0 auto 80px;padding:0 24px}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.val-card{padding:30px 26px}
+.val-ico{font-size:26px;margin-bottom:18px;display:block}
+.val-title{font-size:15px;font-weight:600;color:var(--txt);margin-bottom:8px;letter-spacing:-.2px}
+.val-desc{font-size:13px;color:var(--txt2);line-height:1.6}
+.journey-sec{max-width:980px;margin:0 auto 80px;padding:0 24px}
+.timeline{margin-top:36px}
+.tl-row{display:grid;grid-template-columns:90px 36px 1fr;gap:0 18px;align-items:start}
+.tl-yr{font-family:'Fraunces',serif;font-size:15px;color:var(--txt3);padding-top:3px;text-align:right;font-style:italic}
+.tl-spine{display:flex;flex-direction:column;align-items:center}
+.tl-dot{width:13px;height:13px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);box-shadow:0 0 0 3px var(--accent-bg);flex-shrink:0;margin-top:3px}
+.tl-line{width:2px;flex:1;background:var(--border);min-height:44px}
+.tl-row:last-child .tl-line{display:none}
+.tl-body{padding-bottom:40px}
+.tl-event{font-size:15px;font-weight:600;color:var(--txt);margin-bottom:5px;letter-spacing:-.2px}
+.tl-info{font-size:13px;color:var(--txt2);line-height:1.6}
+.skills-sec{max-width:980px;margin:0 auto 80px;padding:0 24px}
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.skill-card{padding:20px;border-radius:var(--r-md);background:var(--surface);border:1px solid var(--border);backdrop-filter:var(--blur);box-shadow:var(--shadow-sm);text-align:center;transition:transform .22s var(--ease),box-shadow .22s}
+.skill-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.sk-ico{font-size:26px;margin-bottom:10px}
+.sk-name{font-size:13px;font-weight:600;color:var(--txt);margin-bottom:4px}
+.sk-lvl{font-size:11px;color:var(--txt3)}
+.sk-bar{height:3px;border-radius:var(--r-p);background:var(--border);margin-top:10px;overflow:hidden}
+.sk-fill{height:100%;border-radius:var(--r-p);background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 1.2s var(--ease)}
+.about-cta{max-width:980px;margin:0 auto 96px;padding:0 24px}
+.cta-card{padding:52px 48px;background:linear-gradient(135deg,var(--accent-bg) 0%,rgba(87,81,225,.07) 100%);border:1px solid rgba(0,102,204,.15);display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+[data-theme="dark"] .cta-card{border-color:rgba(59,158,255,.18)}
+.cta-txt p{font-size:15px;color:var(--txt2);margin-top:10px;max-width:420px}
+
+/* ═══════════════════════════════════════
+   PAGE 3: SERVICES
+═══════════════════════════════════════ */
+#pg-services{padding-top:calc(var(--nav-h)+24px)}
+.srv-hero{max-width:980px;margin:0 auto;padding:64px 24px 72px}
+.srv-hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end}
+.srv-hero-right{padding:32px 28px;background:linear-gradient(135deg,var(--accent-bg),rgba(87,81,225,.06));border:1px solid rgba(0,102,204,.13);border-radius:var(--r-xl);display:flex;flex-direction:column;gap:14px}
+.srv-qs{display:flex;align-items:center;justify-content:space-between;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.srv-qs:last-child{border-bottom:none;padding-bottom:0}
+.sqs-label{font-size:13px;color:var(--txt2);font-weight:500}
+.sqs-val{font-family:'Fraunces',serif;font-size:20px;color:var(--txt);font-style:italic}
+.srv-cards{max-width:980px;margin:0 auto 20px;padding:0 24px;display:flex;flex-direction:column;gap:14px}
+.srv-card{padding:44px 40px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;position:relative;overflow:hidden}
+.srv-card::after{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;border-radius:var(--r-p);background:linear-gradient(180deg,var(--accent),var(--accent2));opacity:0;transition:opacity .3s}
+.srv-card:hover::after{opacity:1}
+.srv-card-num{position:absolute;top:24px;right:32px;font-family:'Fraunces',serif;font-size:80px;font-style:italic;color:var(--border);line-height:1;pointer-events:none;transition:color .3s}
+.srv-card:hover .srv-card-num{color:var(--accent-bg)}
+.srv-ico{font-size:36px;margin-bottom:22px;display:block}
+.srv-title{font-family:'Fraunces',serif;font-size:28px;letter-spacing:-.6px;color:var(--txt);margin-bottom:12px}
+.srv-desc{font-size:14px;color:var(--txt2);line-height:1.7;margin-bottom:22px}
+.srv-price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:24px}
+.srv-price{font-family:'Fraunces',serif;font-size:32px;letter-spacing:-1px;color:var(--txt)}
+.srv-period{font-size:13px;color:var(--txt3);font-weight:400}
+.srv-features{display:flex;flex-direction:column;gap:0}
+.srv-feat{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--txt2)}
+.srv-feat:last-child{border-bottom:none}
+.srv-feat-check{width:20px;height:20px;border-radius:50%;background:var(--accent-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;color:var(--accent);font-weight:700}
+.srv-bundle{max-width:980px;margin:0 auto 20px;padding:0 24px}
+.bundle-card{padding:52px 44px;background:linear-gradient(135deg,var(--accent-bg) 0%,rgba(87,81,225,.08) 50%,rgba(40,199,111,.05) 100%);border:1px solid rgba(0,102,204,.14);display:grid;grid-template-columns:1fr 1.2fr;gap:52px;align-items:center;position:relative;overflow:hidden}
+[data-theme="dark"] .bundle-card{border-color:rgba(59,158,255,.18)}
+.bundle-card::before{content:'BEST VALUE';position:absolute;top:22px;right:24px;font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--accent);background:var(--accent-bg);padding:4px 12px;border-radius:var(--r-p)}
+.bundle-feats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bundle-feat{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--txt2);background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);padding:12px 14px;backdrop-filter:var(--blur)}
+.bundle-feat-ico{font-size:15px;flex-shrink:0}
+.process-sec{max-width:980px;margin:0 auto 80px;padding:0 24px}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}
+.proc-card{padding:28px 22px;text-align:center;position:relative}
+.proc-card::after{content:'→';position:absolute;top:50%;right:-10px;transform:translateY(-50%);font-size:18px;color:var(--txt3)}
+.proc-card:last-child::after{display:none}
+.proc-num{font-family:'Fraunces',serif;font-size:42px;font-style:italic;color:var(--accent);margin-bottom:16px;line-height:1;display:block}
+.proc-title{font-size:14px;font-weight:600;color:var(--txt);margin-bottom:8px}
+.proc-desc{font-size:12.5px;color:var(--txt2);line-height:1.6}
+.pricing-sec{max-width:980px;margin:0 auto 80px;padding:0 24px}
+.pricing-table{margin-top:32px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);backdrop-filter:var(--blur);overflow:hidden;box-shadow:var(--shadow-sm)}
+.pt-header{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;background:var(--surface-hi);border-bottom:1px solid var(--border);padding:18px 24px}
+.pt-col{font-size:12.5px;font-weight:600;color:var(--txt2)}
+.pt-col.accent{color:var(--accent)}
+.pt-row{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;padding:14px 24px;border-bottom:1px solid var(--border);align-items:center;transition:background .2s}
+.pt-row:last-child{border-bottom:none}
+.pt-row:hover{background:rgba(0,0,0,.02)}
+[data-theme="dark"] .pt-row:hover{background:rgba(255,255,255,.03)}
+.pt-feature{font-size:13.5px;color:var(--txt2)}
+.pt-val{font-size:13px;color:var(--txt3);text-align:center}
+.pt-val.yes{color:var(--green)}
+.pt-val.no{color:var(--txt3);opacity:.5}
+.srv-cta{max-width:980px;margin:0 auto 96px;padding:0 24px}
+.srv-cta-inner{padding:56px;text-align:center;background:linear-gradient(135deg,rgba(0,102,204,.06),rgba(87,81,225,.06));border:1px solid var(--border)}
+.srv-cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* ═══════════════════════════════════════
+   PAGE 4: TESTIMONIALS
+═══════════════════════════════════════ */
+#pg-reviews{padding-top:calc(var(--nav-h)+24px)}
+.rev-hero{max-width:980px;margin:0 auto;padding:64px 24px 72px}
+.rev-hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.rev-hero-stats{display:flex;flex-direction:column;gap:12px}
+.rhs-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-xl);backdrop-filter:var(--blur);padding:24px 28px;box-shadow:var(--shadow-sm);display:flex;align-items:center;gap:20px;transition:transform .22s var(--ease),box-shadow .22s}
+.rhs-card:hover{transform:translateX(6px);box-shadow:var(--shadow-md)}
+.rhs-ico{font-size:28px;flex-shrink:0}
+.rhs-num{font-family:'Fraunces',serif;font-size:32px;letter-spacing:-1px;color:var(--txt);line-height:1}
+.rhs-lbl{font-size:12.5px;color:var(--txt3);margin-top:3px;font-weight:500}
+.marquee-wrap{overflow:hidden;padding:28px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--surface-hi);backdrop-filter:var(--blur)}
+.marquee-track{display:flex;gap:12px;animation:marquee 30s linear infinite;width:max-content}
+.marquee-track:hover{animation-play-state:paused}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.mq-item{flex-shrink:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:20px 24px;width:320px;box-shadow:var(--shadow-sm);backdrop-filter:var(--blur)}
+.mq-text{font-size:13.5px;color:var(--txt2);line-height:1.6;margin-bottom:14px;font-style:italic}
+.mq-author{display:flex;align-items:center;gap:10px}
+.mq-av{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0}
+.mq-name{font-size:13px;font-weight:600;color:var(--txt)}
+.mq-role{font-size:11.5px;color:var(--txt3)}
+.feat-rev-wrap{max-width:980px;margin:48px auto 0;padding:0 24px}
+.feat-rev{padding:52px 48px;position:relative;overflow:hidden}
+.feat-rev::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--green));border-radius:var(--r-p) var(--r-p) 0 0}
+.feat-quote-mark{font-family:'Fraunces',serif;font-size:120px;line-height:.7;color:var(--accent-bg);position:absolute;top:20px;left:32px;font-style:italic;pointer-events:none;transition:color .4s}
+.feat-rev:hover .feat-quote-mark{color:rgba(0,102,204,.16)}
+.feat-rev-text{font-family:'Fraunces',serif;font-size:clamp(18px,2.8vw,26px);color:var(--txt);line-height:1.45;letter-spacing:-.4px;font-style:italic;position:relative;z-index:1;max-width:780px;margin-bottom:32px}
+.feat-rev-author{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.feat-av{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:#fff;flex-shrink:0}
+.feat-name{font-size:16px;font-weight:600;color:var(--txt);margin-bottom:3px}
+.feat-role{font-size:13px;color:var(--txt3)}
+.rev-grid-wrap{max-width:980px;margin:24px auto 0;padding:0 24px}
+.rev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.rev-card{padding:32px 28px;position:relative}
+.rev-card-quote{font-family:'Fraunces',serif;font-size:44px;color:var(--accent-bg);line-height:.8;margin-bottom:14px;font-style:italic;transition:color .3s}
+.rev-card:hover .rev-card-quote{color:rgba(0,102,204,.15)}
+.rev-card-text{font-size:14.5px;color:var(--txt2);line-height:1.7;font-style:italic;margin-bottom:22px}
+.rev-card-author{display:flex;align-items:center;gap:14px}
+.rev-av{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff;flex-shrink:0}
+.rev-name{font-size:14px;font-weight:600;color:var(--txt)}
+.rev-role{font-size:12px;color:var(--txt3);margin-top:2px}
+.rev-stars{margin-top:4px}
+.results-bar{max-width:980px;margin:48px auto 0;padding:0 24px}
+.results-inner{padding:44px 40px;background:linear-gradient(135deg,var(--accent-bg),rgba(87,81,225,.07));border:1px solid rgba(0,102,204,.13);display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+[data-theme="dark"] .results-inner{border-color:rgba(59,158,255,.17)}
+.res-stat{text-align:center;padding:0 20px;border-right:1px solid var(--border)}
+.res-stat:last-child{border-right:none}
+.res-num{font-family:'Fraunces',serif;font-size:40px;letter-spacing:-1.5px;color:var(--txt);line-height:1}
+.res-label{font-size:12.5px;color:var(--txt3);margin-top:6px;font-weight:500}
+/* FAQ */
+.faq-section{max-width:980px;margin:64px auto 0;padding:0 24px}
+.faq-head{margin-bottom:36px}
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-bottom:0}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);backdrop-filter:var(--blur);overflow:hidden;transition:box-shadow .25s,border-color .25s}
+.faq-item.open{border-color:rgba(0,102,204,.2);box-shadow:var(--shadow-md)}
+[data-theme="dark"] .faq-item.open{border-color:rgba(59,158,255,.2)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 26px;font-size:15px;font-weight:500;color:var(--txt);cursor:pointer;text-align:left;gap:16px;transition:color .2s;background:none;border:none}
+.faq-q:hover{color:var(--accent)}
+.faq-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--border);color:var(--txt3);font-size:16px;flex-shrink:0;transition:transform .35s var(--ease),background .25s,color .25s}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--accent-bg);color:var(--accent)}
+.faq-body{max-height:0;overflow:hidden;transition:max-height .42s cubic-bezier(.22,.68,0,1.2),padding .3s;padding:0 26px}
+.faq-item.open .faq-body{max-height:220px;padding:0 26px 22px}
+.faq-body p{font-size:14px;color:var(--txt2);line-height:1.7;border-top:1px solid var(--border);padding-top:16px}
+.rev-cta{max-width:980px;margin:64px auto 96px;padding:0 24px}
+.rev-cta-inner{padding:56px;text-align:center}
+.rev-cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+
+/* ═══════════════════════════════════════
+   PAGE 5: BLOG
+═══════════════════════════════════════ */
+#pg-blog{padding-top:calc(var(--nav-h)+24px)}
+.blog-hero{max-width:980px;margin:0 auto;padding:64px 24px 56px}
+.blog-filter{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
+.fil-btn{font-size:13px;font-weight:500;padding:8px 18px;border-radius:var(--r-p);border:1px solid var(--border);background:var(--surface);color:var(--txt2);cursor:pointer;transition:.2s;backdrop-filter:var(--blur);box-shadow:var(--shadow-sm)}
+.fil-btn:hover,.fil-btn.on{background:var(--txt);color:var(--bg);border-color:transparent;box-shadow:var(--shadow-md)}
+.blog-feat-wrap{max-width:980px;margin:0 auto 16px;padding:0 24px}
+.blog-feat{padding:0;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+.bf-content{padding:44px 40px}
+.bf-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);background:var(--accent-bg);padding:4px 12px;border-radius:var(--r-p);margin-bottom:20px}
+.bf-title{font-family:'Fraunces',serif;font-size:clamp(22px,3vw,32px);letter-spacing:-.6px;color:var(--txt);line-height:1.2;margin-bottom:14px}
+.bf-title em{font-style:italic;color:var(--accent)}
+.bf-excerpt{font-size:14px;color:var(--txt2);line-height:1.7;margin-bottom:22px}
+.bf-meta{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--txt3)}
+.bf-dot{width:3px;height:3px;border-radius:50%;background:var(--txt3)}
+.bf-visual{min-height:280px;background:linear-gradient(135deg,var(--accent-bg) 0%,rgba(87,81,225,.07) 50%,rgba(40,199,111,.05) 100%);display:flex;align-items:center;justify-content:center;font-size:88px;border-left:1px solid var(--border);position:relative;overflow:hidden}
+.bf-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.04),transparent)}
+.blog-grid-wrap{max-width:980px;margin:0 auto;padding:0 24px}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:16px}
+.bc{padding:24px;cursor:pointer}
+.bc-img{height:130px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:44px;margin-bottom:18px;border:1px solid var(--border)}
+.bc-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);background:var(--accent-bg);padding:3px 10px;border-radius:var(--r-p);margin-bottom:12px}
+.bc-title{font-size:15px;font-weight:600;color:var(--txt);line-height:1.35;letter-spacing:-.2px;margin-bottom:8px}
+.bc-excerpt{font-size:13px;color:var(--txt2);line-height:1.6;margin-bottom:14px}
+.bc-meta{font-size:12px;color:var(--txt3);display:flex;align-items:center;gap:8px}
+.bc-sep{width:3px;height:3px;border-radius:50%;background:var(--txt3)}
+.blog-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:16px}
+.blog-grid-2 .bc{display:grid;grid-template-columns:80px 1fr;gap:16px;padding:24px}
+.blog-grid-2 .bc-img{height:80px;margin-bottom:0;font-size:28px}
+.blog-nl{max-width:980px;margin:0 auto 80px;padding:0 24px}
+.blog-nl-inner{padding:52px 48px;background:linear-gradient(135deg,var(--accent-bg),rgba(87,81,225,.07));border:1px solid rgba(0,102,204,.12);display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+[data-theme="dark"] .blog-nl-inner{border-color:rgba(59,158,255,.16)}
+.nl-form{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.nl-input{flex:1;min-width:180px;font-family:'DM Sans',sans-serif;font-size:14px;background:var(--bg-card);color:var(--txt);border:1px solid var(--border-med);border-radius:var(--r-p);padding:12px 18px;outline:none;transition:border-color .2s,box-shadow .2s}
+[data-theme="dark"] .nl-input{background:rgba(255,255,255,.05)}
+.nl-input::placeholder{color:var(--txt3)}
+.nl-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-bg)}
+.nl-btn{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;background:var(--txt);color:var(--bg);border-radius:var(--r-p);padding:12px 22px;transition:opacity .2s,transform .15s;white-space:nowrap}
+.nl-btn:hover{opacity:.82;transform:scale(.97)}
+.nl-note{font-size:12px;color:var(--txt3);margin-top:10px}
+.nl-visual{text-align:center}
+
+/* ═══════════════════════════════════════
+   PAGE 6: CONTACT
+═══════════════════════════════════════ */
+#pg-contact{padding-top:calc(var(--nav-h)+24px)}
+.ct-hero{max-width:980px;margin:0 auto;padding:64px 24px 72px}
+.ct-hero-inner{display:grid;grid-template-columns:1fr 1.3fr;gap:64px;align-items:start}
+.ct-items{display:flex;flex-direction:column;gap:12px;margin-bottom:36px}
+.ct-item{display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:16px 20px;backdrop-filter:var(--blur);box-shadow:var(--shadow-sm);transition:transform .22s var(--ease),box-shadow .22s,border-color .22s}
+.ct-item:hover{transform:translateX(5px);box-shadow:var(--shadow-md);border-color:var(--border-med)}
+.ct-ico{width:44px;height:44px;border-radius:14px;background:var(--accent-bg);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+.ct-label{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--txt3)}
+.ct-val{font-size:14px;font-weight:500;color:var(--txt);margin-top:3px}
+.ct-socials{display:flex;gap:10px;flex-wrap:wrap}
+.ct-soc{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-p);padding:10px 18px;font-size:13px;font-weight:500;color:var(--txt2);backdrop-filter:var(--blur);box-shadow:var(--shadow-sm);transition:color .2s,transform .22s var(--ease),box-shadow .22s}
+.ct-soc:hover{color:var(--txt);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.ct-soc svg{width:15px;height:15px;fill:currentColor;flex-shrink:0}
+.ct-form-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-xl);padding:40px 36px;backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);box-shadow:var(--shadow-md);position:relative;overflow:hidden}
+.ct-form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:var(--r-xl) var(--r-xl) 0 0}
+.form-title{font-family:'Fraunces',serif;font-size:22px;letter-spacing:-.5px;color:var(--txt);margin-bottom:6px}
+.form-sub{font-size:13.5px;color:var(--txt2);margin-bottom:28px;line-height:1.5}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.f-group{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+.f-group label{font-size:12.5px;font-weight:600;color:var(--txt2)}
+.f-group input,.f-group textarea,.f-group select{font-family:'DM Sans',sans-serif;font-size:14px;background:var(--bg);color:var(--txt);border:1px solid var(--border-med);border-radius:var(--r-md);padding:12px 16px;outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none}
+[data-theme="dark"] .f-group input,[data-theme="dark"] .f-group textarea,[data-theme="dark"] .f-group select{background:rgba(255,255,255,.05)}
+.f-group select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236a6a70' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+.f-group textarea{resize:vertical;min-height:110px;line-height:1.5}
+.f-group input::placeholder,.f-group textarea::placeholder{color:var(--txt3)}
+.f-group input:focus,.f-group textarea:focus,.f-group select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-bg)}
+.budget-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.bdg-pill{font-size:12.5px;font-weight:500;padding:7px 14px;border-radius:var(--r-p);border:1px solid var(--border-med);background:var(--surface);color:var(--txt2);cursor:pointer;transition:.2s}
+.bdg-pill:hover,.bdg-pill.sel{background:var(--accent-bg);color:var(--accent);border-color:rgba(0,102,204,.25)}
+.f-submit{width:100%;justify-content:center;padding:15px;font-size:15px;border-radius:var(--r-md);margin-top:6px}
+.f-note{font-size:12px;color:var(--txt3);text-align:center;margin-top:14px;line-height:1.5}
+.f-success{display:none;text-align:center;padding:28px 20px}
+.f-success-ico{font-size:52px;display:block;margin-bottom:16px;animation:popIn .5s var(--ease) both}
+@keyframes popIn{from{transform:scale(.5);opacity:0}}
+.f-success h3{font-family:'Fraunces',serif;font-size:24px;color:var(--txt);margin-bottom:8px}
+.f-success p{font-size:14px;color:var(--txt2);line-height:1.65}
+.ct-map{max-width:980px;margin:0 auto 80px;padding:0 24px}
+.ct-map-inner{padding:44px 40px;background:linear-gradient(135deg,var(--accent-bg),rgba(40,199,111,.05));border:1px solid rgba(0,102,204,.12);display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+[data-theme="dark"] .ct-map-inner{border-color:rgba(59,158,255,.16)}
+.map-stat{display:flex;flex-direction:column;gap:14px}
+.ms-item{display:flex;align-items:center;gap:14px}
+.ms-ico{font-size:20px}
+.ms-txt{font-size:14px;color:var(--txt2);line-height:1.4}
+.ms-txt strong{color:var(--txt);font-weight:600}
+.map-visual{text-align:center}
+.map-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.map-region{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);padding:10px;text-align:center;font-size:12px;color:var(--txt2);backdrop-filter:var(--blur)}
+.map-region strong{display:block;font-size:11px;font-weight:700;color:var(--accent);margin-bottom:2px;text-transform:uppercase;letter-spacing:.06em}
+.ct-faq{max-width:980px;margin:0 auto 80px;padding:0 24px}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media(max-width:900px){
+  .about-hero,.srv-hero-inner,.srv-card,.bundle-card,.ct-hero-inner,.blog-nl-inner,.ct-map-inner,.rev-hero-inner{grid-template-columns:1fr;gap:36px}
+  .metrics,.values-grid{grid-template-columns:1fr 1fr}
+  .skills-grid{grid-template-columns:repeat(2,1fr)}
+  .process-grid{grid-template-columns:repeat(2,1fr)}
+  .proc-card::after{display:none}
+  .ft-top{grid-template-columns:1fr 1fr;gap:36px}
+  .pt-header,.pt-row{grid-template-columns:1.6fr 1fr 1fr}
+  .pt-col:last-child,.pt-val:last-child{display:none}
+  .cta-card{flex-direction:column;text-align:center}
+  .bundle-feats{grid-template-columns:1fr}
+  .bf-visual{display:none}
+  .blog-feat{grid-template-columns:1fr}
+  .results-inner{grid-template-columns:repeat(2,1fr);gap:24px}
+  .res-stat{border-bottom:1px solid var(--border);padding-bottom:20px;border-right:none}
+  .res-stat:nth-child(odd){border-right:1px solid var(--border)}
+  .res-stat:nth-child(3),.res-stat:nth-child(4){border-bottom:none}
+}
+@media(max-width:640px){
+  .n-links{display:none}
+  .n-burger{display:flex}
+  #nav{gap:2px;padding:0 6px 0 14px}
+  .n-logo{margin-right:4px}
+  .hero-section{padding:80px 20px 56px}
+  .metrics,.values-grid,.rev-grid,.blog-grid{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr}
+  .srv-cards{padding:0 16px}
+  .srv-card{padding:32px 24px}
+  .bundle-card{padding:32px 24px}
+  .blog-grid-2{grid-template-columns:1fr}
+  .blog-grid-2 .bc{grid-template-columns:1fr}
+  .blog-grid-2 .bc-img{height:120px;margin-bottom:12px}
+  .ft-top{grid-template-columns:1fr}
+  .ft-bot{flex-direction:column;align-items:flex-start}
+  .f-row{grid-template-columns:1fr}
+  .feat-rev{padding:32px 24px}
+}
+@media(max-width:420px){
+  .hero-btns,.about-btns,.srv-cta-btns,.rev-cta-btns{flex-direction:column;align-items:stretch}
+  .btn{justify-content:center}
+  .trust-inner{flex-direction:column;gap:16px;align-items:flex-start}
+  .trust-divider{display:none}
+  .ct-form-card{padding:28px 20px}
+}
+</style>
+</head>
+<body>
+
+<div id="ambient"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div></div>
+
+<!-- ══════════ NAV ══════════ -->
+<nav id="nav">
+  <div class="n-logo" onclick="go('hero')">Usman.</div>
+  <div class="n-links">
+    <span class="n-link on" id="nl-hero"         onclick="go('hero')">Home</span>
+    <span class="n-link"    id="nl-about"         onclick="go('about')">About</span>
+    <span class="n-link"    id="nl-services"      onclick="go('services')">Services</span>
+    <span class="n-link"    id="nl-reviews"       onclick="go('reviews')">Reviews</span>
+    <span class="n-link"    id="nl-blog"          onclick="go('blog')">Blog</span>
+    <span class="n-link"    id="nl-contact"       onclick="go('contact')">Contact</span>
+  </div>
+  <div class="n-right">
+    <button class="n-theme" id="themeBtn" aria-label="Toggle dark mode">
+    <!-- ghost sun — shows in dark mode on left of track -->
+    <span class="n-theme-ghost ghost-sun">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c0a060" stroke-width="2.2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="4"/>
+        <line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/>
+        <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/>
+        <line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/>
+      </svg>
+    </span>
+    <!-- ghost moon — shows in light mode on right of track -->
+    <span class="n-theme-ghost ghost-moon">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2.2" stroke-linecap="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </span>
+    <!-- sliding knob with sun/moon icons -->
+    <span class="n-theme-knob">
+      <svg class="nt-sun" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.95)" stroke-width="2.2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="4"/>
+        <line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/>
+        <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/>
+        <line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/>
+      </svg>
+      <svg class="nt-moon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(200,200,230,.9)" stroke-width="2.2" stroke-linecap="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </span>
+  </button>
+    <span class="n-cta" onclick="go('contact')">Let's Talk</span>
+    <button class="n-burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div id="mob-menu">
+  <span class="n-link" onclick="go('hero');mobClose()">Home</span>
+  <span class="n-link" onclick="go('about');mobClose()">About</span>
+  <span class="n-link" onclick="go('services');mobClose()">Services</span>
+  <span class="n-link" onclick="go('reviews');mobClose()">Reviews</span>
+  <span class="n-link" onclick="go('blog');mobClose()">Blog</span>
+  <span class="n-link" onclick="go('contact');mobClose()">Contact</span>
+</div>
+
+<!-- ════════════════════════════════════════
+     PAGE 1: HERO
+════════════════════════════════════════ -->
+<div id="pg-hero" class="page on">
+  <section class="hero-section">
+    <div class="hero-avail"><div class="live-dot"></div> Available for new projects — worldwide</div>
+    <h1 class="h-display hero-title">Building things<br/>that <em>genuinely</em><br/>move the needle.</h1>
+    <p class="h-sub hero-subtitle">I help ambitious businesses win more clients through precision lead generation, exceptional web design, and LinkedIn content that converts attention into revenue.</p>
+    <div class="hero-chips">
+      <div class="chip">🎯 Leads Provider</div>
+      <div class="chip">💻 Web Dev & Design</div>
+      <div class="chip">✍️ LinkedIn Ghostwriter</div>
+    </div>
+    <div class="hero-btns">
+      <span class="btn btn-fill" onclick="go('services')">Explore Services →</span>
+      <span class="btn btn-outline" onclick="go('about')">👋 About Me</span>
+    </div>
+  </section>
+
+  <div class="metrics rv">
+    <div class="gc metric-card"><div class="m-icon m-blue">🎯</div><div class="m-label">Lead Generation</div><div class="m-desc">Verified, ICP-matched leads that fill your pipeline with qualified buyers — not junk data.</div><div class="m-num">500+<span class="m-unit"> leads delivered</span></div></div>
+    <div class="gc metric-card"><div class="m-icon m-green">🖥️</div><div class="m-label">Web Design & Dev</div><div class="m-desc">Fast, stunning websites that convert visitors. Mobile-first, SEO-ready and performance-optimised.</div><div class="m-num">40+<span class="m-unit"> sites shipped</span></div></div>
+    <div class="gc metric-card"><div class="m-icon m-purple">✍️</div><div class="m-label">LinkedIn Ghostwriting</div><div class="m-desc">Authority-building content that grows your audience and drives inbound leads consistently.</div><div class="m-num">3×<span class="m-unit"> avg reach growth</span></div></div>
+  </div>
+
+  <div class="trust-strip rv">
+    <div class="trust-inner">
+      <span class="trust-label">Trusted by</span>
+      <div class="trust-divider"></div>
+      <div class="trust-logos">
+        <span class="trust-logo">TechScale</span><span class="trust-logo">Growthly</span><span class="trust-logo">NovaSpark</span><span class="trust-logo">Bloom Agency</span><span class="trust-logo">Finity Group</span><span class="trust-logo">+ 45 more</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="social-row rv">
+    <a href="#" class="soc-btn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.981V9h3.084v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a1.795 1.795 0 1 1 0-3.59 1.795 1.795 0 0 1 0 3.59zM6.754 20.452H3.918V9h2.836v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+    <a href="#" class="soc-btn"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Email Me</a>
+    <a href="#" class="soc-btn" onclick="go('reviews')"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>5.0 Reviews</a>
+    <a href="#" class="soc-btn" onclick="go('blog')"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>Read Blog</a>
+  </div>
+
+  <footer class="hero-footer">
+    <div class="hf-bg-text">MORE</div>
+    <div class="hf-orb"></div>
+    <div class="hf-orb2"></div>
+    <div class="hf-content">
+      <div class="hf-socials">
+        <a href="#" class="hf-soc" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+        <a href="#" class="hf-soc" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" class="hf-soc" aria-label="Twitter">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+        </a>
+        <a href="#" class="hf-soc" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+      <a href="/cdn-cgi/l/email-protection#abc3cec7c7c4ebded8c6cac585cfcedd" class="hf-email"><span class="__cf_email__" data-cfemail="c4aca1a8a8ab84b1b7a9a5aaeaa0a1b2">[email&#160;protected]</span></a>
+    </div>
+    <div class="hf-bottom">
+      <div class="hf-bottom-divider"></div>
+      <p class="hf-crafted">Crafted with <em class="heart">&#9829;</em> by Usman</p>
+      <p class="hf-copy">&#169; 2025 Usman. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<!-- ════════════════════════════════════════
+     PAGE 2: ABOUT
+════════════════════════════════════════ -->
+<div id="pg-about" class="page">
+  <div class="about-hero wrap">
+    <div class="about-visual rv">
+      <div class="av-card gc"><div class="av-emoji">👨‍💻</div><div class="av-name">Usman</div><div class="av-role">Leads · Web · LinkedIn</div></div>
+      <div class="av-badge"><div><div class="ab-num">50+</div><div class="ab-lbl">Happy clients worldwide</div></div><div style="font-size:28px">🌍</div></div>
+    </div>
+    <div class="rv d1">
+      <span class="eyebrow">About Usman</span>
+      <h1 class="h-display" style="font-size:clamp(40px,6vw,62px);margin-bottom:20px">The mind<br/>behind the <em>work.</em></h1>
+      <p class="h-sub" style="max-width:460px;margin-bottom:16px">I'm a multi-disciplined digital professional who helps businesses generate quality leads, build stunning web experiences, and craft LinkedIn content that turns followers into paying clients.</p>
+      <p style="font-size:14px;color:var(--txt2);line-height:1.7;margin-bottom:28px;max-width:460px">With 5+ years across three high-impact disciplines, I've helped 50+ businesses across B2B SaaS, consulting, and professional services unlock consistent, scalable growth. My approach combines strategic thinking with meticulous execution — so results don't just happen once, they compound.</p>
+      <div class="about-chips"><div class="chip chip-sm">🎯 Lead Expert</div><div class="chip chip-sm">💻 Web Designer</div><div class="chip chip-sm">✍️ Ghostwriter</div><div class="chip chip-sm">📈 Growth Strategist</div><div class="chip chip-sm">⚡ Fast Delivery</div></div>
+      <div class="about-btns"><span class="btn btn-fill" onclick="go('services')">View Services →</span><span class="btn btn-outline">📄 Download CV</span></div>
+    </div>
+  </div>
+
+  <section class="values-sec">
+    <div class="rv"><span class="eyebrow">Core Values</span><h2 class="h-section">What I stand <em>for.</em></h2></div>
+    <div class="values-grid">
+      <div class="gc val-card rv d1"><span class="val-ico">🎯</span><div class="val-title">Results First, Always</div><div class="val-desc">Every strategy, design decision, and word written is aligned with one goal — measurable, meaningful results that move your business forward.</div></div>
+      <div class="gc val-card rv d2"><span class="val-ico">⚡</span><div class="val-title">Speed Without Sacrifice</div><div class="val-desc">Fast delivery is a competitive advantage. I consistently deliver ahead of schedule — without cutting corners on quality.</div></div>
+      <div class="gc val-card rv d3"><span class="val-ico">🔍</span><div class="val-title">Deep Research, Always</div><div class="val-desc">I don't guess your audience — I research them. Every lead list, website, and post starts with understanding who you're talking to.</div></div>
+      <div class="gc val-card rv d1"><span class="val-ico">🤝</span><div class="val-title">Long-Term Partnership</div><div class="val-desc">I invest in your success beyond the project. Most of my clients stay for months or years because I treat their business like my own.</div></div>
+      <div class="gc val-card rv d2"><span class="val-ico">✨</span><div class="val-title">Details Matter</div><div class="val-desc">The difference between good and exceptional lives in the details most people skip. I sweat every pixel, word, and data point.</div></div>
+      <div class="gc val-card rv d3"><span class="val-ico">🔒</span><div class="val-title">Radical Transparency</div><div class="val-desc">No jargon, no smoke and mirrors. You always know what's happening, why I made each decision, and what results to expect.</div></div>
+    </div>
+  </section>
+
+  <section class="journey-sec">
+    <div class="rv"><span class="eyebrow">My Journey</span><h2 class="h-section">How I got <em>here.</em></h2></div>
+    <div class="timeline rv">
+      <div class="tl-row"><div class="tl-yr">2019</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-event">Wrote First Line of Code</div><div class="tl-info">Discovered HTML and CSS. Built first client site within 3 months. Realised this was more than a hobby — it was a career.</div></div></div>
+      <div class="tl-row"><div class="tl-yr">2020</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-event">Entered Lead Generation</div><div class="tl-info">Built a B2B client a list of 300 verified contacts. It generated 12 new clients in a month. A second skill was born.</div></div></div>
+      <div class="tl-row"><div class="tl-yr">2021</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-event">LinkedIn Ghostwriting Unlocked</div><div class="tl-info">Wrote for a consulting firm's MD. Their reach tripled in 60 days and two enterprise deals came from the content. Third service added.</div></div></div>
+      <div class="tl-row"><div class="tl-yr">2022</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-event">Went Full-Time Freelance</div><div class="tl-info">Left everything behind to focus entirely on leads, design and content. Doubled revenue within 6 months.</div></div></div>
+      <div class="tl-row"><div class="tl-yr">2023</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-event">50 Clients Milestone</div><div class="tl-info">Hit 50 clients across all services. Refined processes, built repeatable systems, achieved 96% client retention.</div></div></div>
+      <div class="tl-row"><div class="tl-yr">Now</div><div class="tl-spine"><div class="tl-dot" style="background:var(--green)"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-event">Open for New Projects ✨</div><div class="tl-info">Taking on select new clients for leads, web projects, and LinkedIn ghostwriting. Let's build something great.</div></div></div>
+    </div>
+  </section>
+
+  <section class="skills-sec rv">
+    <span class="eyebrow">Toolbox</span><h2 class="h-section">Skills & <em>expertise.</em></h2>
+    <div class="skills-grid">
+      <div class="skill-card"><div class="sk-ico">🎯</div><div class="sk-name">Lead Research</div><div class="sk-lvl">Expert · 5 yrs</div><div class="sk-bar"><div class="sk-fill" style="width:96%"></div></div></div>
+      <div class="skill-card"><div class="sk-ico">🔵</div><div class="sk-name">Apollo / Clay</div><div class="sk-lvl">Advanced</div><div class="sk-bar"><div class="sk-fill" style="width:92%"></div></div></div>
+      <div class="skill-card"><div class="sk-ico">🎨</div><div class="sk-name">UI/UX Design</div><div class="sk-lvl">Expert · 5 yrs</div><div class="sk-bar"><div class="sk-fill" style="width:95%"></div></div></div>
+      <div class="skill-card"><div class="sk-ico">💻</div><div class="sk-name">HTML/CSS/JS</div><div class="sk-lvl">Expert</div><div class="sk-bar"><div class="sk-fill" style="width:94%"></div></div></div>
+      <div class="skill-card"><div class="sk-ico">🌐</div><div class="sk-name">WordPress</div><div class="sk-lvl">Advanced</div><div class="sk-bar"><div class="sk-fill" style="width:88%"></div></div></div>
+      <div class="skill-card"><div class="sk-ico">🔷</div><div class="sk-name">Webflow</div><div class="sk-lvl">Advanced</div><div class="sk-bar"><div class="sk-fill" style="width:85%"></div></div></div>
+      <div class="skill-card"><div class="sk-ico">✍️</div><div class="sk-name">LinkedIn Writing</div><div class="sk-lvl">Expert · 4 yrs</div><div class="sk-bar"><div class="sk-fill" style="width:97%"></div></div></div>
+      <div class="skill-card"><div class="sk-ico">📊</div><div class="sk-name">Content Strategy</div><div class="sk-lvl">Advanced</div><div class="sk-bar"><div class="sk-fill" style="width:90%"></div></div></div>
+    </div>
+  </section>
+
+  <section class="about-cta rv"><div class="gc cta-card"><div class="cta-txt"><h2 class="h-section">Ready to <em>work together?</em></h2><p>Whether you need leads, a new website, or a LinkedIn presence — let's have a no-pressure chat about what you're looking to achieve.</p></div><span class="btn btn-fill" onclick="go('services')" style="font-size:15px;padding:16px 32px">See What I Offer →</span></div></section>
+
+  <footer class="hero-footer">
+    <div class="hf-bg-text">MORE</div>
+    <div class="hf-orb"></div>
+    <div class="hf-orb2"></div>
+    <div class="hf-content">
+      <div class="hf-socials">
+        <a href="#" class="hf-soc" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+        <a href="#" class="hf-soc" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" class="hf-soc" aria-label="Twitter">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+        </a>
+        <a href="#" class="hf-soc" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+      <a href="/cdn-cgi/l/email-protection#49212c252526093c3a242827672d2c3f" class="hf-email"><span class="__cf_email__" data-cfemail="e28a878e8e8da297918f838ccc868794">[email&#160;protected]</span></a>
+    </div>
+    <div class="hf-bottom">
+      <div class="hf-bottom-divider"></div>
+      <p class="hf-crafted">Crafted with <em class="heart">&#9829;</em> by Usman</p>
+      <p class="hf-copy">&#169; 2025 Usman. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<!-- ════════════════════════════════════════
+     PAGE 3: SERVICES
+════════════════════════════════════════ -->
+<div id="pg-services" class="page">
+  <div class="srv-hero">
+    <div class="srv-hero-inner">
+      <div class="rv">
+        <span class="eyebrow">What I Offer</span>
+        <h1 class="h-display" style="font-size:clamp(44px,7vw,80px);margin-bottom:20px">Services that <em>grow</em> your business.</h1>
+        <p class="h-sub" style="max-width:460px;margin-bottom:32px">Three battle-tested disciplines, one clear outcome — more clients, a better online presence, and a personal brand that generates inbound on autopilot.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="chip">🎯 Leads</span><span class="chip">🖥️ Web</span><span class="chip">✍️ LinkedIn</span><span class="chip">🚀 Bundle</span></div>
+      </div>
+      <div class="srv-hero-right rv d2">
+        <div class="srv-qs"><span class="sqs-label">Avg. lead turnaround</span><span class="sqs-val">24–72 hrs</span></div>
+        <div class="srv-qs"><span class="sqs-label">Website delivery</span><span class="sqs-val">2–3 weeks</span></div>
+        <div class="srv-qs"><span class="sqs-label">Client satisfaction</span><span class="sqs-val">5.0 ★ / 40+ reviews</span></div>
+        <div class="srv-qs"><span class="sqs-label">Clients served</span><span class="sqs-val">50+ worldwide</span></div>
+        <div class="srv-qs"><span class="sqs-label">Response time</span><span class="sqs-val">Within 24 hrs</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="srv-cards">
+    <div class="gc srv-card rv"><div class="srv-card-num">01</div><div><span class="srv-ico">🎯</span><h2 class="srv-title">Lead Generation</h2><p class="srv-desc">Highly targeted lead lists of your exact ideal customers — verified contacts with emails, LinkedIn profiles, and enriched data, ready to outreach the same day.</p><div class="srv-price-row"><span class="srv-price">From $99</span><span class="srv-period">/ 100 leads</span></div><span class="btn btn-fill" style="font-size:14px;padding:12px 24px" onclick="go('contact')">Get a Lead List →</span></div><div><div class="srv-features"><div class="srv-feat"><div class="srv-feat-check">✓</div>ICP research & definition</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Verified emails (95%+ deliverability)</div><div class="srv-feat"><div class="srv-feat-check">✓</div>LinkedIn profile URLs included</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Company size, industry, title filters</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Enriched with intent & tech stack data</div><div class="srv-feat"><div class="srv-feat-check">✓</div>CSV + Google Sheets delivery</div><div class="srv-feat"><div class="srv-feat-check">✓</div>One round of refinement included</div></div></div></div>
+    <div class="gc srv-card rv"><div class="srv-card-num">02</div><div><span class="srv-ico">🖥️</span><h2 class="srv-title">Web Design & Development</h2><p class="srv-desc">Modern, responsive websites that look exceptional and convert visitors into clients. From polished landing pages to full multi-page sites — built to perform, not just impress.</p><div class="srv-price-row"><span class="srv-price">From $499</span><span class="srv-period">/ project</span></div><span class="btn btn-fill" style="font-size:14px;padding:12px 24px" onclick="go('contact')">Start a Web Project →</span></div><div><div class="srv-features"><div class="srv-feat"><div class="srv-feat-check">✓</div>Custom UI/UX design from scratch</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Mobile-first, fully responsive</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Core Web Vitals & performance optimised</div><div class="srv-feat"><div class="srv-feat-check">✓</div>On-page SEO foundations included</div><div class="srv-feat"><div class="srv-feat-check">✓</div>CMS integration (WordPress, Webflow)</div><div class="srv-feat"><div class="srv-feat-check">✓</div>3 rounds of revisions included</div><div class="srv-feat"><div class="srv-feat-check">✓</div>30-day post-launch support</div></div></div></div>
+    <div class="gc srv-card rv"><div class="srv-card-num">03</div><div><span class="srv-ico">✍️</span><h2 class="srv-title">LinkedIn Ghostwriting</h2><p class="srv-desc">I write your LinkedIn content so you show up consistently, grow your audience, and attract inbound opportunities — without spending hours at a blank screen every week.</p><div class="srv-price-row"><span class="srv-price">From $299</span><span class="srv-period">/ month</span></div><span class="btn btn-fill" style="font-size:14px;padding:12px 24px" onclick="go('contact')">Start Growing →</span></div><div><div class="srv-features"><div class="srv-feat"><div class="srv-feat-check">✓</div>Voice discovery & brand positioning</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Monthly content calendar for approval</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Hook writing & storytelling-first approach</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Daily or weekly posting schedule</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Engagement strategy & audience growth</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Monthly analytics + performance review</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Unlimited revisions before publishing</div></div></div></div>
+  </div>
+
+  <div class="srv-bundle rv"><div class="gc bundle-card"><div><span class="eyebrow">Bundle Offer</span><h2 class="h-section" style="font-size:clamp(28px,4vw,42px);margin-bottom:14px">The <em>Growth Bundle.</em></h2><p style="font-size:15px;color:var(--txt2);line-height:1.7;margin-bottom:24px;max-width:400px">All three services combined. The complete system for businesses serious about scaling. Leads fill the pipeline, the website converts them, LinkedIn keeps them warm.</p><div class="srv-price-row" style="margin-bottom:24px"><span class="srv-price">From $799</span><span class="srv-period">/ month · Save ~$150</span></div><span class="btn btn-fill" style="font-size:14px;padding:12px 28px" onclick="go('contact')">Get the Bundle →</span></div><div class="bundle-feats"><div class="bundle-feat"><span class="bundle-feat-ico">🎯</span> 500 verified leads/mo</div><div class="bundle-feat"><span class="bundle-feat-ico">🖥️</span> Full website build</div><div class="bundle-feat"><span class="bundle-feat-ico">✍️</span> LinkedIn content daily</div><div class="bundle-feat"><span class="bundle-feat-ico">⚡</span> Priority turnaround</div><div class="bundle-feat"><span class="bundle-feat-ico">🔒</span> Dedicated account manager</div><div class="bundle-feat"><span class="bundle-feat-ico">📊</span> Monthly growth report</div><div class="bundle-feat"><span class="bundle-feat-ico">♾️</span> Unlimited revisions</div><div class="bundle-feat"><span class="bundle-feat-ico">💬</span> Direct Slack access</div></div></div></div>
+
+  <section class="process-sec rv"><span class="eyebrow">How It Works</span><h2 class="h-section">Simple. Transparent. <em>Effective.</em></h2><div class="process-grid"><div class="gc proc-card"><span class="proc-num">01</span><div class="proc-title">Discovery Call</div><div class="proc-desc">A free 30-min call to understand your goals, target audience, and what success looks like for you.</div></div><div class="gc proc-card"><span class="proc-num">02</span><div class="proc-title">Tailored Proposal</div><div class="proc-desc">A custom plan with clear deliverables, realistic timelines, and transparent pricing. No surprises.</div></div><div class="gc proc-card"><span class="proc-num">03</span><div class="proc-title">Execution & Updates</div><div class="proc-desc">Work begins immediately. Regular updates keep you in the loop — not just at the end.</div></div><div class="gc proc-card"><span class="proc-num">04</span><div class="proc-title">Review & Scale</div><div class="proc-desc">We review results, optimise what's working, and build on success. Most clients expand after month one.</div></div></div></section>
+
+  <section class="pricing-sec rv"><span class="eyebrow">Compare Plans</span><h2 class="h-section">Transparent <em>pricing.</em></h2><div class="pricing-table"><div class="pt-header"><div class="pt-col">Feature</div><div class="pt-col">Solo Services</div><div class="pt-col accent">Growth Bundle</div><div class="pt-col">Enterprise</div></div><div class="pt-row"><div class="pt-feature">Lead generation</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div></div><div class="pt-row"><div class="pt-feature">Web design & development</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div></div><div class="pt-row"><div class="pt-feature">LinkedIn ghostwriting</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div></div><div class="pt-row"><div class="pt-feature">Priority turnaround</div><div class="pt-val no">—</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div></div><div class="pt-row"><div class="pt-feature">Dedicated account manager</div><div class="pt-val no">—</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div></div><div class="pt-row"><div class="pt-feature">Direct Slack access</div><div class="pt-val no">—</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div></div><div class="pt-row"><div class="pt-feature">Monthly strategy calls</div><div class="pt-val no">—</div><div class="pt-val no">—</div><div class="pt-val yes">✓</div></div><div class="pt-row"><div class="pt-feature">Custom SLA agreement</div><div class="pt-val no">—</div><div class="pt-val no">—</div><div class="pt-val yes">✓</div></div></div></section>
+
+  <section class="srv-cta rv"><div class="gc srv-cta-inner"><h2 class="h-section" style="font-size:clamp(28px,4vw,44px);margin-bottom:12px">Ready to get <em>started?</em></h2><p style="color:var(--txt2);font-size:15px;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto">Book a free 30-minute discovery call — no pitch, no pressure. Just a real conversation about your goals and how I can help.</p><div class="srv-cta-btns"><span class="btn btn-fill" style="font-size:15px;padding:15px 32px" onclick="go('contact')">📅 Book a Free Call</span><span class="btn btn-outline" style="font-size:15px;padding:15px 32px" onclick="go('contact')">✉️ Send a Message</span></div></div></section>
+
+  <footer class="hero-footer">
+    <div class="hf-bg-text">MORE</div>
+    <div class="hf-orb"></div>
+    <div class="hf-orb2"></div>
+    <div class="hf-content">
+      <div class="hf-socials">
+        <a href="#" class="hf-soc" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+        <a href="#" class="hf-soc" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" class="hf-soc" aria-label="Twitter">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+        </a>
+        <a href="#" class="hf-soc" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+      <a href="/cdn-cgi/l/email-protection#6109040d0d0e2114120c000f4f050417" class="hf-email"><span class="__cf_email__" data-cfemail="a2cac7cececde2d7d1cfc3cc8cc6c7d4">[email&#160;protected]</span></a>
+    </div>
+    <div class="hf-bottom">
+      <div class="hf-bottom-divider"></div>
+      <p class="hf-crafted">Crafted with <em class="heart">&#9829;</em> by Usman</p>
+      <p class="hf-copy">&#169; 2025 Usman. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<!-- ════════════════════════════════════════
+     PAGE 4: TESTIMONIALS + FAQ
+════════════════════════════════════════ -->
+<div id="pg-reviews" class="page">
+  <div class="rev-hero wrap">
+    <div class="rev-hero-inner">
+      <div class="rv">
+        <span class="eyebrow">Client Reviews</span>
+        <h1 class="h-display" style="margin-bottom:20px">Real words.<br/><em>Real results.</em></h1>
+        <p class="body-lg" style="max-width:420px;margin-bottom:32px">50+ clients worldwide. 5.0 average rating. Every testimonial here is unedited — because the results speak for themselves.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px"><div class="chip"><div class="live-dot"></div> Open for Projects</div><div class="chip">⭐ 5.0 Rated</div><div class="chip">🌍 50+ Clients</div></div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap"><span class="btn btn-fill" onclick="go('contact')">Work With Me →</span><span class="btn btn-outline" onclick="go('contact')">📅 Book a Call</span></div>
+      </div>
+      <div class="rev-hero-stats rv d2">
+        <div class="rhs-card"><div class="rhs-ico">⭐</div><div><div class="rhs-num">5.0<span style="font-size:18px;color:var(--txt3)"> / 5.0</span></div><div class="rhs-lbl">Average rating across all platforms</div></div></div>
+        <div class="rhs-card"><div class="rhs-ico">💬</div><div><div class="rhs-num">40+</div><div class="rhs-lbl">Verified written reviews</div></div></div>
+        <div class="rhs-card"><div class="rhs-ico">🔁</div><div><div class="rhs-num">96%</div><div class="rhs-lbl">Client retention rate</div></div></div>
+        <div class="rhs-card"><div class="rhs-ico">🌍</div><div><div class="rhs-num">18</div><div class="rhs-lbl">Countries served worldwide</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee-wrap rv">
+    <div class="marquee-track">
+      <div class="mq-item"><p class="mq-text">"300 leads in 48 hours — every one matched our ICP. Our sales team closed 8 deals from that list alone."</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#0066cc,#5751e1)">A</div><div><div class="mq-name">Alex Chen</div><div class="mq-role">Head of Sales · Growthly</div></div></div></div>
+      <div class="mq-item"><p class="mq-text">"Our bounce rate dropped 45% in month one. The design is stunning — clients comment on it every call."</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#ff9500,#ff3b30)">M</div><div><div class="mq-name">Maria Torres</div><div class="mq-role">Founder · Bloom Agency</div></div></div></div>
+      <div class="mq-item"><p class="mq-text">"LinkedIn views went from 200 to 15,000+ per post. Two enterprise deals came from content Usman wrote."</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#5751e1,#bf5af2)">J</div><div><div class="mq-name">James O'Brien</div><div class="mq-role">MD · Finity Group</div></div></div></div>
+      <div class="mq-item"><p class="mq-text">"Fast, professional, and incredibly talented. The attention to detail in design and data was impressive."</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#ff2d55,#ff9f0a)">P</div><div><div class="mq-name">Priya Kapoor</div><div class="mq-role">Co-founder · NovaSpark</div></div></div></div>
+      <div class="mq-item"><p class="mq-text">"The Growth Bundle was the best investment this year. Leads, website, LinkedIn — ROI in week 3."</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#28c76f,#0066cc)">R</div><div><div class="mq-name">Ravi Singh</div><div class="mq-role">CEO · ScaleStack</div></div></div></div>
+      <!-- duplicate for seamless loop -->
+      <div class="mq-item"><p class="mq-text">"300 leads in 48 hours — every one matched our ICP. Our sales team closed 8 deals from that list alone."</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#0066cc,#5751e1)">A</div><div><div class="mq-name">Alex Chen</div><div class="mq-role">Head of Sales · Growthly</div></div></div></div>
+      <div class="mq-item"><p class="mq-text">"Our bounce rate dropped 45% in month one. The design is stunning — clients comment on it every call."</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#ff9500,#ff3b30)">M</div><div><div class="mq-name">Maria Torres</div><div class="mq-role">Founder · Bloom Agency</div></div></div></div>
+      <div class="mq-item"><p class="mq-text">"LinkedIn views went from 200 to 15,000+ per post. Two enterprise deals came from content Usman wrote."</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#5751e1,#bf5af2)">J</div><div><div class="mq-name">James O'Brien</div><div class="mq-role">MD · Finity Group</div></div></div></div>
+      <div class="mq-item"><p class="mq-text">"Fast, professional, and incredibly talented. The attention to detail in design and data was impressive."</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#ff2d55,#ff9f0a)">P</div><div><div class="mq-name">Priya Kapoor</div><div class="mq-role">Co-founder · NovaSpark</div></div></div></div>
+      <div class="mq-item"><p class="mq-text">"The Growth Bundle was the best investment this year. Leads, website, LinkedIn — ROI in week 3."</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#28c76f,#0066cc)">R</div><div><div class="mq-name">Ravi Singh</div><div class="mq-role">CEO · ScaleStack</div></div></div></div>
+    </div>
+  </div>
+
+  <div class="feat-rev-wrap rv">
+    <div class="gc feat-rev">
+      <div class="feat-quote-mark">"</div>
+      <p class="feat-rev-text">"Working with Usman completely transformed our LinkedIn presence. In 60 days our follower count doubled, inbound DMs tripled, and we closed two enterprise deals directly from content he wrote. The ROI has been extraordinary — I wish I'd found him sooner."</p>
+      <div class="feat-rev-author">
+        <div class="feat-av" style="background:linear-gradient(135deg,#0066cc,#5751e1)">S</div>
+        <div><div class="feat-name">Sarah Mitchell</div><div class="feat-role">CEO, TechScale Solutions — London, UK</div><div class="stars" style="margin-top:6px">★★★★★</div></div>
+        <div style="margin-left:auto;text-align:right;opacity:.6"><div style="font-size:11px;color:var(--txt3);text-transform:uppercase;letter-spacing:.07em;font-weight:600">Service</div><div style="font-size:13px;color:var(--txt2);margin-top:4px;font-weight:500">LinkedIn Ghostwriting</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rev-grid-wrap" style="margin-top:24px"><div class="rev-grid">
+    <div class="gc rev-card rv d1"><div class="rev-card-quote">"</div><p class="rev-card-text">"300 verified leads delivered in under 48 hours — zero bounces. Every contact matched our ICP perfectly. Our pipeline went from empty to 8 closed deals in three weeks."</p><div class="rev-card-author"><div class="rev-av" style="background:linear-gradient(135deg,#0066cc,#28c76f)">A</div><div><div class="rev-name">Alex Chen</div><div class="rev-role">Head of Sales · Growthly · USA</div><div class="rev-stars stars">★★★★★</div></div><div style="margin-left:auto"><span style="font-size:11px;color:var(--accent);background:var(--accent-bg);padding:3px 10px;border-radius:var(--r-p);font-weight:600">Leads</span></div></div></div>
+    <div class="gc rev-card rv d2"><div class="rev-card-quote">"</div><p class="rev-card-text">"Our new website is everything I dreamed of — beautiful, lightning fast, and it converts. Bounce rate down 45% in month one. Clients mention it in almost every first call now."</p><div class="rev-card-author"><div class="rev-av" style="background:linear-gradient(135deg,#ff9500,#ff3b30)">M</div><div><div class="rev-name">Maria Torres</div><div class="rev-role">Founder · Bloom Agency · Spain</div><div class="rev-stars stars">★★★★★</div></div><div style="margin-left:auto"><span style="font-size:11px;color:#28c76f;background:rgba(40,199,111,.1);padding:3px 10px;border-radius:var(--r-p);font-weight:600">Web</span></div></div></div>
+    <div class="gc rev-card rv d3"><div class="rev-card-quote">"</div><p class="rev-card-text">"I went from 200 views per post to averaging 15,000+ weekly. My content sounds exactly like me — but sharper, more strategic, and far more engaging. The inbound leads are a game changer."</p><div class="rev-card-author"><div class="rev-av" style="background:linear-gradient(135deg,#5751e1,#bf5af2)">J</div><div><div class="rev-name">James O'Brien</div><div class="rev-role">Managing Director · Finity Group · Ireland</div><div class="rev-stars stars">★★★★★</div></div><div style="margin-left:auto"><span style="font-size:11px;color:#5751e1;background:rgba(87,81,225,.1);padding:3px 10px;border-radius:var(--r-p);font-weight:600">LinkedIn</span></div></div></div>
+    <div class="gc rev-card rv d4"><div class="rev-card-quote">"</div><p class="rev-card-text">"Fast, professional, incredibly talented. Full site in 11 days. Communication was excellent and the final product was well beyond what I expected. He's my go-to designer now."</p><div class="rev-card-author"><div class="rev-av" style="background:linear-gradient(135deg,#ff2d55,#ff9f0a)">P</div><div><div class="rev-name">Priya Kapoor</div><div class="rev-role">Co-founder · NovaSpark · India</div><div class="rev-stars stars">★★★★★</div></div><div style="margin-left:auto"><span style="font-size:11px;color:#28c76f;background:rgba(40,199,111,.1);padding:3px 10px;border-radius:var(--r-p);font-weight:600">Web</span></div></div></div>
+  </div></div>
+
+  <div class="results-bar rv"><div class="gc-flat results-inner"><div class="res-stat"><div class="res-num">500+</div><div class="res-label">Verified leads delivered</div></div><div class="res-stat"><div class="res-num">40+</div><div class="res-label">Websites shipped</div></div><div class="res-stat"><div class="res-num">3×</div><div class="res-label">Avg LinkedIn reach growth</div></div><div class="res-stat"><div class="res-num">96%</div><div class="res-label">Client retention rate</div></div></div></div>
+
+  <section class="faq-section rv">
+    <div class="faq-head"><span class="eyebrow">FAQ</span><h2 class="h-section">Questions? <em>Answered.</em></h2><p class="body-lg" style="max-width:520px;margin-top:12px">Everything you need to know before working together — answered honestly.</p></div>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">How quickly can I receive my lead list?<span class="faq-icon">+</span></button><div class="faq-body"><p>Most lead lists (up to 500) are delivered within 24–72 hours. Larger orders (1,000+) take 5–7 business days for full verification and enrichment. Rush delivery is available — just ask and I'll confirm the timeline upfront.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">What's your web design process and timeline?<span class="faq-icon">+</span></button><div class="faq-body"><p>After onboarding, wireframes are delivered in 3 days, a full design mockup in 7 days, and the live website in 2–3 weeks. I provide regular updates so you're never wondering what's happening.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">How does LinkedIn ghostwriting work — will it sound like me?<span class="faq-icon">+</span></button><div class="faq-body"><p>We start with a 60-minute voice discovery session. From that I build a personal style guide unique to you. Every post is written in your voice, reviewed by you before publishing, and refined until it feels 100% authentic.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">Do you offer revisions?<span class="faq-icon">+</span></button><div class="faq-body"><p>Absolutely. Web projects include 3 full rounds of revisions. Lead lists can be refined once. LinkedIn posts are revised unlimited times before publishing — your approval is required before anything goes live.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">What industries do you specialise in?<span class="faq-icon">+</span></button><div class="faq-body"><p>I work across B2B SaaS, professional services, consulting, agencies, finance, e-commerce, and coaching. My lead generation is especially effective in industries with clearly defined decision-makers on LinkedIn.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">How do payments and contracts work?<span class="faq-icon">+</span></button><div class="faq-body"><p>I accept PayPal, Stripe, and bank transfer. Projects require 50% upfront with the remainder on delivery. Monthly retainers are billed at the start of each month. All work is covered by a simple service agreement.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">Can I bundle services and save?<span class="faq-icon">+</span></button><div class="faq-body"><p>Yes — the Growth Bundle combines all three services at a bundled rate, saving ~$150/month. Custom bundles are also available. Just message me and we'll put something together that fits your budget and goals.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">What if I'm not happy with the results?<span class="faq-icon">+</span></button><div class="faq-body"><p>I stand behind my work. If a lead list doesn't meet the agreed quality criteria, I'll replace underperforming leads at no cost. For web and content, I won't close a project until you're genuinely satisfied.</p></div></div>
+    </div>
+  </section>
+
+  <section class="rev-cta rv"><div class="gc rev-cta-inner"><h2 class="h-section" style="font-size:clamp(28px,4vw,44px);margin-bottom:12px">Join 50+ satisfied <em>clients.</em></h2><p style="color:var(--txt2);font-size:15px;max-width:460px;margin:0 auto;line-height:1.65">Ready to see results like the ones above? Let's have a free 30-minute call and figure out how I can help your business grow.</p><div class="rev-cta-btns"><span class="btn btn-fill" style="font-size:15px;padding:15px 32px" onclick="go('contact')">📅 Book a Free Call</span><span class="btn btn-outline" style="font-size:15px;padding:15px 32px" onclick="go('contact')">✉️ Send a Message</span></div></div></section>
+
+  <footer class="hero-footer">
+    <div class="hf-bg-text">MORE</div>
+    <div class="hf-orb"></div>
+    <div class="hf-orb2"></div>
+    <div class="hf-content">
+      <div class="hf-socials">
+        <a href="#" class="hf-soc" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+        <a href="#" class="hf-soc" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" class="hf-soc" aria-label="Twitter">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+        </a>
+        <a href="#" class="hf-soc" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+      <a href="/cdn-cgi/l/email-protection#026a676e6e6d4277716f636c2c666774" class="hf-email"><span class="__cf_email__" data-cfemail="fd9598919192bd888e909c93d399988b">[email&#160;protected]</span></a>
+    </div>
+    <div class="hf-bottom">
+      <div class="hf-bottom-divider"></div>
+      <p class="hf-crafted">Crafted with <em class="heart">&#9829;</em> by Usman</p>
+      <p class="hf-copy">&#169; 2025 Usman. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<!-- ════════════════════════════════════════
+     PAGE 5: BLOG
+════════════════════════════════════════ -->
+<div id="pg-blog" class="page">
+  <div class="blog-hero wrap rv">
+    <span class="eyebrow">Insights & Ideas</span>
+    <h1 class="h-display" style="margin-bottom:20px">Writing that <em>teaches.</em></h1>
+    <p class="body-lg" style="max-width:520px;margin-bottom:32px">Practical, no-fluff advice on lead generation, web design, and LinkedIn growth — lessons from 5 years and 50+ clients distilled into posts you can actually use.</p>
+    <div class="blog-filter">
+      <button class="fil-btn on" onclick="blogFilter('all',this)">All Posts</button>
+      <button class="fil-btn" onclick="blogFilter('leads',this)">🎯 Lead Gen</button>
+      <button class="fil-btn" onclick="blogFilter('web',this)">💻 Web Design</button>
+      <button class="fil-btn" onclick="blogFilter('linkedin',this)">✍️ LinkedIn</button>
+      <button class="fil-btn" onclick="blogFilter('growth',this)">📈 Growth</button>
+    </div>
+  </div>
+
+  <div class="blog-feat-wrap rv">
+    <div class="gc blog-feat" data-tag="linkedin">
+      <div class="bf-content"><div class="bf-tag">LinkedIn · Featured</div><h2 class="bf-title">The Hook Formula That <em>Tripled</em> My Clients' LinkedIn Reach</h2><p class="bf-excerpt">After writing hundreds of posts for executives, founders, and consultants, I found a single repeatable hook formula that outperforms everything else — consistently. Here's the exact framework, the psychology behind it, and 8 real examples you can use today.</p><div class="bf-meta"><span>Usman</span><div class="bf-dot"></div><span>Mar 18, 2025</span><div class="bf-dot"></div><span>8 min read</span></div><a class="btn-ghost" style="margin-top:20px">Read article →</a></div>
+      <div class="bf-visual">✍️</div>
+    </div>
+  </div>
+
+  <div class="blog-grid-wrap rv">
+    <div class="blog-grid" id="blogGrid">
+      <div class="gc bc" data-tag="leads"><div class="bc-img" style="background:linear-gradient(135deg,rgba(0,102,204,.08),rgba(0,102,204,.03))">🎯</div><div class="bc-tag">Lead Gen</div><div class="bc-title">How to Build a 500-Lead List in 24 Hours</div><div class="bc-excerpt">The exact tools, workflow and verification process I use to deliver quality leads fast — and how you can replicate it.</div><div class="bc-meta"><span>Feb 28, 2025</span><div class="bc-sep"></div><span>6 min</span></div><a class="btn-ghost" style="margin-top:12px">Read →</a></div>
+      <div class="gc bc" data-tag="web"><div class="bc-img" style="background:linear-gradient(135deg,rgba(40,199,111,.08),rgba(40,199,111,.03))">🖥️</div><div class="bc-tag">Web Design</div><div class="bc-title">5 Design Decisions That Doubled Our Client's Conversion Rate</div><div class="bc-excerpt">Subtle changes to typography, CTA placement and structure that made a massive, measurable difference.</div><div class="bc-meta"><span>Feb 14, 2025</span><div class="bc-sep"></div><span>5 min</span></div><a class="btn-ghost" style="margin-top:12px">Read →</a></div>
+      <div class="gc bc" data-tag="linkedin"><div class="bc-img" style="background:linear-gradient(135deg,rgba(87,81,225,.08),rgba(87,81,225,.03))">💼</div><div class="bc-tag">LinkedIn</div><div class="bc-title">Why Most LinkedIn Ghostwriters Fail Their Clients</div><div class="bc-excerpt">The uncomfortable truth about polished content that performs poorly — and what high-performing writing actually looks like.</div><div class="bc-meta"><span>Jan 30, 2025</span><div class="bc-sep"></div><span>7 min</span></div><a class="btn-ghost" style="margin-top:12px">Read →</a></div>
+    </div>
+  </div>
+
+  <div class="blog-grid-wrap rv" style="margin-top:14px">
+    <div class="blog-grid-2" id="blogGrid2">
+      <div class="gc bc" data-tag="leads"><div class="bc-img" style="background:linear-gradient(135deg,rgba(0,102,204,.08),rgba(0,102,204,.03))">🔍</div><div class="bc-body"><div class="bc-tag">Lead Gen</div><div class="bc-title">Apollo vs Clay vs Hunter: Which Lead Tool Wins in 2025?</div><div class="bc-excerpt">Honest comparison of data quality, pricing, and ease of use after testing all three on the same ICP.</div><div class="bc-meta"><span>Jan 15, 2025</span><div class="bc-sep"></div><span>9 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
+      <div class="gc bc" data-tag="web"><div class="bc-img" style="background:linear-gradient(135deg,rgba(40,199,111,.08),rgba(40,199,111,.03))">🍎</div><div class="bc-body"><div class="bc-tag">Web Design</div><div class="bc-title">Apple-Style UI: The Design Principles Behind the Aesthetic</div><div class="bc-excerpt">Breaking down what makes Apple's design language so effective and how to apply it to your projects.</div><div class="bc-meta"><span>Jan 3, 2025</span><div class="bc-sep"></div><span>6 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
+      <div class="gc bc" data-tag="growth"><div class="bc-img" style="background:linear-gradient(135deg,rgba(255,149,0,.08),rgba(255,149,0,.03))">📈</div><div class="bc-body"><div class="bc-tag">Growth</div><div class="bc-title">The Full-Stack Freelancer: How I Built a 3-Service Business</div><div class="bc-excerpt">Leads + design + content. Why the combination is more powerful than any single service — and how I made it work.</div><div class="bc-meta"><span>Dec 28, 2024</span><div class="bc-sep"></div><span>10 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
+      <div class="gc bc" data-tag="linkedin"><div class="bc-img" style="background:linear-gradient(135deg,rgba(87,81,225,.08),rgba(87,81,225,.03))">🔎</div><div class="bc-body"><div class="bc-tag">LinkedIn</div><div class="bc-title">The 10-Minute LinkedIn Profile Audit That Changes Everything</div><div class="bc-excerpt">Most profiles lose clients before they read a post. Fix these 7 critical issues this week.</div><div class="bc-meta"><span>Dec 20, 2024</span><div class="bc-sep"></div><span>4 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
+      <div class="gc bc" data-tag="growth"><div class="bc-img" style="background:linear-gradient(135deg,rgba(255,45,85,.08),rgba(255,45,85,.03))">🚀</div><div class="bc-body"><div class="bc-tag">Growth</div><div class="bc-title">Cold Outreach in 2025: What Still Works and What Doesn't</div><div class="bc-excerpt">The landscape has changed. Here's what's actually getting replies today and what's being ignored.</div><div class="bc-meta"><span>Dec 10, 2024</span><div class="bc-sep"></div><span>8 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
+      <div class="gc bc" data-tag="web"><div class="bc-img" style="background:linear-gradient(135deg,rgba(40,199,111,.08),rgba(40,199,111,.03))">⚡</div><div class="bc-body"><div class="bc-tag">Web Design</div><div class="bc-title">Why Your Website Speed is Killing Your Conversions</div><div class="bc-excerpt">A 1-second delay costs 7% in conversions. Here's the exact checklist I use on every site I build.</div><div class="bc-meta"><span>Dec 2, 2024</span><div class="bc-sep"></div><span>5 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
+    </div>
+  </div>
+
+  <div class="blog-nl rv">
+    <div class="gc-flat blog-nl-inner">
+      <div><span class="eyebrow">Stay in the Loop</span><h2 class="h-med">Get the good stuff<br/><em>in your inbox.</em></h2><p style="font-size:14px;color:var(--txt2);margin-top:10px;line-height:1.65">One email per week. Practical tips on leads, web design, and LinkedIn growth. No fluff, no spam — just actionable insights from the trenches.</p><div class="nl-form"><input class="nl-input" type="email" placeholder="your@email.com" id="nlEmail"/><button class="nl-btn" onclick="nlSubmit()">Subscribe →</button></div><div class="nl-note" id="nlNote">🔒 No spam. Unsubscribe any time. Join 800+ subscribers.</div></div>
+      <div class="nl-visual"><span style="font-size:72px;display:block;margin-bottom:16px">📬</span><p style="font-size:14px;color:var(--txt2)">Join 800+ founders and marketers who read Usman's weekly dispatch.</p><div style="display:flex;flex-direction:column;gap:10px;margin-top:20px"><div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--txt2)"><span style="color:var(--green);font-weight:700">✓</span>Lead gen tactics</div><div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--txt2)"><span style="color:var(--green);font-weight:700">✓</span>Web design tips</div><div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--txt2)"><span style="color:var(--green);font-weight:700">✓</span>LinkedIn growth plays</div><div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--txt2)"><span style="color:var(--green);font-weight:700">✓</span>Real case studies</div></div></div>
+    </div>
+  </div>
+
+  <footer class="hero-footer">
+    <div class="hf-bg-text">MORE</div>
+    <div class="hf-orb"></div>
+    <div class="hf-orb2"></div>
+    <div class="hf-content">
+      <div class="hf-socials">
+        <a href="#" class="hf-soc" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+        <a href="#" class="hf-soc" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" class="hf-soc" aria-label="Twitter">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+        </a>
+        <a href="#" class="hf-soc" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+      <a href="/cdn-cgi/l/email-protection#3d55585151527d484e505c531359584b" class="hf-email"><span class="__cf_email__" data-cfemail="cea6aba2a2a18ebbbda3afa0e0aaabb8">[email&#160;protected]</span></a>
+    </div>
+    <div class="hf-bottom">
+      <div class="hf-bottom-divider"></div>
+      <p class="hf-crafted">Crafted with <em class="heart">&#9829;</em> by Usman</p>
+      <p class="hf-copy">&#169; 2025 Usman. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<!-- ════════════════════════════════════════
+     PAGE 6: CONTACT
+════════════════════════════════════════ -->
+<div id="pg-contact" class="page">
+  <div class="ct-hero wrap">
+    <div class="ct-hero-inner">
+      <div class="rv">
+        <span class="eyebrow">Get In Touch</span>
+        <h1 class="h-display" style="font-size:clamp(44px,7vw,72px);margin-bottom:20px">Let's build<br/>something <em>great.</em></h1>
+        <p class="body-lg" style="max-width:400px;margin-bottom:36px">Have a project in mind? Fill out the form or reach out directly — I respond within 24 hours, every time.</p>
+        <div class="ct-items">
+          <div class="ct-item"><div class="ct-ico">📧</div><div><div class="ct-label">Email</div><div class="ct-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dca9afb1bdb29cb9a4bdb1acb0b9f2bfb3b1">[email&#160;protected]</a></div></div></div>
+          <div class="ct-item"><div class="ct-ico">💼</div><div><div class="ct-label">LinkedIn</div><div class="ct-val">linkedin.com/in/usman</div></div></div>
+          <div class="ct-item"><div class="ct-ico">⏱️</div><div><div class="ct-label">Response Time</div><div class="ct-val">Within 24 hours</div></div></div>
+          <div class="ct-item"><div class="ct-ico">🌍</div><div><div class="ct-label">Availability</div><div class="ct-val">Open to worldwide clients</div></div></div>
+        </div>
+        <div class="ct-socials">
+          <a href="#" class="ct-soc"><svg viewBox="0 0 24 24"><path d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.981V9h3.084v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a1.795 1.795 0 1 1 0-3.59 1.795 1.795 0 0 1 0 3.59zM6.754 20.452H3.918V9h2.836v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+          <a href="#" class="ct-soc"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.254 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>Twitter / X</a>
+        </div>
+      </div>
+
+      <div class="ct-form-card rv d2">
+        <div id="formInner">
+          <div class="form-title">Send me a message</div>
+          <div class="form-sub">Tell me about your project and I'll respond within 24 hours with a tailored reply.</div>
+          <div class="f-row"><div class="f-group"><label>First Name</label><input type="text" placeholder="John"/></div><div class="f-group"><label>Last Name</label><input type="text" placeholder="Smith"/></div></div>
+          <div class="f-group"><label>Email Address *</label><input type="email" placeholder="john@company.com" id="ctEmail"/></div>
+          <div class="f-group"><label>Company</label><input type="text" placeholder="Acme Corp (optional)"/></div>
+          <div class="f-group"><label>Service Interested In</label><select><option value="">Select a service…</option><option>Lead Generation</option><option>Web Design & Development</option><option>LinkedIn Ghostwriting</option><option>Growth Bundle (All 3)</option><option>Something Else</option></select></div>
+          <div class="f-group"><label>Budget Range</label><div class="budget-pills"><span class="bdg-pill" onclick="selBudget(this)">Under $500</span><span class="bdg-pill" onclick="selBudget(this)">$500–$1K</span><span class="bdg-pill" onclick="selBudget(this)">$1K–$3K</span><span class="bdg-pill" onclick="selBudget(this)">$3K+</span></div></div>
+          <div class="f-group"><label>Your Message *</label><textarea placeholder="Tell me about your goals, timeline, and what you're looking to achieve…"></textarea></div>
+          <button class="btn btn-fill f-submit" onclick="ctSubmit()">Send Message →</button>
+          <div class="f-note">🔒 Your information is never shared or sold. I reply within 24 hours.</div>
+        </div>
+        <div class="f-success" id="formSuccess"><span class="f-success-ico">✅</span><h3>Message received!</h3><p>Thanks for reaching out — I'll reply to your email within 24 hours. Feel free to connect on LinkedIn in the meantime.</p><a href="#" class="btn btn-outline" style="margin-top:20px;font-size:14px;padding:12px 22px">Connect on LinkedIn →</a></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="ct-map rv">
+    <div class="gc-flat ct-map-inner">
+      <div class="map-stat"><span class="eyebrow">Working Worldwide</span><h2 class="h-med" style="margin-bottom:20px">Available across<br/><em>every timezone.</em></h2><div class="ms-item"><div class="ms-ico">🕐</div><div class="ms-txt"><strong>Flexible hours</strong><br/>I adapt to your timezone for calls and updates</div></div><div class="ms-item"><div class="ms-ico">📅</div><div class="ms-txt"><strong>Quick onboarding</strong><br/>Most projects kick off within 48 hours of agreement</div></div><div class="ms-item"><div class="ms-ico">💬</div><div class="ms-txt"><strong>Always reachable</strong><br/>Email, LinkedIn, or Slack — whichever you prefer</div></div><div class="ms-item"><div class="ms-ico">🌐</div><div class="ms-txt"><strong>18+ countries served</strong><br/>From startups to established enterprises</div></div></div>
+      <div class="map-visual"><span style="font-size:72px;display:block;margin-bottom:12px">🌍</span><div class="map-grid"><div class="map-region"><strong>Americas</strong>USA · Canada</div><div class="map-region"><strong>Europe</strong>UK · Germany</div><div class="map-region"><strong>Asia</strong>India · UAE</div><div class="map-region"><strong>Middle East</strong>KSA · Kuwait</div><div class="map-region"><strong>Africa</strong>Nigeria · Kenya</div><div class="map-region"><strong>Pacific</strong>Australia · NZ</div></div></div>
+    </div>
+  </section>
+
+  <section class="ct-faq rv"><span class="eyebrow">Before You Reach Out</span><h2 class="h-section" style="margin-bottom:36px">Common <em>questions.</em></h2><div class="faq-list"><div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">How do I get started?<span class="faq-icon">+</span></button><div class="faq-body"><p>Fill out the form above or email me directly. I respond within 24 hours to schedule a free 30-minute discovery call. No pressure, no pitch — just a real conversation about whether I can genuinely help.</p></div></div><div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">What information should I prepare?<span class="faq-icon">+</span></button><div class="faq-body"><p>The more context the better — your target audience, goals, timeline, and a rough budget. Don't worry if you don't have everything figured out. Half my clients come with a problem, not a solution, and we work it out together.</p></div></div><div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">Do you take on small projects?<span class="faq-icon">+</span></button><div class="faq-body"><p>Yes — I work with businesses of all sizes. My minimum engagement is a single lead list ($99) or a landing page ($499), so there's no barrier to getting started.</p></div></div><div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">What happens after I send the form?<span class="faq-icon">+</span></button><div class="faq-body"><p>You'll receive a confirmation email immediately. I personally review every message and reply within 24 hours with a tailored response. If your project is a good fit, I'll suggest a call. If not, I'll tell you honestly and point you in the right direction.</p></div></div></div></section>
+
+  <footer class="hero-footer">
+    <div class="hf-bg-text">MORE</div>
+    <div class="hf-orb"></div>
+    <div class="hf-orb2"></div>
+    <div class="hf-content">
+      <div class="hf-socials">
+        <a href="#" class="hf-soc" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+        <a href="#" class="hf-soc" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" class="hf-soc" aria-label="Twitter">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+        </a>
+        <a href="#" class="hf-soc" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+      <a href="/cdn-cgi/l/email-protection#167e737a7a795663657b777838727360" class="hf-email"><span class="__cf_email__" data-cfemail="69010c050506291c1a040807470d0c1f">[email&#160;protected]</span></a>
+    </div>
+    <div class="hf-bottom">
+      <div class="hf-bottom-divider"></div>
+      <p class="hf-crafted">Crafted with <em class="heart">&#9829;</em> by Usman</p>
+      <p class="hf-copy">&#169; 2025 Usman. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<!-- ════════════════════════════════════════
+     SHARED JAVASCRIPT
+════════════════════════════════════════ -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── Page Navigation ──
+const PGS = ['hero','about','services','reviews','blog','contact'];
+
+function go(id) {
+  PGS.forEach(p => {
+    document.getElementById('pg-'+p).classList.remove('on');
+    const nl = document.getElementById('nl-'+p);
+    if (nl) nl.classList.remove('on');
+  });
+  document.getElementById('pg-'+id).classList.add('on');
+  const nl = document.getElementById('nl-'+id);
+  if (nl) nl.classList.add('on');
+  window.scrollTo({top:0, behavior:'instant'});
+  setTimeout(initReveal, 80);
+}
+
+// ── Slider Theme Toggle ──
+const root = document.documentElement;
+const themeBtn = document.getElementById('themeBtn');
+// restore saved theme
+const savedTheme = localStorage.getItem('usman-theme') || 'light';
+root.setAttribute('data-theme', savedTheme);
+themeBtn.addEventListener('click', () => {
+  const t = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  root.setAttribute('data-theme', t);
+  localStorage.setItem('usman-theme', t);
+});
+
+// ── Mobile Hamburger ──
+const burger = document.getElementById('burger');
+const mobMenu = document.getElementById('mob-menu');
+burger.addEventListener('click', e => { e.stopPropagation(); mobMenu.classList.toggle('open'); });
+document.addEventListener('click', e => {
+  if (!burger.contains(e.target) && !mobMenu.contains(e.target)) mobMenu.classList.remove('open');
+});
+function mobClose() { mobMenu.classList.remove('open'); }
+
+// ── FAQ Accordion ──
+function faqToggle(btn) {
+  const item = btn.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  item.closest('.faq-list').querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+// ── Blog Filter ──
+function blogFilter(tag, btn) {
+  document.querySelectorAll('.fil-btn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  ['blogGrid','blogGrid2'].forEach(gId => {
+    const g = document.getElementById(gId);
+    if (!g) return;
+    g.querySelectorAll('.bc').forEach(card => {
+      card.style.display = (tag === 'all' || card.dataset.tag === tag) ? '' : 'none';
+    });
+  });
+}
+
+// ── Budget Pills ──
+function selBudget(el) {
+  document.querySelectorAll('.bdg-pill').forEach(p => p.classList.remove('sel'));
+  el.classList.add('sel');
+}
+
+// ── Contact Form ──
+function ctSubmit() {
+  const email = document.getElementById('ctEmail');
+  if (!email || !email.value.includes('@')) {
+    if (email) { email.focus(); email.style.borderColor = '#ff3b30'; }
+    return;
+  }
+  document.getElementById('formInner').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+
+// ── Newsletter ──
+function nlSubmit() {
+  const em = document.getElementById('nlEmail');
+  if (!em || !em.value.includes('@')) {
+    if (em) { em.focus(); em.style.borderColor = '#ff3b30'; }
+    return;
+  }
+  const note = document.getElementById('nlNote');
+  note.textContent = '🎉 You\'re in! Welcome to the weekly dispatch.';
+  note.style.color = 'var(--green)';
+  em.value = '';
+}
+
+// ── Scroll Reveal ──
+function initReveal() {
+  const activePg = PGS.find(p => document.getElementById('pg-'+p).classList.contains('on'));
+  const els = document.querySelectorAll('#pg-'+activePg+' .rv');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('vis'), i * 75);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.07 });
+  els.forEach(el => { el.classList.remove('vis'); obs.observe(el); });
+}
+
+// ── Skill Bar Animation ──
+const barObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.sk-fill').forEach(b => {
+        const w = b.style.width;
+        b.style.width = '0';
+        requestAnimationFrame(() => { setTimeout(() => b.style.width = w, 100); });
+      });
+      barObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.skills-grid').forEach(g => barObs.observe(g));
+
+document.addEventListener('DOMContentLoaded', () => setTimeout(initReveal, 150));
+</script>
+</body>
+</html>
