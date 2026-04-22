@@ -159,10 +159,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .h-med{font-family:'Fraunces',serif;font-size:clamp(24px,3.5vw,38px);letter-spacing:-1px;color:var(--txt);line-height:1.1}
 .h-med em{font-style:italic;color:var(--accent)}
 .body-lg{font-size:clamp(15px,1.8vw,18px);color:var(--txt2);line-height:1.65}
-.body-sm{font-size:13.5px;color:var(--txt2);line-height:1.65}
 .h-sub{font-size:clamp(15px,1.8vw,18px);color:var(--txt2);line-height:1.65}
 .stars{color:var(--gold);letter-spacing:1px;font-size:13px}
-.gc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);box-shadow:var(--shadow-sm);transition:transform .28s var(--ease),box-shadow .28s}
+.gc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);box-shadow:var(--shadow-sm);transition:transform .28s var(--ease),box-shadow .28s;-webkit-backface-visibility:hidden;backface-visibility:hidden;transform:translateZ(0);}
 .gc:hover{transform:translateY(-5px) scale(1.008);box-shadow:var(--shadow-lg)}
 .gc-flat{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);backdrop-filter:var(--blur);box-shadow:var(--shadow-sm)}
 .btn{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;padding:14px 28px;border-radius:var(--r-p);transition:opacity .2s,transform .15s;cursor:pointer}
@@ -214,21 +213,21 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
    PAGE 1: HERO
 ═══════════════════════════════════════ */
 #pg-hero{padding-top:var(--nav-h)}
-.hero-section{padding:92px 24px 72px;display:flex;flex-direction:column;align-items:center;text-align:center;max-width:980px;margin:0 auto}
-.hero-avail{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-p);padding:7px 16px 7px 10px;font-size:13px;font-weight:500;color:var(--txt2);box-shadow:var(--shadow-sm);backdrop-filter:var(--blur);margin-bottom:36px;animation:fadeUp .6s .1s var(--ease) both}
+.hero-section{padding:48px 24px 72px;display:flex;flex-direction:column;align-items:center;text-align:center;max-width:980px;margin:0 auto}
+.hero-avail{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-p);padding:7px 16px 7px 10px;font-size:13px;font-weight:500;color:var(--txt2);box-shadow:var(--shadow-sm);backdrop-filter:var(--blur);margin-bottom:20px;animation:fadeUp .6s .1s var(--ease) both}
 .hero-title{margin-bottom:20px;animation:fadeUp .6s .2s var(--ease) both}
 .hero-subtitle{max-width:540px;margin-bottom:40px;animation:fadeUp .6s .3s var(--ease) both}
 .hero-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:44px;animation:fadeUp .6s .4s var(--ease) both}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;animation:fadeUp .6s .5s var(--ease) both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}}
 .metrics{max-width:980px;margin:0 auto 24px;padding:0 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.metric-card{padding:32px 28px}
+.metric-card{padding:32px 28px 36px;isolation:isolate;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision;}
 .m-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:20px}
 .m-blue{background:rgba(0,102,204,.10)} [data-theme="dark"] .m-blue{background:rgba(59,158,255,.14)}
 .m-green{background:rgba(40,199,111,.10)} [data-theme="dark"] .m-green{background:rgba(48,209,88,.12)}
 .m-purple{background:rgba(87,81,225,.10)} [data-theme="dark"] .m-purple{background:rgba(123,118,255,.14)}
-.m-num{font-family:'Fraunces',serif;font-size:40px;letter-spacing:-1.5px;color:var(--txt);line-height:1;margin-top:20px}
-.m-unit{font-size:13px;font-family:'DM Sans',sans-serif;font-weight:400;color:var(--txt3)}
+.m-num{font-family:'Fraunces',serif;font-size:40px;letter-spacing:-1.5px;color:var(--txt);line-height:1;margin-top:20px;display:flex;align-items:baseline;gap:5px;flex-wrap:wrap;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision;will-change:auto;}
+.m-unit{font-size:13px;font-family:'DM Sans',sans-serif;font-weight:500;color:var(--txt2);display:inline-block;white-space:nowrap;}
 .m-label{font-size:15px;font-weight:600;color:var(--txt);margin-bottom:6px;letter-spacing:-.2px}
 .m-desc{font-size:13px;color:var(--txt2);line-height:1.6}
 .trust-strip{max-width:980px;margin:0 auto 52px;padding:0 24px}
@@ -371,27 +370,32 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .mq-av{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0}
 .mq-name{font-size:13px;font-weight:600;color:var(--txt)}
 .mq-role{font-size:11.5px;color:var(--txt3)}
-.feat-rev-wrap{max-width:980px;margin:48px auto 0;padding:0 24px}
-.feat-rev{padding:52px 48px;position:relative;overflow:hidden}
-.feat-rev::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--green));border-radius:var(--r-p) var(--r-p) 0 0}
-.feat-quote-mark{font-family:'Fraunces',serif;font-size:120px;line-height:.7;color:var(--accent-bg);position:absolute;top:20px;left:32px;font-style:italic;pointer-events:none;transition:color .4s}
-.feat-rev:hover .feat-quote-mark{color:rgba(0,102,204,.16)}
-.feat-rev-text{font-family:'Fraunces',serif;font-size:clamp(18px,2.8vw,26px);color:var(--txt);line-height:1.45;letter-spacing:-.4px;font-style:italic;position:relative;z-index:1;max-width:780px;margin-bottom:32px}
-.feat-rev-author{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.feat-av{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:#fff;flex-shrink:0}
-.feat-name{font-size:16px;font-weight:600;color:var(--txt);margin-bottom:3px}
-.feat-role{font-size:13px;color:var(--txt3)}
-.rev-grid-wrap{max-width:980px;margin:24px auto 0;padding:0 24px}
-.rev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.rev-card{padding:32px 28px;position:relative}
-.rev-card-quote{font-family:'Fraunces',serif;font-size:44px;color:var(--accent-bg);line-height:.8;margin-bottom:14px;font-style:italic;transition:color .3s}
-.rev-card:hover .rev-card-quote{color:rgba(0,102,204,.15)}
-.rev-card-text{font-size:14.5px;color:var(--txt2);line-height:1.7;font-style:italic;margin-bottom:22px}
-.rev-card-author{display:flex;align-items:center;gap:14px}
-.rev-av{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff;flex-shrink:0}
-.rev-name{font-size:14px;font-weight:600;color:var(--txt)}
-.rev-role{font-size:12px;color:var(--txt3);margin-top:2px}
-.rev-stars{margin-top:4px}
+/* ── BENTO REVIEWS GRID ── */
+.bento-wrap{max-width:980px;margin:48px auto 0;padding:0 24px}
+.bento-grid{display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:auto auto;gap:14px}
+.bc{border-radius:var(--r-lg);padding:32px 28px;position:relative;overflow:hidden;display:flex;flex-direction:column;transition:transform .28s var(--ease),box-shadow .28s;border:1px solid var(--border);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur)}
+.bc:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.bc-1{grid-column:1/3;grid-row:1/2;background:var(--surface-hi)}
+.bc-2{grid-column:3/5;grid-row:1/2;background:var(--surface-hi)}
+.bc-3{grid-column:5/7;grid-row:1/2;background:var(--surface-hi)}
+.bc-4{grid-column:1/4;grid-row:2/3;background:var(--surface-hi)}
+.bc-5{grid-column:4/7;grid-row:2/3;background:var(--surface-hi)}
+[data-theme="dark"] .bc-1,[data-theme="dark"] .bc-2,[data-theme="dark"] .bc-3,[data-theme="dark"] .bc-4,[data-theme="dark"] .bc-5{background:var(--surface-hi)}
+.bc-stars{color:#ffd60a;font-size:12px;letter-spacing:1px;margin-bottom:14px}
+
+
+.bc-q{font-size:clamp(13px,1.35vw,14.5px);line-height:1.68;margin-bottom:20px;flex:1;color:var(--txt2)}
+.bc-author{display:flex;align-items:center;gap:11px;margin-top:auto}
+.bc-av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.bc-name{font-size:13px;font-weight:700;letter-spacing:-.1px;margin-bottom:2px}
+.bc-name{color:var(--txt)}
+.bc-role{font-size:11px}
+.bc-role{color:var(--txt3)}
+.bento-grid .bc-tag{position:absolute;top:18px;right:18px;font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:3px 10px;border-radius:var(--r-p);background:var(--accent-bg);color:var(--accent)}
+/* bc-3 decorative elements removed — now plain */
+
+
+@media(max-width:860px){.bento-grid{grid-template-columns:1fr 1fr}.bc-1{grid-column:1/2;grid-row:1/2}.bc-2{grid-column:2/3;grid-row:1/2}.bc-3{grid-column:1/3;grid-row:2/3}.bc-4{grid-column:1/2;grid-row:3/4}.bc-5{grid-column:2/3;grid-row:3/4}}@media(max-width:560px){.bento-grid{grid-template-columns:1fr}.bc-1,.bc-2,.bc-3,.bc-4,.bc-5{grid-column:1/2;grid-row:auto}}
 .results-bar{max-width:980px;margin:48px auto 0;padding:0 24px}
 .results-inner{padding:44px 40px;background:linear-gradient(135deg,var(--accent-bg),rgba(87,81,225,.07));border:1px solid rgba(0,102,204,.13);display:grid;grid-template-columns:repeat(4,1fr);gap:0}
 [data-theme="dark"] .results-inner{border-color:rgba(59,158,255,.17)}
@@ -403,16 +407,16 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .faq-section{max-width:980px;margin:64px auto 0;padding:0 24px}
 .faq-head{margin-bottom:36px}
 .faq-list{display:flex;flex-direction:column;gap:8px;margin-bottom:0}
-.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);backdrop-filter:var(--blur);overflow:hidden;transition:box-shadow .25s,border-color .25s}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);backdrop-filter:var(--blur);overflow:hidden;transition:box-shadow .35s var(--ease),border-color .35s}
 .faq-item.open{border-color:rgba(0,102,204,.2);box-shadow:var(--shadow-md)}
 [data-theme="dark"] .faq-item.open{border-color:rgba(59,158,255,.2)}
 .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 26px;font-size:15px;font-weight:500;color:var(--txt);cursor:pointer;text-align:left;gap:16px;transition:color .2s;background:none;border:none}
 .faq-q:hover{color:var(--accent)}
 .faq-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--border);color:var(--txt3);font-size:16px;flex-shrink:0;transition:transform .35s var(--ease),background .25s,color .25s}
 .faq-item.open .faq-icon{transform:rotate(45deg);background:var(--accent-bg);color:var(--accent)}
-.faq-body{max-height:0;overflow:hidden;transition:max-height .42s cubic-bezier(.22,.68,0,1.2),padding .3s;padding:0 26px}
-.faq-item.open .faq-body{max-height:220px;padding:0 26px 22px}
-.faq-body p{font-size:14px;color:var(--txt2);line-height:1.7;border-top:1px solid var(--border);padding-top:16px}
+.faq-body{max-height:0;overflow:hidden;transition:max-height .44s cubic-bezier(.22,.68,0,1.2),padding .35s,opacity .35s;padding:0 26px;opacity:0;}
+.faq-item.open .faq-body{max-height:260px;padding:0 26px 22px;opacity:1}
+.faq-body p{font-size:14px;color:var(--txt2);line-height:1.7;border-top:1px solid var(--border);padding-top:16px}.faq-item.closing .faq-body{max-height:0;padding:0 26px;opacity:0;transition:max-height .38s cubic-bezier(.22,.68,0,1.2),padding .32s,opacity .28s}.faq-item.closing .faq-icon{transform:rotate(0deg);background:var(--border);color:var(--txt3);transition:transform .32s var(--ease),background .28s,color .28s}.faq-item.closing{border-color:var(--border);box-shadow:none}
 .rev-cta{max-width:980px;margin:64px auto 96px;padding:0 24px}
 .rev-cta-inner{padding:56px;text-align:center}
 .rev-cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
@@ -438,16 +442,17 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .bf-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.04),transparent)}
 .blog-grid-wrap{max-width:980px;margin:0 auto;padding:0 24px}
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:16px}
+.blog-grid .bc,.blog-grid-2 .bc-body{display:flex;flex-direction:column}
 .bc{padding:24px;cursor:pointer}
 .bc-img{height:130px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:44px;margin-bottom:18px;border:1px solid var(--border)}
-.bc-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);background:var(--accent-bg);padding:3px 10px;border-radius:var(--r-p);margin-bottom:12px}
+.blog-bc-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);background:var(--accent-bg);padding:3px 10px;border-radius:var(--r-p);margin-bottom:12px;width:fit-content;max-width:fit-content;align-self:flex-start}
 .bc-title{font-size:15px;font-weight:600;color:var(--txt);line-height:1.35;letter-spacing:-.2px;margin-bottom:8px}
 .bc-excerpt{font-size:13px;color:var(--txt2);line-height:1.6;margin-bottom:14px}
 .bc-meta{font-size:12px;color:var(--txt3);display:flex;align-items:center;gap:8px}
 .bc-sep{width:3px;height:3px;border-radius:50%;background:var(--txt3)}
 .blog-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:16px}
-.blog-grid-2 .bc{display:grid;grid-template-columns:80px 1fr;gap:16px;padding:24px}
-.blog-grid-2 .bc-img{height:80px;margin-bottom:0;font-size:28px}
+.blog-grid-2 .bc{display:flex;flex-direction:row;align-items:flex-start;gap:16px;padding:24px}
+.blog-grid-2 .bc-img{height:80px;min-width:80px;width:80px;margin-bottom:0;font-size:28px;flex-shrink:0}.blog-grid-2 .bc-body{display:flex;flex-direction:column;flex:1;min-width:0}
 .blog-nl{max-width:980px;margin:0 auto 80px;padding:0 24px}
 .blog-nl-inner{padding:52px 48px;background:linear-gradient(135deg,var(--accent-bg),rgba(87,81,225,.07));border:1px solid rgba(0,102,204,.12);display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
 [data-theme="dark"] .blog-nl-inner{border-color:rgba(59,158,255,.16)}
@@ -490,9 +495,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .f-group textarea{resize:vertical;min-height:110px;line-height:1.5}
 .f-group input::placeholder,.f-group textarea::placeholder{color:var(--txt3)}
 .f-group input:focus,.f-group textarea:focus,.f-group select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-bg)}
-.budget-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
-.bdg-pill{font-size:12.5px;font-weight:500;padding:7px 14px;border-radius:var(--r-p);border:1px solid var(--border-med);background:var(--surface);color:var(--txt2);cursor:pointer;transition:.2s}
-.bdg-pill:hover,.bdg-pill.sel{background:var(--accent-bg);color:var(--accent);border-color:rgba(0,102,204,.25)}
 .f-submit{width:100%;justify-content:center;padding:15px;font-size:15px;border-radius:var(--r-md);margin-top:6px}
 .f-note{font-size:12px;color:var(--txt3);text-align:center;margin-top:14px;line-height:1.5}
 .f-success{display:none;text-align:center;padding:28px 20px}
@@ -540,8 +542,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   .n-burger{display:flex}
   #nav{gap:2px;padding:0 6px 0 14px}
   .n-logo{margin-right:4px}
-  .hero-section{padding:80px 20px 56px}
-  .metrics,.values-grid,.rev-grid,.blog-grid{grid-template-columns:1fr}
+  .hero-section{padding:44px 20px 56px}
+  .metrics,.values-grid,.rev-grid,.blog-grid{grid-template-columns:1fr}.metric-card{padding:28px 24px 32px}
   .process-grid{grid-template-columns:1fr}
   .srv-cards{padding:0 16px}
   .srv-card{padding:32px 24px}
@@ -552,7 +554,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   .ft-top{grid-template-columns:1fr}
   .ft-bot{flex-direction:column;align-items:flex-start}
   .f-row{grid-template-columns:1fr}
-  .feat-rev{padding:32px 24px}
 }
 @media(max-width:420px){
   .hero-btns,.about-btns,.srv-cta-btns,.rev-cta-btns{flex-direction:column;align-items:stretch}
@@ -561,6 +562,40 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   .trust-divider{display:none}
   .ct-form-card{padding:28px 20px}
 }
+
+/* ═══════════════════════════════════════
+   TESTIMONIAL SLIDER — hero section
+═══════════════════════════════════════ */
+.ts-section{max-width:980px;margin:0 auto 48px;padding:0 24px;}
+
+
+
+
+.ts-viewport{position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;width:100vw;overflow:hidden;padding:32px 0 8px;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;touch-action:none;cursor:pointer;pointer-events:all;isolation:isolate;-webkit-backface-visibility:hidden;backface-visibility:hidden;transform:translateZ(0);}
+.ts-viewport:active{cursor:grabbing;}.ts-viewport *{cursor:pointer;-webkit-user-select:none;user-select:none;}
+.ts-track{display:flex;align-items:center;will-change:transform;overflow:visible;}
+.ts-slide{flex:0 0 52%;max-width:52%;padding:0 10px;position:relative;overflow:visible;transition:transform .85s cubic-bezier(.22,1,.36,1),opacity .85s cubic-bezier(.22,1,.36,1);-webkit-backface-visibility:hidden;backface-visibility:hidden;}
+.ts-slide.ts-side{opacity:.36;transform:scale(.87);}
+.ts-slide.ts-active{opacity:1;transform:scale(1);z-index:2;}
+.ts-stars-pill{position:absolute;top:-20px;left:50%;transform:translateX(-50%);background:var(--surface-hi);border:1px solid var(--border-med);border-radius:var(--r-p);padding:6px 16px;display:flex;gap:3px;align-items:center;z-index:10;white-space:nowrap;box-shadow:0 0 0 5px var(--bg);transition:opacity .5s cubic-bezier(.22,1,.36,1),box-shadow .45s;}
+.ts-slide.ts-side .ts-stars-pill{opacity:0;pointer-events:none;}
+.ts-slide.ts-active .ts-stars-pill{opacity:1;}
+.ts-star{font-size:14px;line-height:1;}
+.ts-card{background:var(--surface-hi);border:1px solid var(--border-med);border-radius:var(--r-lg);box-shadow:var(--shadow-md);padding:48px 40px 34px;display:flex;flex-direction:column;align-items:center;text-align:center;height:280px;justify-content:center;position:relative;transition:background .4s,border-color .4s,box-shadow .4s;-webkit-user-select:none;user-select:none;pointer-events:none;}
+.ts-card::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:55%;height:2px;border-radius:0 0 var(--r-lg) var(--r-lg);background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:opacity .5s;}
+.ts-slide.ts-active .ts-card::after{opacity:1;}
+.ts-quote{font-family:'Fraunces',serif;font-size:clamp(15px,2vw,18px);font-weight:600;font-style:italic;color:var(--txt);line-height:1.55;margin-bottom:26px;max-width:420px;letter-spacing:-.2px;}
+.ts-author{display:flex;align-items:center;gap:12px;}
+.ts-av{width:40px;height:40px;border-radius:50%;overflow:hidden;flex-shrink:0;box-shadow:0 3px 12px rgba(0,0,0,.18);background:var(--border);}
+.ts-av img{width:100%;height:100%;object-fit:cover;display:block;}
+.ts-aname{font-size:13.5px;font-weight:600;color:var(--txt);margin-bottom:2px;letter-spacing:-.1px;}
+.ts-arole{font-size:12px;color:var(--txt3);}
+.ts-nav-pill{display:flex;justify-content:center;margin-top:20px;}
+.ts-pill-track{display:flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border-med);border-radius:var(--r-p);padding:6px 12px;backdrop-filter:var(--blur);box-shadow:var(--shadow-sm);transition:background .4s,border-color .4s;}
+.ts-pdot{width:7px;height:7px;border-radius:50%;background:var(--txt3);border:none;padding:0;cursor:pointer;flex-shrink:0;transition:background .35s,transform .35s;pointer-events:all;}
+.ts-pdot.ts-active{background:var(--txt);transform:scale(1.25);}
+@media(max-width:700px){.ts-slide{flex:0 0 80%;max-width:80%;}.ts-card{padding:40px 24px 28px;height:auto;min-height:240px;}.ts-quote{font-size:15px;}}
+@media(max-width:420px){.ts-slide{flex:0 0 90%;max-width:90%;}.ts-card{padding:36px 18px 24px;}}
 </style>
 </head>
 <body>
@@ -658,6 +693,18 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     </div>
   </div>
 
+  <!-- ── TESTIMONIAL SLIDER (hero) ── -->
+  <div class="ts-section rv">
+
+    <!-- slider -->
+    <div class="ts-viewport" id="tsViewport">
+      <div class="ts-track" id="tsTrack"></div>
+    </div>
+    <div class="ts-nav-pill">
+      <div class="ts-pill-track" id="tsPillTrack"></div>
+    </div>
+  </div>
+
   <div class="social-row rv">
     <a href="#" class="soc-btn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.981V9h3.084v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a1.795 1.795 0 1 1 0-3.59 1.795 1.795 0 0 1 0 3.59zM6.754 20.452H3.918V9h2.836v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
     <a href="#" class="soc-btn"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Email Me</a>
@@ -709,7 +756,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
       <p class="h-sub" style="max-width:460px;margin-bottom:16px">I'm a multi-disciplined digital professional who helps businesses generate quality leads, build stunning web experiences, and craft LinkedIn content that turns followers into paying clients.</p>
       <p style="font-size:14px;color:var(--txt2);line-height:1.7;margin-bottom:28px;max-width:460px">With 5+ years across three high-impact disciplines, I've helped 50+ businesses across B2B SaaS, consulting, and professional services unlock consistent, scalable growth. My approach combines strategic thinking with meticulous execution — so results don't just happen once, they compound.</p>
       <div class="about-chips"><div class="chip chip-sm">🎯 Lead Expert</div><div class="chip chip-sm">💻 Web Designer</div><div class="chip chip-sm">✍️ Ghostwriter</div><div class="chip chip-sm">📈 Growth Strategist</div><div class="chip chip-sm">⚡ Fast Delivery</div></div>
-      <div class="about-btns"><span class="btn btn-fill" onclick="go('services')">View Services →</span><span class="btn btn-outline">📄 Download CV</span></div>
+      <div class="about-btns"><span class="btn btn-fill" onclick="go('services')">View Services →</span></div>
     </div>
   </div>
 
@@ -777,7 +824,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     <div class="hf-bottom">
       <div class="hf-bottom-divider"></div>
       <p class="hf-crafted">Crafted with <em class="heart">&#9829;</em> by Usman</p>
-      <p class="hf-copy">&#169; 2025 Usman. All rights reserved.</p>
+      <p class="hf-copy">&#169; 2026 Usman. All rights reserved.</p>
     </div>
   </footer>
 </div>
@@ -885,24 +932,74 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     </div>
   </div>
 
-  <div class="feat-rev-wrap rv">
-    <div class="gc feat-rev">
-      <div class="feat-quote-mark">"</div>
-      <p class="feat-rev-text">"Working with Usman completely transformed our LinkedIn presence. In 60 days our follower count doubled, inbound DMs tripled, and we closed two enterprise deals directly from content he wrote. The ROI has been extraordinary — I wish I'd found him sooner."</p>
-      <div class="feat-rev-author">
-        <div class="feat-av" style="background:linear-gradient(135deg,#0066cc,#5751e1)">S</div>
-        <div><div class="feat-name">Sarah Mitchell</div><div class="feat-role">CEO, TechScale Solutions — London, UK</div><div class="stars" style="margin-top:6px">★★★★★</div></div>
-        <div style="margin-left:auto;text-align:right;opacity:.6"><div style="font-size:11px;color:var(--txt3);text-transform:uppercase;letter-spacing:.07em;font-weight:600">Service</div><div style="font-size:13px;color:var(--txt2);margin-top:4px;font-weight:500">LinkedIn Ghostwriting</div></div>
+  <!-- ── BENTO REVIEWS GRID ── -->
+  <div class="bento-wrap rv">
+    <div class="bento-grid">
+
+      <!-- Card 1 — dark filled — Sarah Mitchell (LinkedIn) -->
+      <div class="bc bc-1 rv d1">
+        <span class="bc-tag">LinkedIn</span>
+        
+        <div class="bc-stars">★★★★★</div>
+        <p class="bc-q">"Working with Usman completely transformed our LinkedIn presence. In 60 days our follower count doubled, inbound DMs tripled, and we closed two enterprise deals from content he wrote."</p>
+        <div class="bc-author">
+          <div class="bc-av" style="background:linear-gradient(135deg,#0066cc,#5751e1)">S</div>
+          <div><div class="bc-name">Sarah Mitchell</div><div class="bc-role">CEO, TechScale Solutions · UK</div></div>
+        </div>
       </div>
+
+      <!-- Card 2 — light glass — Alex Chen (Leads) -->
+      <div class="bc bc-2 rv d2">
+        <span class="bc-tag">Leads</span>
+        
+        <div class="bc-stars">★★★★★</div>
+        <p class="bc-q">"300 verified leads in 48 hours — zero bounces. Every contact matched our ICP perfectly. Our pipeline went from empty to 8 closed deals in three weeks."</p>
+        <div class="bc-author">
+          <div class="bc-av" style="background:linear-gradient(135deg,#0066cc,#28c76f)">A</div>
+          <div><div class="bc-name">Alex Chen</div><div class="bc-role">Head of Sales · Growthly · USA</div></div>
+        </div>
+      </div>
+
+      <!-- Card 3 — tall — James O'Brien (LinkedIn) -->
+      <div class="bc bc-3 rv d3">
+        <span class="bc-tag">LinkedIn</span>
+        
+        <div class="bc-stars">★★★★★</div>
+        <p class="bc-q">"I went from 200 views per post to averaging 15,000+ weekly. My content sounds exactly like me — but sharper and far more engaging. The inbound leads are a game changer."</p>
+
+
+        <div class="bc-author">
+          <div class="bc-av" style="background:linear-gradient(135deg,#5751e1,#bf5af2)">J</div>
+          <div><div class="bc-name">James O'Brien</div><div class="bc-role">MD · Finity Group · Ireland</div></div>
+        </div>
+      </div>
+
+      <!-- Card 4 — light glass — Priya Kapoor (Web) -->
+      <div class="bc bc-4 rv d2">
+        <span class="bc-tag">Web</span>
+        
+        <div class="bc-stars">★★★★★</div>
+        <p class="bc-q">"Fast, professional, incredibly talented. Full site in 11 days. The final product was well beyond what I expected. He's my go-to designer now."</p>
+        <div class="bc-author">
+          <div class="bc-av" style="background:linear-gradient(135deg,#ff2d55,#ff9f0a)">P</div>
+          <div><div class="bc-name">Priya Kapoor</div><div class="bc-role">Co-founder · NovaSpark · India</div></div>
+        </div>
+      </div>
+
+      <!-- Card 5 — accent tint — Maria Torres (Web) -->
+      <div class="bc bc-5 rv d3">
+        <span class="bc-tag">Web</span>
+        
+        <div class="bc-stars">★★★★★</div>
+        <p class="bc-q">"Our new website is beautiful, lightning fast, and converts. Bounce rate down 45% in month one. Clients mention it in almost every first call now."</p>
+        <div class="bc-author">
+          <div class="bc-av" style="background:linear-gradient(135deg,#ff9500,#ff3b30)">M</div>
+          <div><div class="bc-name">Maria Torres</div><div class="bc-role">Founder · Bloom Agency · Spain</div></div>
+        </div>
+      </div>
+
     </div>
   </div>
-
-  <div class="rev-grid-wrap" style="margin-top:24px"><div class="rev-grid">
-    <div class="gc rev-card rv d1"><div class="rev-card-quote">"</div><p class="rev-card-text">"300 verified leads delivered in under 48 hours — zero bounces. Every contact matched our ICP perfectly. Our pipeline went from empty to 8 closed deals in three weeks."</p><div class="rev-card-author"><div class="rev-av" style="background:linear-gradient(135deg,#0066cc,#28c76f)">A</div><div><div class="rev-name">Alex Chen</div><div class="rev-role">Head of Sales · Growthly · USA</div><div class="rev-stars stars">★★★★★</div></div><div style="margin-left:auto"><span style="font-size:11px;color:var(--accent);background:var(--accent-bg);padding:3px 10px;border-radius:var(--r-p);font-weight:600">Leads</span></div></div></div>
-    <div class="gc rev-card rv d2"><div class="rev-card-quote">"</div><p class="rev-card-text">"Our new website is everything I dreamed of — beautiful, lightning fast, and it converts. Bounce rate down 45% in month one. Clients mention it in almost every first call now."</p><div class="rev-card-author"><div class="rev-av" style="background:linear-gradient(135deg,#ff9500,#ff3b30)">M</div><div><div class="rev-name">Maria Torres</div><div class="rev-role">Founder · Bloom Agency · Spain</div><div class="rev-stars stars">★★★★★</div></div><div style="margin-left:auto"><span style="font-size:11px;color:#28c76f;background:rgba(40,199,111,.1);padding:3px 10px;border-radius:var(--r-p);font-weight:600">Web</span></div></div></div>
-    <div class="gc rev-card rv d3"><div class="rev-card-quote">"</div><p class="rev-card-text">"I went from 200 views per post to averaging 15,000+ weekly. My content sounds exactly like me — but sharper, more strategic, and far more engaging. The inbound leads are a game changer."</p><div class="rev-card-author"><div class="rev-av" style="background:linear-gradient(135deg,#5751e1,#bf5af2)">J</div><div><div class="rev-name">James O'Brien</div><div class="rev-role">Managing Director · Finity Group · Ireland</div><div class="rev-stars stars">★★★★★</div></div><div style="margin-left:auto"><span style="font-size:11px;color:#5751e1;background:rgba(87,81,225,.1);padding:3px 10px;border-radius:var(--r-p);font-weight:600">LinkedIn</span></div></div></div>
-    <div class="gc rev-card rv d4"><div class="rev-card-quote">"</div><p class="rev-card-text">"Fast, professional, incredibly talented. Full site in 11 days. Communication was excellent and the final product was well beyond what I expected. He's my go-to designer now."</p><div class="rev-card-author"><div class="rev-av" style="background:linear-gradient(135deg,#ff2d55,#ff9f0a)">P</div><div><div class="rev-name">Priya Kapoor</div><div class="rev-role">Co-founder · NovaSpark · India</div><div class="rev-stars stars">★★★★★</div></div><div style="margin-left:auto"><span style="font-size:11px;color:#28c76f;background:rgba(40,199,111,.1);padding:3px 10px;border-radius:var(--r-p);font-weight:600">Web</span></div></div></div>
-  </div></div>
 
   <div class="results-bar rv"><div class="gc-flat results-inner"><div class="res-stat"><div class="res-num">500+</div><div class="res-label">Verified leads delivered</div></div><div class="res-stat"><div class="res-num">40+</div><div class="res-label">Websites shipped</div></div><div class="res-stat"><div class="res-num">3×</div><div class="res-label">Avg LinkedIn reach growth</div></div><div class="res-stat"><div class="res-num">96%</div><div class="res-label">Client retention rate</div></div></div></div>
 
@@ -977,20 +1074,20 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 
   <div class="blog-grid-wrap rv">
     <div class="blog-grid" id="blogGrid">
-      <div class="gc bc" data-tag="leads"><div class="bc-img" style="background:linear-gradient(135deg,rgba(0,102,204,.08),rgba(0,102,204,.03))">🎯</div><div class="bc-tag">Lead Gen</div><div class="bc-title">How to Build a 500-Lead List in 24 Hours</div><div class="bc-excerpt">The exact tools, workflow and verification process I use to deliver quality leads fast — and how you can replicate it.</div><div class="bc-meta"><span>Feb 28, 2025</span><div class="bc-sep"></div><span>6 min</span></div><a class="btn-ghost" style="margin-top:12px">Read →</a></div>
-      <div class="gc bc" data-tag="web"><div class="bc-img" style="background:linear-gradient(135deg,rgba(40,199,111,.08),rgba(40,199,111,.03))">🖥️</div><div class="bc-tag">Web Design</div><div class="bc-title">5 Design Decisions That Doubled Our Client's Conversion Rate</div><div class="bc-excerpt">Subtle changes to typography, CTA placement and structure that made a massive, measurable difference.</div><div class="bc-meta"><span>Feb 14, 2025</span><div class="bc-sep"></div><span>5 min</span></div><a class="btn-ghost" style="margin-top:12px">Read →</a></div>
-      <div class="gc bc" data-tag="linkedin"><div class="bc-img" style="background:linear-gradient(135deg,rgba(87,81,225,.08),rgba(87,81,225,.03))">💼</div><div class="bc-tag">LinkedIn</div><div class="bc-title">Why Most LinkedIn Ghostwriters Fail Their Clients</div><div class="bc-excerpt">The uncomfortable truth about polished content that performs poorly — and what high-performing writing actually looks like.</div><div class="bc-meta"><span>Jan 30, 2025</span><div class="bc-sep"></div><span>7 min</span></div><a class="btn-ghost" style="margin-top:12px">Read →</a></div>
+      <div class="gc bc" data-tag="leads"><div class="bc-img" style="background:linear-gradient(135deg,rgba(0,102,204,.08),rgba(0,102,204,.03))">🎯</div><div class="blog-bc-tag">Lead Gen</div><div class="bc-title">How to Build a 500-Lead List in 24 Hours</div><div class="bc-excerpt">The exact tools, workflow and verification process I use to deliver quality leads fast — and how you can replicate it.</div><div class="bc-meta"><span>Feb 28, 2025</span><div class="bc-sep"></div><span>6 min</span></div><a class="btn-ghost" style="margin-top:12px">Read →</a></div>
+      <div class="gc bc" data-tag="web"><div class="bc-img" style="background:linear-gradient(135deg,rgba(40,199,111,.08),rgba(40,199,111,.03))">🖥️</div><div class="blog-bc-tag">Web Design</div><div class="bc-title">5 Design Decisions That Doubled Our Client's Conversion Rate</div><div class="bc-excerpt">Subtle changes to typography, CTA placement and structure that made a massive, measurable difference.</div><div class="bc-meta"><span>Feb 14, 2025</span><div class="bc-sep"></div><span>5 min</span></div><a class="btn-ghost" style="margin-top:12px">Read →</a></div>
+      <div class="gc bc" data-tag="linkedin"><div class="bc-img" style="background:linear-gradient(135deg,rgba(87,81,225,.08),rgba(87,81,225,.03))">💼</div><div class="blog-bc-tag">LinkedIn</div><div class="bc-title">Why Most LinkedIn Ghostwriters Fail Their Clients</div><div class="bc-excerpt">The uncomfortable truth about polished content that performs poorly — and what high-performing writing actually looks like.</div><div class="bc-meta"><span>Jan 30, 2025</span><div class="bc-sep"></div><span>7 min</span></div><a class="btn-ghost" style="margin-top:12px">Read →</a></div>
     </div>
   </div>
 
   <div class="blog-grid-wrap rv" style="margin-top:14px">
     <div class="blog-grid-2" id="blogGrid2">
-      <div class="gc bc" data-tag="leads"><div class="bc-img" style="background:linear-gradient(135deg,rgba(0,102,204,.08),rgba(0,102,204,.03))">🔍</div><div class="bc-body"><div class="bc-tag">Lead Gen</div><div class="bc-title">Apollo vs Clay vs Hunter: Which Lead Tool Wins in 2025?</div><div class="bc-excerpt">Honest comparison of data quality, pricing, and ease of use after testing all three on the same ICP.</div><div class="bc-meta"><span>Jan 15, 2025</span><div class="bc-sep"></div><span>9 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
-      <div class="gc bc" data-tag="web"><div class="bc-img" style="background:linear-gradient(135deg,rgba(40,199,111,.08),rgba(40,199,111,.03))">🍎</div><div class="bc-body"><div class="bc-tag">Web Design</div><div class="bc-title">Apple-Style UI: The Design Principles Behind the Aesthetic</div><div class="bc-excerpt">Breaking down what makes Apple's design language so effective and how to apply it to your projects.</div><div class="bc-meta"><span>Jan 3, 2025</span><div class="bc-sep"></div><span>6 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
-      <div class="gc bc" data-tag="growth"><div class="bc-img" style="background:linear-gradient(135deg,rgba(255,149,0,.08),rgba(255,149,0,.03))">📈</div><div class="bc-body"><div class="bc-tag">Growth</div><div class="bc-title">The Full-Stack Freelancer: How I Built a 3-Service Business</div><div class="bc-excerpt">Leads + design + content. Why the combination is more powerful than any single service — and how I made it work.</div><div class="bc-meta"><span>Dec 28, 2024</span><div class="bc-sep"></div><span>10 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
-      <div class="gc bc" data-tag="linkedin"><div class="bc-img" style="background:linear-gradient(135deg,rgba(87,81,225,.08),rgba(87,81,225,.03))">🔎</div><div class="bc-body"><div class="bc-tag">LinkedIn</div><div class="bc-title">The 10-Minute LinkedIn Profile Audit That Changes Everything</div><div class="bc-excerpt">Most profiles lose clients before they read a post. Fix these 7 critical issues this week.</div><div class="bc-meta"><span>Dec 20, 2024</span><div class="bc-sep"></div><span>4 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
-      <div class="gc bc" data-tag="growth"><div class="bc-img" style="background:linear-gradient(135deg,rgba(255,45,85,.08),rgba(255,45,85,.03))">🚀</div><div class="bc-body"><div class="bc-tag">Growth</div><div class="bc-title">Cold Outreach in 2025: What Still Works and What Doesn't</div><div class="bc-excerpt">The landscape has changed. Here's what's actually getting replies today and what's being ignored.</div><div class="bc-meta"><span>Dec 10, 2024</span><div class="bc-sep"></div><span>8 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
-      <div class="gc bc" data-tag="web"><div class="bc-img" style="background:linear-gradient(135deg,rgba(40,199,111,.08),rgba(40,199,111,.03))">⚡</div><div class="bc-body"><div class="bc-tag">Web Design</div><div class="bc-title">Why Your Website Speed is Killing Your Conversions</div><div class="bc-excerpt">A 1-second delay costs 7% in conversions. Here's the exact checklist I use on every site I build.</div><div class="bc-meta"><span>Dec 2, 2024</span><div class="bc-sep"></div><span>5 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
+      <div class="gc bc" data-tag="leads"><div class="bc-img" style="background:linear-gradient(135deg,rgba(0,102,204,.08),rgba(0,102,204,.03))">🔍</div><div class="bc-body"><div class="blog-bc-tag">Lead Gen</div><div class="bc-title">Apollo vs Clay vs Hunter: Which Lead Tool Wins in 2025?</div><div class="bc-excerpt">Honest comparison of data quality, pricing, and ease of use after testing all three on the same ICP.</div><div class="bc-meta"><span>Jan 15, 2025</span><div class="bc-sep"></div><span>9 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
+      <div class="gc bc" data-tag="web"><div class="bc-img" style="background:linear-gradient(135deg,rgba(40,199,111,.08),rgba(40,199,111,.03))">🍎</div><div class="bc-body"><div class="blog-bc-tag">Web Design</div><div class="bc-title">Apple-Style UI: The Design Principles Behind the Aesthetic</div><div class="bc-excerpt">Breaking down what makes Apple's design language so effective and how to apply it to your projects.</div><div class="bc-meta"><span>Jan 3, 2025</span><div class="bc-sep"></div><span>6 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
+      <div class="gc bc" data-tag="growth"><div class="bc-img" style="background:linear-gradient(135deg,rgba(255,149,0,.08),rgba(255,149,0,.03))">📈</div><div class="bc-body"><div class="blog-bc-tag">Growth</div><div class="bc-title">The Full-Stack Freelancer: How I Built a 3-Service Business</div><div class="bc-excerpt">Leads + design + content. Why the combination is more powerful than any single service — and how I made it work.</div><div class="bc-meta"><span>Dec 28, 2024</span><div class="bc-sep"></div><span>10 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
+      <div class="gc bc" data-tag="linkedin"><div class="bc-img" style="background:linear-gradient(135deg,rgba(87,81,225,.08),rgba(87,81,225,.03))">🔎</div><div class="bc-body"><div class="blog-bc-tag">LinkedIn</div><div class="bc-title">The 10-Minute LinkedIn Profile Audit That Changes Everything</div><div class="bc-excerpt">Most profiles lose clients before they read a post. Fix these 7 critical issues this week.</div><div class="bc-meta"><span>Dec 20, 2024</span><div class="bc-sep"></div><span>4 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
+      <div class="gc bc" data-tag="growth"><div class="bc-img" style="background:linear-gradient(135deg,rgba(255,45,85,.08),rgba(255,45,85,.03))">🚀</div><div class="bc-body"><div class="blog-bc-tag">Growth</div><div class="bc-title">Cold Outreach in 2025: What Still Works and What Doesn't</div><div class="bc-excerpt">The landscape has changed. Here's what's actually getting replies today and what's being ignored.</div><div class="bc-meta"><span>Dec 10, 2024</span><div class="bc-sep"></div><span>8 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
+      <div class="gc bc" data-tag="web"><div class="bc-img" style="background:linear-gradient(135deg,rgba(40,199,111,.08),rgba(40,199,111,.03))">⚡</div><div class="bc-body"><div class="blog-bc-tag">Web Design</div><div class="bc-title">Why Your Website Speed is Killing Your Conversions</div><div class="bc-excerpt">A 1-second delay costs 7% in conversions. Here's the exact checklist I use on every site I build.</div><div class="bc-meta"><span>Dec 2, 2024</span><div class="bc-sep"></div><span>5 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
     </div>
   </div>
 
@@ -1056,11 +1153,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
         <div id="formInner">
           <div class="form-title">Send me a message</div>
           <div class="form-sub">Tell me about your project and I'll respond within 24 hours with a tailored reply.</div>
-          <div class="f-row"><div class="f-group"><label>First Name</label><input type="text" placeholder="John"/></div><div class="f-group"><label>Last Name</label><input type="text" placeholder="Smith"/></div></div>
+          <div class="f-group"><label>Full Name</label><input type="text" placeholder="John Smith"/></div>
           <div class="f-group"><label>Email Address *</label><input type="email" placeholder="john@company.com" id="ctEmail"/></div>
           <div class="f-group"><label>Company</label><input type="text" placeholder="Acme Corp (optional)"/></div>
           <div class="f-group"><label>Service Interested In</label><select><option value="">Select a service…</option><option>Lead Generation</option><option>Web Design & Development</option><option>LinkedIn Ghostwriting</option><option>Growth Bundle (All 3)</option><option>Something Else</option></select></div>
-          <div class="f-group"><label>Budget Range</label><div class="budget-pills"><span class="bdg-pill" onclick="selBudget(this)">Under $500</span><span class="bdg-pill" onclick="selBudget(this)">$500–$1K</span><span class="bdg-pill" onclick="selBudget(this)">$1K–$3K</span><span class="bdg-pill" onclick="selBudget(this)">$3K+</span></div></div>
+          
           <div class="f-group"><label>Your Message *</label><textarea placeholder="Tell me about your goals, timeline, and what you're looking to achieve…"></textarea></div>
           <button class="btn btn-fill f-submit" onclick="ctSubmit()">Send Message →</button>
           <div class="f-note">🔒 Your information is never shared or sold. I reply within 24 hours.</div>
@@ -1153,8 +1250,18 @@ function mobClose() { mobMenu.classList.remove('open'); }
 function faqToggle(btn) {
   const item = btn.closest('.faq-item');
   const wasOpen = item.classList.contains('open');
-  item.closest('.faq-list').querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-  if (!wasOpen) item.classList.add('open');
+  // close all open items in this list with smooth reverse animation
+  item.closest('.faq-list').querySelectorAll('.faq-item.open').forEach(el => {
+    el.classList.add('closing');
+    el.classList.remove('open');
+    setTimeout(() => el.classList.remove('closing'), 420);
+  });
+  // open clicked item if it wasn't already open
+  if (!wasOpen) {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => { item.classList.add('open'); });
+    });
+  }
 }
 
 // ── Blog Filter ──
@@ -1170,11 +1277,7 @@ function blogFilter(tag, btn) {
   });
 }
 
-// ── Budget Pills ──
-function selBudget(el) {
-  document.querySelectorAll('.bdg-pill').forEach(p => p.classList.remove('sel'));
-  el.classList.add('sel');
-}
+
 
 // ── Contact Form ──
 function ctSubmit() {
@@ -1231,6 +1334,171 @@ const barObs = new IntersectionObserver(entries => {
 document.querySelectorAll('.skills-grid').forEach(g => barObs.observe(g));
 
 document.addEventListener('DOMContentLoaded', () => setTimeout(initReveal, 150));
+
+// ── TESTIMONIAL SLIDER ──
+(function(){
+  const DATA = [
+    {
+      starColor:'#facc15',
+      quote:'"Usman\'s system tripled our inbound pipeline in under 3 months. He didn\'t just run campaigns — he rebuilt our entire go-to-market motion. Best investment we made this year, by a wide margin."',
+      avatar:'https://framerusercontent.com/images/6XzhsZf3aeyx8kervEEstLcudfg.jpg?width=160',
+      name:'Arjun Mehta',
+      role:'Head of Revenue · Scalepath'
+    },
+    {
+      starColor:'#34d399',
+      quote:'"Our cost-per-lead dropped 60% while lead quality went way up. The ABM campaign landed us three enterprise contracts worth over $1.8M. Usman understands enterprise buyers better than most insiders do."',
+      avatar:'https://framerusercontent.com/images/KWIWRnobntyska9UpcNCRQbpJ50.png?width=160',
+      name:'Thomas Weber',
+      role:'Co-founder · NexaCorp'
+    },
+    {
+      starColor:'#60a5fa',
+      quote:'"The content system Usman built now drives more leads than all our paid channels combined, and it compounds every single month. ROAS went from 2.1× to 4.8× in 60 days. Genuinely transformational work."',
+      avatar:'https://framerusercontent.com/images/iGko9dIokPOUJkTBoanwq6EXY.jpg?width=160',
+      name:'Sarah Kim',
+      role:'CMO · PeopleHub'
+    }
+  ];
+
+  const total   = DATA.length;
+  const track   = document.getElementById('tsTrack');
+  const outer   = document.getElementById('tsViewport');
+  const pillBox = document.getElementById('tsPillTrack');
+  if (!track || !outer || !pillBox) return;
+
+  // build dot nav
+  for (let i = 0; i < total; i++) {
+    const b = document.createElement('button');
+    b.className = 'ts-pdot';
+    b.setAttribute('aria-label', 'Go to slide ' + (i+1));
+    b.addEventListener('click', () => dotGoTo(i));
+    pillBox.appendChild(b);
+  }
+  const pdots = pillBox.querySelectorAll('.ts-pdot');
+
+  let cur = 0, dragging = false, startX = 0, lastX = 0, velX = 0, trackX = 0, autoTmr = null;
+
+  function mod(n,m){ return ((n%m)+m)%m; }
+  function slideW(){ return outer.offsetWidth * 0.52; }
+  function centreX(){ return outer.offsetWidth/2 - slideW()*2 - slideW()/2; }
+
+  function getBg(){
+    return getComputedStyle(document.documentElement).getPropertyValue('--bg').trim() || '#f2f2f4';
+  }
+
+  function makeSlide(idx, cls){
+    const d  = DATA[idx];
+    const el = document.createElement('div');
+    el.className = 'ts-slide ' + cls;
+    const stars = Array(5).fill(0).map(() =>
+      `<span class="ts-star" style="color:${d.starColor}">&#9733;</span>`
+    ).join('');
+    const bg = getBg();
+    el.innerHTML =
+      '<div class="ts-card-wrap" style="position:relative;overflow:visible">' +
+        '<div class="ts-stars-pill" style="box-shadow:0 0 0 5px '+bg+'">' + stars + '</div>' +
+        '<div class="ts-card">' +
+          '<p class="ts-quote">' + d.quote + '</p>' +
+          '<div class="ts-author">' +
+            '<div class="ts-av"><img src="'+d.avatar+'" alt="'+d.name+'" loading="lazy" width="40" height="40"/></div>' +
+            '<div>' +
+              '<div class="ts-aname">'+d.name+'</div>' +
+              '<div class="ts-arole">'+d.role+'</div>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    return el;
+  }
+
+  function setTrack(x, animated){
+    trackX = x;
+    track.style.transition = animated ? 'transform .85s cubic-bezier(.22,1,.36,1)' : 'none';
+    track.style.transform  = 'translateX('+x+'px)';
+  }
+
+  function buildWindow(){
+    track.innerHTML = '';
+    for (let i = -2; i <= 2; i++){
+      track.appendChild(makeSlide(mod(cur+i,total), i===0 ? 'ts-active' : 'ts-side'));
+    }
+    track.getBoundingClientRect();
+    setTrack(centreX(), false);
+    track.getBoundingClientRect();
+  }
+
+  function updateDots(){
+    pdots.forEach((d,i) => d.classList.toggle('ts-active', i===cur));
+  }
+
+  function slide(dir){
+    cur = mod(cur+dir, total);
+    updateDots();
+    track.innerHTML = '';
+    for (let i = -2; i <= 2; i++){
+      track.appendChild(makeSlide(mod(cur+i,total), i===0 ? 'ts-active' : 'ts-side'));
+    }
+    track.getBoundingClientRect();
+    setTrack(centreX() + dir*slideW(), false);
+    track.getBoundingClientRect();
+    setTrack(centreX(), true);
+  }
+
+  function dotGoTo(idx){
+    if (idx === cur) return;
+    clearInterval(autoTmr);
+    cur = idx; buildWindow(); updateDots(); resetAuto();
+  }
+
+  function resetAuto(){
+    clearInterval(autoTmr);
+    autoTmr = setInterval(() => slide(1), 5000);
+  }
+
+  outer.addEventListener('pointerdown', e => {
+    dragging=true; startX=e.clientX; lastX=e.clientX; velX=0;
+    clearInterval(autoTmr);
+    track.style.transition='none';
+    track.style.transform='translateX('+trackX+'px)';
+    outer.setPointerCapture(e.pointerId);
+  });
+  outer.addEventListener('pointermove', e => {
+    if (!dragging) return;
+    velX = e.clientX-lastX; lastX=e.clientX; trackX+=velX;
+    track.style.transform='translateX('+trackX+'px)';
+  });
+  outer.addEventListener('pointerup', e => {
+    if (!dragging) return;
+    dragging=false;
+    const dx = e.clientX-startX;
+    if (Math.abs(dx)>45 || Math.abs(velX)>7) slide(dx<0?1:-1);
+    else setTrack(centreX(), true);
+    resetAuto();
+  });
+  outer.addEventListener('pointercancel', () => {
+    if (!dragging) return;
+    dragging=false; setTrack(centreX(),true); resetAuto();
+  });
+  outer.addEventListener('dragstart', e => e.preventDefault());
+  document.addEventListener('selectstart', e => {
+    if (outer.contains(e.target)) e.preventDefault();
+  });
+
+  // sync star pill shadow on theme change
+  document.getElementById('themeBtn') && document.getElementById('themeBtn').addEventListener('click', () => {
+    setTimeout(() => {
+      const bg = getBg();
+      document.querySelectorAll('.ts-stars-pill').forEach(el => {
+        el.style.boxShadow = '0 0 0 5px '+bg;
+      });
+    }, 50);
+  });
+
+  window.addEventListener('resize', () => { buildWindow(); updateDots(); });
+  buildWindow(); updateDots(); resetAuto();
+})();
+
 </script>
 </body>
 </html>
