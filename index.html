@@ -206,8 +206,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .hf-crafted .heart{color:#ff3b30;font-style:normal;display:inline-block;animation:heartBeat 2.4s ease-in-out infinite}
 @keyframes heartBeat{0%,100%{transform:scale(1)}14%{transform:scale(1.28)}28%{transform:scale(1)}42%{transform:scale(1.18)}56%{transform:scale(1)}}
 .hf-copy{font-size:12px;color:var(--txt3);font-weight:400;letter-spacing:.02em}
-@media(max-width:640px){.hf-bg-text{font-size:clamp(72px,18vw,130px)}.hf-soc{width:46px;height:46px}.hf-soc svg{width:18px;height:18px}.hero-footer{padding:44px 0 72px;min-height:200px}.hf-content{padding-top:18px}.hf-socials{gap:10px}}
-@media(max-width:380px){.hf-bg-text{font-size:68px}.hf-soc{width:42px;height:42px}.hf-soc svg{width:16px;height:16px}.hero-footer{min-height:180px}}
+@media(max-width:640px){.hf-bg-text{font-size:clamp(64px,16vw,120px)}.hf-soc{width:46px;height:46px}.hf-soc svg{width:18px;height:18px}.hero-footer{padding:40px 0 68px;min-height:200px}.hf-content{padding-top:16px}.hf-socials{gap:10px}.hf-email{font-size:15px}.hf-bottom{padding:0 16px 18px}.hf-crafted{font-size:11.5px}.hf-copy{font-size:11px}.hf-bottom-divider{margin-bottom:8px}}
+@media(max-width:380px){.hf-bg-text{font-size:clamp(52px,14vw,72px)}.hf-soc{width:40px;height:40px}.hf-soc svg{width:16px;height:16px}.hero-footer{min-height:170px;padding:36px 0 64px}.hf-socials{gap:8px}.hf-email{font-size:13.5px}.hf-content{padding-top:12px}}
 
 /* ═══════════════════════════════════════
    PAGE 1: HERO
@@ -571,8 +571,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 
 
 
-.ts-viewport{position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;width:100vw;overflow:hidden;padding:32px 0 8px;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;touch-action:none;cursor:pointer;pointer-events:all;isolation:isolate;-webkit-backface-visibility:hidden;backface-visibility:hidden;transform:translateZ(0);}
-.ts-viewport:active{cursor:grabbing;}.ts-viewport *{cursor:pointer;-webkit-user-select:none;user-select:none;}
+.ts-viewport{position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;width:100vw;overflow:hidden;padding:32px 0 8px;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;touch-action:none;cursor:pointer !important;pointer-events:all;isolation:isolate;-webkit-backface-visibility:hidden;backface-visibility:hidden;transform:translateZ(0);}
+.ts-viewport,.ts-viewport:active,.ts-viewport:hover{cursor:pointer !important;}.ts-viewport *{cursor:pointer !important;-webkit-user-select:none;user-select:none;}
 .ts-track{display:flex;align-items:center;will-change:transform;overflow:visible;}
 .ts-slide{flex:0 0 52%;max-width:52%;padding:0 10px;position:relative;overflow:visible;transition:transform .85s cubic-bezier(.22,1,.36,1),opacity .85s cubic-bezier(.22,1,.36,1);-webkit-backface-visibility:hidden;backface-visibility:hidden;}
 .ts-slide.ts-side{opacity:.36;transform:scale(.87);}
@@ -581,7 +581,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .ts-slide.ts-side .ts-stars-pill{opacity:0;pointer-events:none;}
 .ts-slide.ts-active .ts-stars-pill{opacity:1;}
 .ts-star{font-size:14px;line-height:1;}
-.ts-card{background:var(--surface-hi);border:1px solid var(--border-med);border-radius:var(--r-lg);box-shadow:var(--shadow-md);padding:48px 40px 34px;display:flex;flex-direction:column;align-items:center;text-align:center;height:280px;justify-content:center;position:relative;transition:background .4s,border-color .4s,box-shadow .4s;-webkit-user-select:none;user-select:none;pointer-events:none;}
+.ts-card{background:var(--surface-hi);border:1px solid var(--border-med);border-radius:var(--r-lg);box-shadow:var(--shadow-md);padding:48px 40px 34px;display:flex;flex-direction:column;align-items:center;text-align:center;height:280px;justify-content:center;position:relative;transition:background .4s,border-color .4s,box-shadow .4s;-webkit-user-select:none;user-select:none;pointer-events:none;cursor:pointer !important;}
 .ts-card::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:55%;height:2px;border-radius:0 0 var(--r-lg) var(--r-lg);background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:opacity .5s;}
 .ts-slide.ts-active .ts-card::after{opacity:1;}
 .ts-quote{font-family:'Fraunces',serif;font-size:clamp(15px,2vw,18px);font-weight:600;font-style:italic;color:var(--txt);line-height:1.55;margin-bottom:26px;max-width:420px;letter-spacing:-.2px;}
@@ -594,8 +594,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .ts-pill-track{display:flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border-med);border-radius:var(--r-p);padding:6px 12px;backdrop-filter:var(--blur);box-shadow:var(--shadow-sm);transition:background .4s,border-color .4s;}
 .ts-pdot{width:7px;height:7px;border-radius:50%;background:var(--txt3);border:none;padding:0;cursor:pointer;flex-shrink:0;transition:background .35s,transform .35s;pointer-events:all;}
 .ts-pdot.ts-active{background:var(--txt);transform:scale(1.25);}
-@media(max-width:700px){.ts-slide{flex:0 0 80%;max-width:80%;}.ts-card{padding:40px 24px 28px;height:auto;min-height:240px;}.ts-quote{font-size:15px;}}
-@media(max-width:420px){.ts-slide{flex:0 0 90%;max-width:90%;}.ts-card{padding:36px 18px 24px;}}
+@media(max-width:700px){.ts-slide{flex:0 0 84%;max-width:84%;}.ts-section{padding:0 12px;margin-bottom:36px;}.ts-card{padding:36px 22px 26px;height:auto;min-height:220px;}.ts-quote{font-size:14.5px;}.ts-aname{font-size:13px;}.ts-arole{font-size:11px;}.ts-av{width:36px;height:36px;}.ts-nav-pill{margin-top:16px;}.ts-stars-pill{padding:4px 12px;}.ts-star{font-size:12px;}}
+@media(max-width:420px){.ts-slide{flex:0 0 92%;max-width:92%;}.ts-card{padding:30px 16px 22px;min-height:200px;}.ts-quote{font-size:13.5px;line-height:1.55;}.ts-author{gap:9px;}.ts-av{width:32px;height:32px;}.ts-stars-pill{padding:3px 10px;top:-16px;}.ts-star{font-size:11px;}.ts-pill-track{gap:5px;padding:5px 10px;}.ts-pdot{width:6px;height:6px;}}
 </style>
 </head>
 <body>
@@ -604,625 +604,625 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 
 <!-- ══════════ NAV ══════════ -->
 <nav id="nav">
-  <div class="n-logo" onclick="go('hero')">Usman.</div>
-  <div class="n-links">
-    <span class="n-link on" id="nl-hero"         onclick="go('hero')">Home</span>
-    <span class="n-link"    id="nl-about"         onclick="go('about')">About</span>
-    <span class="n-link"    id="nl-services"      onclick="go('services')">Services</span>
-    <span class="n-link"    id="nl-reviews"       onclick="go('reviews')">Reviews</span>
-    <span class="n-link"    id="nl-blog"          onclick="go('blog')">Blog</span>
-    <span class="n-link"    id="nl-contact"       onclick="go('contact')">Contact</span>
-  </div>
-  <div class="n-right">
-    <button class="n-theme" id="themeBtn" aria-label="Toggle dark mode">
-    <!-- ghost sun — shows in dark mode on left of track -->
-    <span class="n-theme-ghost ghost-sun">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c0a060" stroke-width="2.2" stroke-linecap="round">
-        <circle cx="12" cy="12" r="4"/>
-        <line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/>
-        <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/>
-        <line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/>
-        <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/>
-      </svg>
-    </span>
-    <!-- ghost moon — shows in light mode on right of track -->
-    <span class="n-theme-ghost ghost-moon">
-      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2.2" stroke-linecap="round">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-      </svg>
-    </span>
-    <!-- sliding knob with sun/moon icons -->
-    <span class="n-theme-knob">
-      <svg class="nt-sun" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.95)" stroke-width="2.2" stroke-linecap="round">
-        <circle cx="12" cy="12" r="4"/>
-        <line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/>
-        <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/>
-        <line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/>
-        <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/>
-      </svg>
-      <svg class="nt-moon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(200,200,230,.9)" stroke-width="2.2" stroke-linecap="round">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-      </svg>
-    </span>
-  </button>
-    <span class="n-cta" onclick="go('contact')">Let's Talk</span>
-    <button class="n-burger" id="burger"><span></span><span></span><span></span></button>
-  </div>
+ <div class="n-logo" onclick="go('hero')">Usman.</div>
+ <div class="n-links">
+ <span class="n-link on" id="nl-hero" onclick="go('hero')">Home</span>
+ <span class="n-link" id="nl-about" onclick="go('about')">About</span>
+ <span class="n-link" id="nl-services" onclick="go('services')">Services</span>
+ <span class="n-link" id="nl-reviews" onclick="go('reviews')">Reviews</span>
+ <span class="n-link" id="nl-blog" onclick="go('blog')">Blog</span>
+ <span class="n-link" id="nl-contact" onclick="go('contact')">Contact</span>
+ </div>
+ <div class="n-right">
+ <button class="n-theme" id="themeBtn" aria-label="Toggle dark mode">
+ <!-- ghost sun - shows in dark mode on left of track -->
+ <span class="n-theme-ghost ghost-sun">
+ <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c0a060" stroke-width="2.2" stroke-linecap="round">
+ <circle cx="12" cy="12" r="4"/>
+ <line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/>
+ <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/>
+ <line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/>
+ <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/>
+ </svg>
+ </span>
+ <!-- ghost moon - shows in light mode on right of track -->
+ <span class="n-theme-ghost ghost-moon">
+ <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2.2" stroke-linecap="round">
+ <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+ </svg>
+ </span>
+ <!-- sliding knob with sun/moon icons -->
+ <span class="n-theme-knob">
+ <svg class="nt-sun" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.95)" stroke-width="2.2" stroke-linecap="round">
+ <circle cx="12" cy="12" r="4"/>
+ <line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/>
+ <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/>
+ <line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/>
+ <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/>
+ </svg>
+ <svg class="nt-moon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(200,200,230,.9)" stroke-width="2.2" stroke-linecap="round">
+ <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+ </svg>
+ </span>
+ </button>
+ <span class="n-cta" onclick="go('contact')">Let's Talk</span>
+ <button class="n-burger" id="burger"><span></span><span></span><span></span></button>
+ </div>
 </nav>
 <div id="mob-menu">
-  <span class="n-link" onclick="go('hero');mobClose()">Home</span>
-  <span class="n-link" onclick="go('about');mobClose()">About</span>
-  <span class="n-link" onclick="go('services');mobClose()">Services</span>
-  <span class="n-link" onclick="go('reviews');mobClose()">Reviews</span>
-  <span class="n-link" onclick="go('blog');mobClose()">Blog</span>
-  <span class="n-link" onclick="go('contact');mobClose()">Contact</span>
+ <span class="n-link" onclick="go('hero');mobClose()">Home</span>
+ <span class="n-link" onclick="go('about');mobClose()">About</span>
+ <span class="n-link" onclick="go('services');mobClose()">Services</span>
+ <span class="n-link" onclick="go('reviews');mobClose()">Reviews</span>
+ <span class="n-link" onclick="go('blog');mobClose()">Blog</span>
+ <span class="n-link" onclick="go('contact');mobClose()">Contact</span>
 </div>
 
 <!-- ════════════════════════════════════════
-     PAGE 1: HERO
+ PAGE 1: HERO
 ════════════════════════════════════════ -->
 <div id="pg-hero" class="page on">
-  <section class="hero-section">
-    <div class="hero-avail"><div class="live-dot"></div> Available for new projects — worldwide</div>
-    <h1 class="h-display hero-title">Building things<br/>that <em>genuinely</em><br/>move the needle.</h1>
-    <p class="h-sub hero-subtitle">I help ambitious businesses win more clients through precision lead generation, exceptional web design, and LinkedIn content that converts attention into revenue.</p>
-    <div class="hero-chips">
-      <div class="chip">🎯 Leads Provider</div>
-      <div class="chip">💻 Web Dev & Design</div>
-      <div class="chip">✍️ LinkedIn Ghostwriter</div>
-    </div>
-    <div class="hero-btns">
-      <span class="btn btn-fill" onclick="go('services')">Explore Services →</span>
-      <span class="btn btn-outline" onclick="go('about')">👋 About Me</span>
-    </div>
-  </section>
+ <section class="hero-section">
+ <div class="hero-avail"><div class="live-dot"></div> Available for new projects globally.</div>
+ <h1 class="h-display hero-title">Building things<br/>that <em>genuinely</em><br/>move the needle.</h1>
+ <p class="h-sub hero-subtitle">I help ambitious businesses find better leads, build better digital experiences and turn attention into opportunities.</p>
+ <div class="hero-chips">
+ <div class="chip">🎯 Leads Provider</div>
+ <div class="chip">💻 Web Dev & Design</div>
+ <div class="chip">✍️ LinkedIn Ghostwriter</div>
+ </div>
+ <div class="hero-btns">
+ <span class="btn btn-fill" onclick="go('services')">Explore Services →</span>
+ <span class="btn btn-outline" onclick="go('about')">👋 About Me</span>
+ </div>
+ </section>
 
-  <div class="metrics rv">
-    <div class="gc metric-card"><div class="m-icon m-blue">🎯</div><div class="m-label">Lead Generation</div><div class="m-desc">Verified, ICP-matched leads that fill your pipeline with qualified buyers — not junk data.</div><div class="m-num">500+<span class="m-unit"> leads delivered</span></div></div>
-    <div class="gc metric-card"><div class="m-icon m-green">🖥️</div><div class="m-label">Web Design & Dev</div><div class="m-desc">Fast, stunning websites that convert visitors. Mobile-first, SEO-ready and performance-optimised.</div><div class="m-num">40+<span class="m-unit"> sites shipped</span></div></div>
-    <div class="gc metric-card"><div class="m-icon m-purple">✍️</div><div class="m-label">LinkedIn Ghostwriting</div><div class="m-desc">Authority-building content that grows your audience and drives inbound leads consistently.</div><div class="m-num">3×<span class="m-unit"> avg reach growth</span></div></div>
-  </div>
+ <div class="metrics rv">
+ <div class="gc metric-card"><div class="m-icon m-blue">🎯</div><div class="m-label">Lead Generation</div><div class="m-desc">Verified, ICP-matched leads that fill your pipeline with qualified buyers - not junk data.</div><div class="m-num">500+<span class="m-unit"> leads delivered</span></div></div>
+ <div class="gc metric-card"><div class="m-icon m-green">🖥️</div><div class="m-label">Web Design & Dev</div><div class="m-desc">Stunning websites that convert visitors. Mobile-first, SEO-ready and performance-optimised.</div><div class="m-num">40+<span class="m-unit"> sites shipped</span></div></div>
+ <div class="gc metric-card"><div class="m-icon m-purple">✍️</div><div class="m-label">LinkedIn Ghostwriting</div><div class="m-desc">Authority-building content that grows your audience and drives inbound leads consistently.</div><div class="m-num">3×<span class="m-unit"> avg reach growth</span></div></div>
+ </div>
 
-  <div class="trust-strip rv">
-    <div class="trust-inner">
-      <span class="trust-label">Trusted by</span>
-      <div class="trust-divider"></div>
-      <div class="trust-logos">
-        <span class="trust-logo">TechScale</span><span class="trust-logo">Growthly</span><span class="trust-logo">NovaSpark</span><span class="trust-logo">Bloom Agency</span><span class="trust-logo">Finity Group</span><span class="trust-logo">+ 45 more</span>
-      </div>
-    </div>
-  </div>
+ <div class="trust-strip rv">
+ <div class="trust-inner">
+ <span class="trust-label">Trusted by</span>
+ <div class="trust-divider"></div>
+ <div class="trust-logos">
+ <span class="trust-logo">LedgersCFO</span><span class="trust-logo">ADLEM AMINA</span><span class="trust-logo">Endpoint IT</span><span class="trust-logo">Digital Prospo</span><span class="trust-logo">Resilience Consulting</span><span class="trust-logo">+ 45 more</span>
+ </div>
+ </div>
+ </div>
 
-  <!-- ── TESTIMONIAL SLIDER (hero) ── -->
-  <div class="ts-section rv">
+ <!-- ── TESTIMONIAL SLIDER (hero) ── -->
+ <div class="ts-section rv">
 
-    <!-- slider -->
-    <div class="ts-viewport" id="tsViewport">
-      <div class="ts-track" id="tsTrack"></div>
-    </div>
-    <div class="ts-nav-pill">
-      <div class="ts-pill-track" id="tsPillTrack"></div>
-    </div>
-  </div>
+ <!-- slider -->
+ <div class="ts-viewport" id="tsViewport">
+ <div class="ts-track" id="tsTrack"></div>
+ </div>
+ <div class="ts-nav-pill">
+ <div class="ts-pill-track" id="tsPillTrack"></div>
+ </div>
+ </div>
 
-  <div class="social-row rv">
-    <a href="#" class="soc-btn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.981V9h3.084v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a1.795 1.795 0 1 1 0-3.59 1.795 1.795 0 0 1 0 3.59zM6.754 20.452H3.918V9h2.836v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
-    <a href="#" class="soc-btn"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Email Me</a>
-    <a href="#" class="soc-btn" onclick="go('reviews')"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>5.0 Reviews</a>
-    <a href="#" class="soc-btn" onclick="go('blog')"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>Read Blog</a>
-  </div>
+ <div class="social-row rv">
+ <a href="https://www.linkedin.com/in/usman-leadgen/" target="_blank" rel="noopener" class="soc-btn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.981V9h3.084v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a1.795 1.795 0 1 1 0-3.59 1.795 1.795 0 0 1 0 3.59zM6.754 20.452H3.918V9h2.836v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+ <a href="https://www.linkedin.com/in/usman-leadgen/" target="_blank" rel="noopener" class="soc-btn"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Email Me</a>
+ <a href="#" class="soc-btn" onclick="go('reviews')"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>5.0 Reviews</a>
+ <a href="#" class="soc-btn" onclick="go('blog')"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>Read Blog</a>
+ </div>
 
-  <footer class="hero-footer">
-    <div class="hf-bg-text">MORE</div>
-    <div class="hf-orb"></div>
-    <div class="hf-orb2"></div>
-    <div class="hf-content">
-      <div class="hf-socials">
-        <a href="#" class="hf-soc" aria-label="GitHub">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        </a>
-        <a href="#" class="hf-soc" aria-label="LinkedIn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="#" class="hf-soc" aria-label="Twitter">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-        </a>
-        <a href="#" class="hf-soc" aria-label="Instagram">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </a>
-      </div>
-      <a href="/cdn-cgi/l/email-protection#abc3cec7c7c4ebded8c6cac585cfcedd" class="hf-email"><span class="__cf_email__" data-cfemail="c4aca1a8a8ab84b1b7a9a5aaeaa0a1b2">[email&#160;protected]</span></a>
-    </div>
-    <div class="hf-bottom">
-      <div class="hf-bottom-divider"></div>
-      <p class="hf-crafted">Crafted with <em class="heart">&#9829;</em> by Usman</p>
-      <p class="hf-copy">&#169; 2025 Usman. All rights reserved.</p>
-    </div>
-  </footer>
+ <footer class="hero-footer">
+ <div class="hf-bg-text">MORE</div>
+ <div class="hf-orb"></div>
+ <div class="hf-orb2"></div>
+ <div class="hf-content">
+ <div class="hf-socials">
+ <a href="https://github.com/usmankhan-pw" target="_blank" rel="noopener" class="hf-soc" aria-label="GitHub">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+ </a>
+ <a href="https://www.linkedin.com/in/usman-leadgen/" target="_blank" rel="noopener" class="hf-soc" aria-label="LinkedIn">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+ </a>
+ <a href="#" class="hf-soc" aria-label="Twitter">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+ </a>
+ <a href="#" class="hf-soc" aria-label="Instagram">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+ </a>
+ </div>
+ <a href="mailto:usman.leadgen@gmail.com" class="hf-email">usman.leadgen@gmail.com</a>
+ </div>
+ <div class="hf-bottom">
+ <div class="hf-bottom-divider"></div>
+ <p class="hf-crafted">Crafted with <em class="heart">&#9829;</em> by Usman</p>
+ <p class="hf-copy">&#169; 2026 Usman. All rights reserved.</p>
+ </div>
+ </footer>
 </div>
 
 <!-- ════════════════════════════════════════
-     PAGE 2: ABOUT
+ PAGE 2: ABOUT
 ════════════════════════════════════════ -->
 <div id="pg-about" class="page">
-  <div class="about-hero wrap">
-    <div class="about-visual rv">
-      <div class="av-card gc"><div class="av-emoji">👨‍💻</div><div class="av-name">Usman</div><div class="av-role">Leads · Web · LinkedIn</div></div>
-      <div class="av-badge"><div><div class="ab-num">50+</div><div class="ab-lbl">Happy clients worldwide</div></div><div style="font-size:28px">🌍</div></div>
-    </div>
-    <div class="rv d1">
-      <span class="eyebrow">About Usman</span>
-      <h1 class="h-display" style="font-size:clamp(40px,6vw,62px);margin-bottom:20px">The mind<br/>behind the <em>work.</em></h1>
-      <p class="h-sub" style="max-width:460px;margin-bottom:16px">I'm a multi-disciplined digital professional who helps businesses generate quality leads, build stunning web experiences, and craft LinkedIn content that turns followers into paying clients.</p>
-      <p style="font-size:14px;color:var(--txt2);line-height:1.7;margin-bottom:28px;max-width:460px">With 5+ years across three high-impact disciplines, I've helped 50+ businesses across B2B SaaS, consulting, and professional services unlock consistent, scalable growth. My approach combines strategic thinking with meticulous execution — so results don't just happen once, they compound.</p>
-      <div class="about-chips"><div class="chip chip-sm">🎯 Lead Expert</div><div class="chip chip-sm">💻 Web Designer</div><div class="chip chip-sm">✍️ Ghostwriter</div><div class="chip chip-sm">📈 Growth Strategist</div><div class="chip chip-sm">⚡ Fast Delivery</div></div>
-      <div class="about-btns"><span class="btn btn-fill" onclick="go('services')">View Services →</span></div>
-    </div>
-  </div>
+ <div class="about-hero wrap">
+ <div class="about-visual rv">
+ <div class="av-card gc"><div class="av-emoji">👨‍💻</div><div class="av-name">Usman</div><div class="av-role">Leads · Web · LinkedIn</div></div>
+ <div class="av-badge"><div><div class="ab-num">50+</div><div class="ab-lbl">Happy clients worldwide</div></div><div style="font-size:28px">🌍</div></div>
+ </div>
+ <div class="rv d1">
+ <span class="eyebrow">About Usman</span>
+ <h1 class="h-display" style="font-size:clamp(40px,6vw,62px);margin-bottom:20px">The mind<br/>behind the <em>work.</em></h1>
+ <p class="h-sub" style="max-width:460px;margin-bottom:16px">I’m Usman - a multi-disciplined digital professional who helps businesses generate quality leads, build modern websites and craft LinkedIn content that turns followers into paying clients.</p>
+ <p style="font-size:14px;color:var(--txt2);line-height:1.7;margin-bottom:28px;max-width:460px">Over the years, I've helped 50+ businesses across B2B SaaS, accounting firms, consulting and professional services unlock consistent, scalable growth. My approach combines strategic thinking with meticulous execution - so results don't just happen once, they compound.</p>
+ <div class="about-chips"><div class="chip chip-sm">🎯 Lead Expert</div><div class="chip chip-sm">💻 Web Designer</div><div class="chip chip-sm">✍️ Ghostwriter</div><div class="chip chip-sm">📈 Growth Strategist</div><div class="chip chip-sm">⚡ Fast Delivery</div></div>
+ <div class="about-btns"><span class="btn btn-fill" onclick="go('services')">View Services →</span></div>
+ </div>
+ </div>
 
-  <section class="values-sec">
-    <div class="rv"><span class="eyebrow">Core Values</span><h2 class="h-section">What I stand <em>for.</em></h2></div>
-    <div class="values-grid">
-      <div class="gc val-card rv d1"><span class="val-ico">🎯</span><div class="val-title">Results First, Always</div><div class="val-desc">Every strategy, design decision, and word written is aligned with one goal — measurable, meaningful results that move your business forward.</div></div>
-      <div class="gc val-card rv d2"><span class="val-ico">⚡</span><div class="val-title">Speed Without Sacrifice</div><div class="val-desc">Fast delivery is a competitive advantage. I consistently deliver ahead of schedule — without cutting corners on quality.</div></div>
-      <div class="gc val-card rv d3"><span class="val-ico">🔍</span><div class="val-title">Deep Research, Always</div><div class="val-desc">I don't guess your audience — I research them. Every lead list, website, and post starts with understanding who you're talking to.</div></div>
-      <div class="gc val-card rv d1"><span class="val-ico">🤝</span><div class="val-title">Long-Term Partnership</div><div class="val-desc">I invest in your success beyond the project. Most of my clients stay for months or years because I treat their business like my own.</div></div>
-      <div class="gc val-card rv d2"><span class="val-ico">✨</span><div class="val-title">Details Matter</div><div class="val-desc">The difference between good and exceptional lives in the details most people skip. I sweat every pixel, word, and data point.</div></div>
-      <div class="gc val-card rv d3"><span class="val-ico">🔒</span><div class="val-title">Radical Transparency</div><div class="val-desc">No jargon, no smoke and mirrors. You always know what's happening, why I made each decision, and what results to expect.</div></div>
-    </div>
-  </section>
+ <section class="values-sec">
+ <div class="rv"><span class="eyebrow">Core Values</span><h2 class="h-section">What I stand <em>for.</em></h2></div>
+ <div class="values-grid">
+ <div class="gc val-card rv d1"><span class="val-ico">🎯</span><div class="val-title">Results First, Always</div><div class="val-desc">Every strategy, design decision and word written is aligned with one goal - measurable, meaningful results that move your business forward.</div></div>
+ <div class="gc val-card rv d2"><span class="val-ico">⚡</span><div class="val-title">Speed Without Sacrifice</div><div class="val-desc">Fast delivery is a competitive advantage. I consistently deliver ahead of schedule - without cutting corners on quality.</div></div>
+ <div class="gc val-card rv d3"><span class="val-ico">🔍</span><div class="val-title">Deep Research, Always</div><div class="val-desc">I don't guess your audience - I research them. Every lead list, website and post starts with understanding who you're talking to.</div></div>
+ <div class="gc val-card rv d1"><span class="val-ico">🤝</span><div class="val-title">Long-Term Partnership</div><div class="val-desc">I invest in your success beyond the project. Most of my clients stay for years because I treat their business like my own.</div></div>
+ <div class="gc val-card rv d2"><span class="val-ico">✨</span><div class="val-title">Details Matter</div><div class="val-desc">The difference between good and exceptional lives in the details most people skip. I sweat every pixel, word and data point.</div></div>
+ <div class="gc val-card rv d3"><span class="val-ico">🔒</span><div class="val-title">Radical Transparency</div><div class="val-desc">You'll know what I'm working on, why I'm doing it and what we're trying to achieve. No unnecessary jargon. No hiding behind complicated processes.</div></div>
+ </div>
+ </section>
 
-  <section class="journey-sec">
-    <div class="rv"><span class="eyebrow">My Journey</span><h2 class="h-section">How I got <em>here.</em></h2></div>
-    <div class="timeline rv">
-      <div class="tl-row"><div class="tl-yr">2019</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-event">Wrote First Line of Code</div><div class="tl-info">Discovered HTML and CSS. Built first client site within 3 months. Realised this was more than a hobby — it was a career.</div></div></div>
-      <div class="tl-row"><div class="tl-yr">2020</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-event">Entered Lead Generation</div><div class="tl-info">Built a B2B client a list of 300 verified contacts. It generated 12 new clients in a month. A second skill was born.</div></div></div>
-      <div class="tl-row"><div class="tl-yr">2021</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-event">LinkedIn Ghostwriting Unlocked</div><div class="tl-info">Wrote for a consulting firm's MD. Their reach tripled in 60 days and two enterprise deals came from the content. Third service added.</div></div></div>
-      <div class="tl-row"><div class="tl-yr">2022</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-event">Went Full-Time Freelance</div><div class="tl-info">Left everything behind to focus entirely on leads, design and content. Doubled revenue within 6 months.</div></div></div>
-      <div class="tl-row"><div class="tl-yr">2023</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-event">50 Clients Milestone</div><div class="tl-info">Hit 50 clients across all services. Refined processes, built repeatable systems, achieved 96% client retention.</div></div></div>
-      <div class="tl-row"><div class="tl-yr">Now</div><div class="tl-spine"><div class="tl-dot" style="background:var(--green)"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-event">Open for New Projects ✨</div><div class="tl-info">Taking on select new clients for leads, web projects, and LinkedIn ghostwriting. Let's build something great.</div></div></div>
-    </div>
-  </section>
+ <section class="journey-sec">
+ <div class="rv"><span class="eyebrow">My Journey</span><h2 class="h-section">How I got <em>here.</em></h2></div>
+ <div class="timeline rv">
+ <div class="tl-row"><div class="tl-yr">2020</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-event">Wrote First Line of Code</div><div class="tl-info">Discovered HTML/CSS/JS. Built first client site within 1 month. Realised this was more than a hobby - it was a career.</div></div></div>
+ <div class="tl-row"><div class="tl-yr">2021</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-event">Entered Lead Generation</div><div class="tl-info">Built a B2B client a list of 700 verified contacts. It generated 34 new clients in a month. A second skill was born.</div></div></div>
+ <div class="tl-row"><div class="tl-yr">2022</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-event">LinkedIn Ghostwriting Unlocked</div><div class="tl-info">Wrote for a consulting firm's MD. Their reach tripled in 60 days and two enterprise deals came from the content. Third service added.</div></div></div>
+ <div class="tl-row"><div class="tl-yr">2023</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-event">Went Full-Time Freelance</div><div class="tl-info">Left everything behind to focus entirely on leads, design and content. Doubled revenue within 6 months.</div></div></div>
+ <div class="tl-row"><div class="tl-yr">2024</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-event">50 Clients Milestone</div><div class="tl-info">Hit 50 clients across all services. Refined processes, built repeatable systems, achieved 96% client retention.</div></div></div>
+ <div class="tl-row"><div class="tl-yr">Now</div><div class="tl-spine"><div class="tl-dot" style="background:var(--green)"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-event">Open for New Projects ✨</div><div class="tl-info">Taking on select new clients for leads, web projects and LinkedIn ghostwriting. Let's build something great.</div></div></div>
+ </div>
+ </section>
 
-  <section class="skills-sec rv">
-    <span class="eyebrow">Toolbox</span><h2 class="h-section">Skills & <em>expertise.</em></h2>
-    <div class="skills-grid">
-      <div class="skill-card"><div class="sk-ico">🎯</div><div class="sk-name">Lead Research</div><div class="sk-lvl">Expert · 5 yrs</div><div class="sk-bar"><div class="sk-fill" style="width:96%"></div></div></div>
-      <div class="skill-card"><div class="sk-ico">🔵</div><div class="sk-name">Apollo / Clay</div><div class="sk-lvl">Advanced</div><div class="sk-bar"><div class="sk-fill" style="width:92%"></div></div></div>
-      <div class="skill-card"><div class="sk-ico">🎨</div><div class="sk-name">UI/UX Design</div><div class="sk-lvl">Expert · 5 yrs</div><div class="sk-bar"><div class="sk-fill" style="width:95%"></div></div></div>
-      <div class="skill-card"><div class="sk-ico">💻</div><div class="sk-name">HTML/CSS/JS</div><div class="sk-lvl">Expert</div><div class="sk-bar"><div class="sk-fill" style="width:94%"></div></div></div>
-      <div class="skill-card"><div class="sk-ico">🌐</div><div class="sk-name">WordPress</div><div class="sk-lvl">Advanced</div><div class="sk-bar"><div class="sk-fill" style="width:88%"></div></div></div>
-      <div class="skill-card"><div class="sk-ico">🔷</div><div class="sk-name">Webflow</div><div class="sk-lvl">Advanced</div><div class="sk-bar"><div class="sk-fill" style="width:85%"></div></div></div>
-      <div class="skill-card"><div class="sk-ico">✍️</div><div class="sk-name">LinkedIn Writing</div><div class="sk-lvl">Expert · 4 yrs</div><div class="sk-bar"><div class="sk-fill" style="width:97%"></div></div></div>
-      <div class="skill-card"><div class="sk-ico">📊</div><div class="sk-name">Content Strategy</div><div class="sk-lvl">Advanced</div><div class="sk-bar"><div class="sk-fill" style="width:90%"></div></div></div>
-    </div>
-  </section>
+ <section class="skills-sec rv">
+ <span class="eyebrow">Toolbox</span><h2 class="h-section">Skills & <em>expertise.</em></h2>
+ <div class="skills-grid">
+ <div class="skill-card"><div class="sk-ico">🎯</div><div class="sk-name">Lead Research</div><div class="sk-lvl">Expert · 5 yrs</div><div class="sk-bar"><div class="sk-fill" style="width:96%"></div></div></div>
+ <div class="skill-card"><div class="sk-ico">🔵</div><div class="sk-name">Apollo / Clay</div><div class="sk-lvl">Advanced</div><div class="sk-bar"><div class="sk-fill" style="width:92%"></div></div></div>
+ <div class="skill-card"><div class="sk-ico">🎨</div><div class="sk-name">UI/UX Design</div><div class="sk-lvl">Expert · 5 yrs</div><div class="sk-bar"><div class="sk-fill" style="width:95%"></div></div></div>
+ <div class="skill-card"><div class="sk-ico">💻</div><div class="sk-name">HTML/CSS/JS</div><div class="sk-lvl">Expert</div><div class="sk-bar"><div class="sk-fill" style="width:94%"></div></div></div>
+ <div class="skill-card"><div class="sk-ico">🌐</div><div class="sk-name">WordPress</div><div class="sk-lvl">Advanced</div><div class="sk-bar"><div class="sk-fill" style="width:88%"></div></div></div>
+ <div class="skill-card"><div class="sk-ico">🔷</div><div class="sk-name">Webflow</div><div class="sk-lvl">Advanced</div><div class="sk-bar"><div class="sk-fill" style="width:85%"></div></div></div>
+ <div class="skill-card"><div class="sk-ico">✍️</div><div class="sk-name">LinkedIn Writing</div><div class="sk-lvl">Expert · 4 yrs</div><div class="sk-bar"><div class="sk-fill" style="width:97%"></div></div></div>
+ <div class="skill-card"><div class="sk-ico">📊</div><div class="sk-name">Content Strategy</div><div class="sk-lvl">Advanced</div><div class="sk-bar"><div class="sk-fill" style="width:90%"></div></div></div>
+ </div>
+ </section>
 
-  <section class="about-cta rv"><div class="gc cta-card"><div class="cta-txt"><h2 class="h-section">Ready to <em>work together?</em></h2><p>Whether you need leads, a new website, or a LinkedIn presence — let's have a no-pressure chat about what you're looking to achieve.</p></div><span class="btn btn-fill" onclick="go('services')" style="font-size:15px;padding:16px 32px">See What I Offer →</span></div></section>
+ <section class="about-cta rv"><div class="gc cta-card"><div class="cta-txt"><h2 class="h-section">Ready to <em>work together?</em></h2><p>Whether you need leads, a new website or a LinkedIn presence - let's have a no-pressure chat about what you're looking to achieve.</p></div><span class="btn btn-fill" onclick="go('services')" style="font-size:15px;padding:16px 32px">See What I Offer →</span></div></section>
 
-  <footer class="hero-footer">
-    <div class="hf-bg-text">MORE</div>
-    <div class="hf-orb"></div>
-    <div class="hf-orb2"></div>
-    <div class="hf-content">
-      <div class="hf-socials">
-        <a href="#" class="hf-soc" aria-label="GitHub">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        </a>
-        <a href="#" class="hf-soc" aria-label="LinkedIn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="#" class="hf-soc" aria-label="Twitter">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-        </a>
-        <a href="#" class="hf-soc" aria-label="Instagram">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </a>
-      </div>
-      <a href="/cdn-cgi/l/email-protection#49212c252526093c3a242827672d2c3f" class="hf-email"><span class="__cf_email__" data-cfemail="e28a878e8e8da297918f838ccc868794">[email&#160;protected]</span></a>
-    </div>
-    <div class="hf-bottom">
-      <div class="hf-bottom-divider"></div>
-      <p class="hf-crafted">Crafted with <em class="heart">&#9829;</em> by Usman</p>
-      <p class="hf-copy">&#169; 2026 Usman. All rights reserved.</p>
-    </div>
-  </footer>
+ <footer class="hero-footer">
+ <div class="hf-bg-text">MORE</div>
+ <div class="hf-orb"></div>
+ <div class="hf-orb2"></div>
+ <div class="hf-content">
+ <div class="hf-socials">
+ <a href="https://github.com/usmankhan-pw" target="_blank" rel="noopener" class="hf-soc" aria-label="GitHub">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+ </a>
+ <a href="https://www.linkedin.com/in/usman-leadgen/" target="_blank" rel="noopener" class="hf-soc" aria-label="LinkedIn">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+ </a>
+ <a href="#" class="hf-soc" aria-label="Twitter">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+ </a>
+ <a href="#" class="hf-soc" aria-label="Instagram">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+ </a>
+ </div>
+ <a href="mailto:usman.leadgen@gmail.com" class="hf-email">usman.leadgen@gmail.com</a>
+ </div>
+ <div class="hf-bottom">
+ <div class="hf-bottom-divider"></div>
+ <p class="hf-crafted">Crafted with <em class="heart">&#9829;</em> by Usman</p>
+ <p class="hf-copy">&#169; 2026 Usman. All rights reserved.</p>
+ </div>
+ </footer>
 </div>
 
 <!-- ════════════════════════════════════════
-     PAGE 3: SERVICES
+ PAGE 3: SERVICES
 ════════════════════════════════════════ -->
 <div id="pg-services" class="page">
-  <div class="srv-hero">
-    <div class="srv-hero-inner">
-      <div class="rv">
-        <span class="eyebrow">What I Offer</span>
-        <h1 class="h-display" style="font-size:clamp(44px,7vw,80px);margin-bottom:20px">Services that <em>grow</em> your business.</h1>
-        <p class="h-sub" style="max-width:460px;margin-bottom:32px">Three battle-tested disciplines, one clear outcome — more clients, a better online presence, and a personal brand that generates inbound on autopilot.</p>
-        <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="chip">🎯 Leads</span><span class="chip">🖥️ Web</span><span class="chip">✍️ LinkedIn</span><span class="chip">🚀 Bundle</span></div>
-      </div>
-      <div class="srv-hero-right rv d2">
-        <div class="srv-qs"><span class="sqs-label">Avg. lead turnaround</span><span class="sqs-val">24–72 hrs</span></div>
-        <div class="srv-qs"><span class="sqs-label">Website delivery</span><span class="sqs-val">2–3 weeks</span></div>
-        <div class="srv-qs"><span class="sqs-label">Client satisfaction</span><span class="sqs-val">5.0 ★ / 40+ reviews</span></div>
-        <div class="srv-qs"><span class="sqs-label">Clients served</span><span class="sqs-val">50+ worldwide</span></div>
-        <div class="srv-qs"><span class="sqs-label">Response time</span><span class="sqs-val">Within 24 hrs</span></div>
-      </div>
-    </div>
-  </div>
+ <div class="srv-hero">
+ <div class="srv-hero-inner">
+ <div class="rv">
+ <span class="eyebrow">What I Offer</span>
+ <h1 class="h-display" style="font-size:clamp(44px,7vw,80px);margin-bottom:20px">Services that <em>grow</em> your business.</h1>
+ <p class="h-sub" style="max-width:460px;margin-bottom:32px">I work across three areas that sit at the core of modern growth: finding the right people, building better digital experiences and turning expertise into attention.</p>
+ <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="chip">🎯 Leads</span><span class="chip">🖥️ Web</span><span class="chip">✍️ LinkedIn</span><span class="chip">🚀 Bundle</span></div>
+ </div>
+ <div class="srv-hero-right rv d2">
+ <div class="srv-qs"><span class="sqs-label">Avg. lead turnaround</span><span class="sqs-val">24-72 hrs</span></div>
+ <div class="srv-qs"><span class="sqs-label">Website delivery</span><span class="sqs-val">2-3 weeks</span></div>
+ <div class="srv-qs"><span class="sqs-label">Client satisfaction</span><span class="sqs-val">5.0 ★ / 40+ reviews</span></div>
+ <div class="srv-qs"><span class="sqs-label">Clients served</span><span class="sqs-val">50+ worldwide</span></div>
+ <div class="srv-qs"><span class="sqs-label">Response time</span><span class="sqs-val">Within 24 hrs</span></div>
+ </div>
+ </div>
+ </div>
 
-  <div class="srv-cards">
-    <div class="gc srv-card rv"><div class="srv-card-num">01</div><div><span class="srv-ico">🎯</span><h2 class="srv-title">Lead Generation</h2><p class="srv-desc">Highly targeted lead lists of your exact ideal customers — verified contacts with emails, LinkedIn profiles, and enriched data, ready to outreach the same day.</p><div class="srv-price-row"><span class="srv-price">From $99</span><span class="srv-period">/ 100 leads</span></div><span class="btn btn-fill" style="font-size:14px;padding:12px 24px" onclick="go('contact')">Get a Lead List →</span></div><div><div class="srv-features"><div class="srv-feat"><div class="srv-feat-check">✓</div>ICP research & definition</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Verified emails (95%+ deliverability)</div><div class="srv-feat"><div class="srv-feat-check">✓</div>LinkedIn profile URLs included</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Company size, industry, title filters</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Enriched with intent & tech stack data</div><div class="srv-feat"><div class="srv-feat-check">✓</div>CSV + Google Sheets delivery</div><div class="srv-feat"><div class="srv-feat-check">✓</div>One round of refinement included</div></div></div></div>
-    <div class="gc srv-card rv"><div class="srv-card-num">02</div><div><span class="srv-ico">🖥️</span><h2 class="srv-title">Web Design & Development</h2><p class="srv-desc">Modern, responsive websites that look exceptional and convert visitors into clients. From polished landing pages to full multi-page sites — built to perform, not just impress.</p><div class="srv-price-row"><span class="srv-price">From $499</span><span class="srv-period">/ project</span></div><span class="btn btn-fill" style="font-size:14px;padding:12px 24px" onclick="go('contact')">Start a Web Project →</span></div><div><div class="srv-features"><div class="srv-feat"><div class="srv-feat-check">✓</div>Custom UI/UX design from scratch</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Mobile-first, fully responsive</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Core Web Vitals & performance optimised</div><div class="srv-feat"><div class="srv-feat-check">✓</div>On-page SEO foundations included</div><div class="srv-feat"><div class="srv-feat-check">✓</div>CMS integration (WordPress, Webflow)</div><div class="srv-feat"><div class="srv-feat-check">✓</div>3 rounds of revisions included</div><div class="srv-feat"><div class="srv-feat-check">✓</div>30-day post-launch support</div></div></div></div>
-    <div class="gc srv-card rv"><div class="srv-card-num">03</div><div><span class="srv-ico">✍️</span><h2 class="srv-title">LinkedIn Ghostwriting</h2><p class="srv-desc">I write your LinkedIn content so you show up consistently, grow your audience, and attract inbound opportunities — without spending hours at a blank screen every week.</p><div class="srv-price-row"><span class="srv-price">From $299</span><span class="srv-period">/ month</span></div><span class="btn btn-fill" style="font-size:14px;padding:12px 24px" onclick="go('contact')">Start Growing →</span></div><div><div class="srv-features"><div class="srv-feat"><div class="srv-feat-check">✓</div>Voice discovery & brand positioning</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Monthly content calendar for approval</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Hook writing & storytelling-first approach</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Daily or weekly posting schedule</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Engagement strategy & audience growth</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Monthly analytics + performance review</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Unlimited revisions before publishing</div></div></div></div>
-  </div>
+ <div class="srv-cards">
+ <div class="gc srv-card rv"><div class="srv-card-num">01</div><div><span class="srv-ico">🎯</span><h2 class="srv-title">Lead Generation</h2><p class="srv-desc">Highly targeted lead lists of your exact ideal customers - verified contacts with direct business emails, LinkedIn profiles and enriched data, ready to outreach the same day.</p><div class="srv-price-row"><span class="srv-price">From $99</span><span class="srv-period">/ 1,000 leads</span></div><span class="btn btn-fill" style="font-size:14px;padding:12px 24px" onclick="go('contact')">Get a Lead List →</span></div><div><div class="srv-features"><div class="srv-feat"><div class="srv-feat-check">✓</div>ICP research & definition</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Verified emails (95%+ deliverability)</div><div class="srv-feat"><div class="srv-feat-check">✓</div>LinkedIn profile URLs included</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Company size, industry, title filters and more</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Enriched with intent & tech stack data</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Excel/CSV/Google Sheets delivery</div><div class="srv-feat"><div class="srv-feat-check">✓</div>One round of refinement included</div></div></div></div>
+ <div class="gc srv-card rv"><div class="srv-card-num">02</div><div><span class="srv-ico">🖥️</span><h2 class="srv-title">Web Design & Development</h2><p class="srv-desc">Modern, responsive websites that look exceptional and convert visitors into clients. From polished landing pages to full multi-page sites - built to perform, not just impress.</p><div class="srv-price-row"><span class="srv-price">From $499</span><span class="srv-period">/ project</span></div><span class="btn btn-fill" style="font-size:14px;padding:12px 24px" onclick="go('contact')">Start a Web Project →</span></div><div><div class="srv-features"><div class="srv-feat"><div class="srv-feat-check">✓</div>Custom UI/UX design from scratch</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Mobile-first, fully responsive</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Core Web Vitals & performance optimised</div><div class="srv-feat"><div class="srv-feat-check">✓</div>On-page SEO foundations included</div><div class="srv-feat"><div class="srv-feat-check">✓</div>CMS integration (WordPress, Webflow)</div><div class="srv-feat"><div class="srv-feat-check">✓</div>3 rounds of revisions included</div><div class="srv-feat"><div class="srv-feat-check">✓</div>30-day post-launch support</div></div></div></div>
+ <div class="gc srv-card rv"><div class="srv-card-num">03</div><div><span class="srv-ico">✍️</span><h2 class="srv-title">LinkedIn Ghostwriting</h2><p class="srv-desc">I write your LinkedIn content so you show up consistently, grow your audience and attract inbound opportunities - without spending hours at a blank screen every week.</p><div class="srv-price-row"><span class="srv-price">From $199</span><span class="srv-period">/ month</span></div><span class="btn btn-fill" style="font-size:14px;padding:12px 24px" onclick="go('contact')">Start Growing →</span></div><div><div class="srv-features"><div class="srv-feat"><div class="srv-feat-check">✓</div>Voice discovery & brand positioning</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Monthly/Weekly content calendar for approval</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Hook writing & storytelling-first approach</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Daily or weekly posting schedule</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Engagement strategy & audience growth</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Monthly analytics + performance review</div><div class="srv-feat"><div class="srv-feat-check">✓</div>Unlimited revisions before publishing</div></div></div></div>
+ </div>
 
-  <div class="srv-bundle rv"><div class="gc bundle-card"><div><span class="eyebrow">Bundle Offer</span><h2 class="h-section" style="font-size:clamp(28px,4vw,42px);margin-bottom:14px">The <em>Growth Bundle.</em></h2><p style="font-size:15px;color:var(--txt2);line-height:1.7;margin-bottom:24px;max-width:400px">All three services combined. The complete system for businesses serious about scaling. Leads fill the pipeline, the website converts them, LinkedIn keeps them warm.</p><div class="srv-price-row" style="margin-bottom:24px"><span class="srv-price">From $799</span><span class="srv-period">/ month · Save ~$150</span></div><span class="btn btn-fill" style="font-size:14px;padding:12px 28px" onclick="go('contact')">Get the Bundle →</span></div><div class="bundle-feats"><div class="bundle-feat"><span class="bundle-feat-ico">🎯</span> 500 verified leads/mo</div><div class="bundle-feat"><span class="bundle-feat-ico">🖥️</span> Full website build</div><div class="bundle-feat"><span class="bundle-feat-ico">✍️</span> LinkedIn content daily</div><div class="bundle-feat"><span class="bundle-feat-ico">⚡</span> Priority turnaround</div><div class="bundle-feat"><span class="bundle-feat-ico">🔒</span> Dedicated account manager</div><div class="bundle-feat"><span class="bundle-feat-ico">📊</span> Monthly growth report</div><div class="bundle-feat"><span class="bundle-feat-ico">♾️</span> Unlimited revisions</div><div class="bundle-feat"><span class="bundle-feat-ico">💬</span> Direct Slack access</div></div></div></div>
+ <div class="srv-bundle rv"><div class="gc bundle-card"><div><span class="eyebrow">Bundle Offer</span><h2 class="h-section" style="font-size:clamp(28px,4vw,42px);margin-bottom:14px">The <em>Growth Bundle.</em></h2><p style="font-size:15px;color:var(--txt2);line-height:1.7;margin-bottom:24px;max-width:400px">All three services combined. The complete system for businesses serious about scaling. Leads fill the pipeline, the website converts them, LinkedIn keeps them warm.</p><div class="srv-price-row" style="margin-bottom:24px"><span class="srv-price">From $699</span><span class="srv-period">/ month · Save ~$150</span></div><span class="btn btn-fill" style="font-size:14px;padding:12px 28px" onclick="go('contact')">Get the Bundle →</span></div><div class="bundle-feats"><div class="bundle-feat"><span class="bundle-feat-ico">🎯</span> 1,500 verified leads/mo</div><div class="bundle-feat"><span class="bundle-feat-ico">🖥️</span> Full website build</div><div class="bundle-feat"><span class="bundle-feat-ico">✍️</span> LinkedIn content daily</div><div class="bundle-feat"><span class="bundle-feat-ico">⚡</span> Priority turnaround</div><div class="bundle-feat"><span class="bundle-feat-ico">🔒</span> Dedicated account management</div><div class="bundle-feat"><span class="bundle-feat-ico">📊</span> Monthly growth report</div><div class="bundle-feat"><span class="bundle-feat-ico">♾️</span> Unlimited revisions</div><div class="bundle-feat"><span class="bundle-feat-ico">💬</span> Direct Slack access</div></div></div></div>
 
-  <section class="process-sec rv"><span class="eyebrow">How It Works</span><h2 class="h-section">Simple. Transparent. <em>Effective.</em></h2><div class="process-grid"><div class="gc proc-card"><span class="proc-num">01</span><div class="proc-title">Discovery Call</div><div class="proc-desc">A free 30-min call to understand your goals, target audience, and what success looks like for you.</div></div><div class="gc proc-card"><span class="proc-num">02</span><div class="proc-title">Tailored Proposal</div><div class="proc-desc">A custom plan with clear deliverables, realistic timelines, and transparent pricing. No surprises.</div></div><div class="gc proc-card"><span class="proc-num">03</span><div class="proc-title">Execution & Updates</div><div class="proc-desc">Work begins immediately. Regular updates keep you in the loop — not just at the end.</div></div><div class="gc proc-card"><span class="proc-num">04</span><div class="proc-title">Review & Scale</div><div class="proc-desc">We review results, optimise what's working, and build on success. Most clients expand after month one.</div></div></div></section>
+ <section class="process-sec rv"><span class="eyebrow">How It Works</span><h2 class="h-section">Simple. Transparent. <em>Effective.</em></h2><div class="process-grid"><div class="gc proc-card"><span class="proc-num">01</span><div class="proc-title">Discovery Call</div><div class="proc-desc">A free 30-min call to understand your goals, target audience and what success looks like for you.</div></div><div class="gc proc-card"><span class="proc-num">02</span><div class="proc-title">Tailored Proposal</div><div class="proc-desc">A custom plan with clear deliverables, realistic timelines and transparent pricing. No surprises.</div></div><div class="gc proc-card"><span class="proc-num">03</span><div class="proc-title">Execution & Updates</div><div class="proc-desc">Work begins immediately. Regular updates keep you in the loop - not just at the end.</div></div><div class="gc proc-card"><span class="proc-num">04</span><div class="proc-title">Review & Scale</div><div class="proc-desc">We review results, optimise what's working and build on success. Most clients expand after month one.</div></div></div></section>
 
-  <section class="pricing-sec rv"><span class="eyebrow">Compare Plans</span><h2 class="h-section">Transparent <em>pricing.</em></h2><div class="pricing-table"><div class="pt-header"><div class="pt-col">Feature</div><div class="pt-col">Solo Services</div><div class="pt-col accent">Growth Bundle</div><div class="pt-col">Enterprise</div></div><div class="pt-row"><div class="pt-feature">Lead generation</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div></div><div class="pt-row"><div class="pt-feature">Web design & development</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div></div><div class="pt-row"><div class="pt-feature">LinkedIn ghostwriting</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div></div><div class="pt-row"><div class="pt-feature">Priority turnaround</div><div class="pt-val no">—</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div></div><div class="pt-row"><div class="pt-feature">Dedicated account manager</div><div class="pt-val no">—</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div></div><div class="pt-row"><div class="pt-feature">Direct Slack access</div><div class="pt-val no">—</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div></div><div class="pt-row"><div class="pt-feature">Monthly strategy calls</div><div class="pt-val no">—</div><div class="pt-val no">—</div><div class="pt-val yes">✓</div></div><div class="pt-row"><div class="pt-feature">Custom SLA agreement</div><div class="pt-val no">—</div><div class="pt-val no">—</div><div class="pt-val yes">✓</div></div></div></section>
+ <section class="pricing-sec rv"><span class="eyebrow">Compare Plans</span><h2 class="h-section">Transparent <em>pricing.</em></h2><div class="pricing-table"><div class="pt-header"><div class="pt-col">Feature</div><div class="pt-col">Solo Services</div><div class="pt-col accent">Growth Bundle</div><div class="pt-col">Enterprise</div></div><div class="pt-row"><div class="pt-feature">Lead generation</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div></div><div class="pt-row"><div class="pt-feature">Web design & development</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div></div><div class="pt-row"><div class="pt-feature">LinkedIn ghostwriting</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div></div><div class="pt-row"><div class="pt-feature">Priority turnaround</div><div class="pt-val no"> - </div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div></div><div class="pt-row"><div class="pt-feature">Dedicated account management</div><div class="pt-val no"> - </div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div></div><div class="pt-row"><div class="pt-feature">Direct Slack access</div><div class="pt-val no"> - </div><div class="pt-val yes">✓</div><div class="pt-val yes">✓</div></div><div class="pt-row"><div class="pt-feature">Monthly strategy calls</div><div class="pt-val no"> - </div><div class="pt-val no"> - </div><div class="pt-val yes">✓</div></div><div class="pt-row"><div class="pt-feature">Custom SLA agreement</div><div class="pt-val no"> - </div><div class="pt-val no"> - </div><div class="pt-val yes">✓</div></div></div></section>
 
-  <section class="srv-cta rv"><div class="gc srv-cta-inner"><h2 class="h-section" style="font-size:clamp(28px,4vw,44px);margin-bottom:12px">Ready to get <em>started?</em></h2><p style="color:var(--txt2);font-size:15px;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto">Book a free 30-minute discovery call — no pitch, no pressure. Just a real conversation about your goals and how I can help.</p><div class="srv-cta-btns"><span class="btn btn-fill" style="font-size:15px;padding:15px 32px" onclick="go('contact')">📅 Book a Free Call</span><span class="btn btn-outline" style="font-size:15px;padding:15px 32px" onclick="go('contact')">✉️ Send a Message</span></div></div></section>
+ <section class="srv-cta rv"><div class="gc srv-cta-inner"><h2 class="h-section" style="font-size:clamp(28px,4vw,44px);margin-bottom:12px">Ready to get <em>started?</em></h2><p style="color:var(--txt2);font-size:15px;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto">Book a free 30-minute discovery call - no pitch, no pressure. Just a real conversation about your goals and how I can help.</p><div class="srv-cta-btns"><span class="btn btn-fill" style="font-size:15px;padding:15px 32px" onclick="go('contact')">📅 Book a Free Call</span><span class="btn btn-outline" style="font-size:15px;padding:15px 32px" onclick="go('contact')">✉️ Send a Message</span></div></div></section>
 
-  <footer class="hero-footer">
-    <div class="hf-bg-text">MORE</div>
-    <div class="hf-orb"></div>
-    <div class="hf-orb2"></div>
-    <div class="hf-content">
-      <div class="hf-socials">
-        <a href="#" class="hf-soc" aria-label="GitHub">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        </a>
-        <a href="#" class="hf-soc" aria-label="LinkedIn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="#" class="hf-soc" aria-label="Twitter">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-        </a>
-        <a href="#" class="hf-soc" aria-label="Instagram">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </a>
-      </div>
-      <a href="/cdn-cgi/l/email-protection#6109040d0d0e2114120c000f4f050417" class="hf-email"><span class="__cf_email__" data-cfemail="a2cac7cececde2d7d1cfc3cc8cc6c7d4">[email&#160;protected]</span></a>
-    </div>
-    <div class="hf-bottom">
-      <div class="hf-bottom-divider"></div>
-      <p class="hf-crafted">Crafted with <em class="heart">&#9829;</em> by Usman</p>
-      <p class="hf-copy">&#169; 2025 Usman. All rights reserved.</p>
-    </div>
-  </footer>
+ <footer class="hero-footer">
+ <div class="hf-bg-text">MORE</div>
+ <div class="hf-orb"></div>
+ <div class="hf-orb2"></div>
+ <div class="hf-content">
+ <div class="hf-socials">
+ <a href="https://github.com/usmankhan-pw" target="_blank" rel="noopener" class="hf-soc" aria-label="GitHub">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+ </a>
+ <a href="https://www.linkedin.com/in/usman-leadgen/" target="_blank" rel="noopener" class="hf-soc" aria-label="LinkedIn">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+ </a>
+ <a href="#" class="hf-soc" aria-label="Twitter">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+ </a>
+ <a href="#" class="hf-soc" aria-label="Instagram">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+ </a>
+ </div>
+ <a href="mailto:usman.leadgen@gmail.com" class="hf-email">usman.leadgen@gmail.com</a>
+ </div>
+ <div class="hf-bottom">
+ <div class="hf-bottom-divider"></div>
+ <p class="hf-crafted">Crafted with <em class="heart">&#9829;</em> by Usman</p>
+ <p class="hf-copy">&#169; 2026 Usman. All rights reserved.</p>
+ </div>
+ </footer>
 </div>
 
 <!-- ════════════════════════════════════════
-     PAGE 4: TESTIMONIALS + FAQ
+ PAGE 4: TESTIMONIALS + FAQ
 ════════════════════════════════════════ -->
 <div id="pg-reviews" class="page">
-  <div class="rev-hero wrap">
-    <div class="rev-hero-inner">
-      <div class="rv">
-        <span class="eyebrow">Client Reviews</span>
-        <h1 class="h-display" style="margin-bottom:20px">Real words.<br/><em>Real results.</em></h1>
-        <p class="body-lg" style="max-width:420px;margin-bottom:32px">50+ clients worldwide. 5.0 average rating. Every testimonial here is unedited — because the results speak for themselves.</p>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px"><div class="chip"><div class="live-dot"></div> Open for Projects</div><div class="chip">⭐ 5.0 Rated</div><div class="chip">🌍 50+ Clients</div></div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap"><span class="btn btn-fill" onclick="go('contact')">Work With Me →</span><span class="btn btn-outline" onclick="go('contact')">📅 Book a Call</span></div>
-      </div>
-      <div class="rev-hero-stats rv d2">
-        <div class="rhs-card"><div class="rhs-ico">⭐</div><div><div class="rhs-num">5.0<span style="font-size:18px;color:var(--txt3)"> / 5.0</span></div><div class="rhs-lbl">Average rating across all platforms</div></div></div>
-        <div class="rhs-card"><div class="rhs-ico">💬</div><div><div class="rhs-num">40+</div><div class="rhs-lbl">Verified written reviews</div></div></div>
-        <div class="rhs-card"><div class="rhs-ico">🔁</div><div><div class="rhs-num">96%</div><div class="rhs-lbl">Client retention rate</div></div></div>
-        <div class="rhs-card"><div class="rhs-ico">🌍</div><div><div class="rhs-num">18</div><div class="rhs-lbl">Countries served worldwide</div></div></div>
-      </div>
-    </div>
-  </div>
+ <div class="rev-hero wrap">
+ <div class="rev-hero-inner">
+ <div class="rv">
+ <span class="eyebrow">Client Reviews</span>
+ <h1 class="h-display" style="margin-bottom:20px">Real words.<br/><em>Real results.</em></h1>
+ <p class="body-lg" style="max-width:420px;margin-bottom:32px">50+ clients worldwide. 5.0 average rating. Every testimonial here is unedited - because the results speak for themselves.</p>
+ <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px"><div class="chip"><div class="live-dot"></div> Open for Projects</div><div class="chip">⭐ 5.0 Rated</div><div class="chip">🌍 50+ Clients</div></div>
+ <div style="display:flex;gap:12px;flex-wrap:wrap"><span class="btn btn-fill" onclick="go('contact')">Work With Me →</span><span class="btn btn-outline" onclick="go('contact')">📅 Book a Call</span></div>
+ </div>
+ <div class="rev-hero-stats rv d2">
+ <div class="rhs-card"><div class="rhs-ico">⭐</div><div><div class="rhs-num">5.0<span style="font-size:18px;color:var(--txt3)"> / 5.0</span></div><div class="rhs-lbl">Average rating across all platforms</div></div></div>
+ <div class="rhs-card"><div class="rhs-ico">💬</div><div><div class="rhs-num">30+</div><div class="rhs-lbl">Verified written reviews</div></div></div>
+ <div class="rhs-card"><div class="rhs-ico">🔁</div><div><div class="rhs-num">76%</div><div class="rhs-lbl">Client retention rate</div></div></div>
+ <div class="rhs-card"><div class="rhs-ico">🌍</div><div><div class="rhs-num">18</div><div class="rhs-lbl">Countries served worldwide</div></div></div>
+ </div>
+ </div>
+ </div>
 
-  <div class="marquee-wrap rv">
-    <div class="marquee-track">
-      <div class="mq-item"><p class="mq-text">"300 leads in 48 hours — every one matched our ICP. Our sales team closed 8 deals from that list alone."</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#0066cc,#5751e1)">A</div><div><div class="mq-name">Alex Chen</div><div class="mq-role">Head of Sales · Growthly</div></div></div></div>
-      <div class="mq-item"><p class="mq-text">"Our bounce rate dropped 45% in month one. The design is stunning — clients comment on it every call."</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#ff9500,#ff3b30)">M</div><div><div class="mq-name">Maria Torres</div><div class="mq-role">Founder · Bloom Agency</div></div></div></div>
-      <div class="mq-item"><p class="mq-text">"LinkedIn views went from 200 to 15,000+ per post. Two enterprise deals came from content Usman wrote."</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#5751e1,#bf5af2)">J</div><div><div class="mq-name">James O'Brien</div><div class="mq-role">MD · Finity Group</div></div></div></div>
-      <div class="mq-item"><p class="mq-text">"Fast, professional, and incredibly talented. The attention to detail in design and data was impressive."</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#ff2d55,#ff9f0a)">P</div><div><div class="mq-name">Priya Kapoor</div><div class="mq-role">Co-founder · NovaSpark</div></div></div></div>
-      <div class="mq-item"><p class="mq-text">"The Growth Bundle was the best investment this year. Leads, website, LinkedIn — ROI in week 3."</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#28c76f,#0066cc)">R</div><div><div class="mq-name">Ravi Singh</div><div class="mq-role">CEO · ScaleStack</div></div></div></div>
-      <!-- duplicate for seamless loop -->
-      <div class="mq-item"><p class="mq-text">"300 leads in 48 hours — every one matched our ICP. Our sales team closed 8 deals from that list alone."</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#0066cc,#5751e1)">A</div><div><div class="mq-name">Alex Chen</div><div class="mq-role">Head of Sales · Growthly</div></div></div></div>
-      <div class="mq-item"><p class="mq-text">"Our bounce rate dropped 45% in month one. The design is stunning — clients comment on it every call."</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#ff9500,#ff3b30)">M</div><div><div class="mq-name">Maria Torres</div><div class="mq-role">Founder · Bloom Agency</div></div></div></div>
-      <div class="mq-item"><p class="mq-text">"LinkedIn views went from 200 to 15,000+ per post. Two enterprise deals came from content Usman wrote."</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#5751e1,#bf5af2)">J</div><div><div class="mq-name">James O'Brien</div><div class="mq-role">MD · Finity Group</div></div></div></div>
-      <div class="mq-item"><p class="mq-text">"Fast, professional, and incredibly talented. The attention to detail in design and data was impressive."</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#ff2d55,#ff9f0a)">P</div><div><div class="mq-name">Priya Kapoor</div><div class="mq-role">Co-founder · NovaSpark</div></div></div></div>
-      <div class="mq-item"><p class="mq-text">"The Growth Bundle was the best investment this year. Leads, website, LinkedIn — ROI in week 3."</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#28c76f,#0066cc)">R</div><div><div class="mq-name">Ravi Singh</div><div class="mq-role">CEO · ScaleStack</div></div></div></div>
-    </div>
-  </div>
+ <div class="marquee-wrap rv">
+ <div class="marquee-track">
+ <div class="mq-item"><p class="mq-text">300 leads in 48 hours - every one matched our ICP. Our sales team closed 8 deals from that list alone.</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#0066cc,#5751e1)">A</div><div><div class="mq-name">Alex Chen</div><div class="mq-role">Head of Sales · Growthly</div></div></div></div>
+ <div class="mq-item"><p class="mq-text">Our bounce rate dropped 45% in month one. The design is stunning - clients comment on it every call.</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#ff9500,#ff3b30)">M</div><div><div class="mq-name">Maria Torres</div><div class="mq-role">Founder · Bloom Agency</div></div></div></div>
+ <div class="mq-item"><p class="mq-text">LinkedIn views went from 200 to 15,000+ per post. Two enterprise deals came from content Usman wrote.</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#5751e1,#bf5af2)">J</div><div><div class="mq-name">James O'Brien</div><div class="mq-role">MD · Finity Group</div></div></div></div>
+ <div class="mq-item"><p class="mq-text">Fast, professional and incredibly talented. The attention to detail in design and data was impressive.</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#ff2d55,#ff9f0a)">P</div><div><div class="mq-name">Priya Kapoor</div><div class="mq-role">Co-founder · NovaSpark</div></div></div></div>
+ <div class="mq-item"><p class="mq-text">The Growth Bundle was the best investment this year. Leads, website, LinkedIn - ROI in week 3.</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#28c76f,#0066cc)">R</div><div><div class="mq-name">Ravi Singh</div><div class="mq-role">CEO · ScaleStack</div></div></div></div>
+ <!-- duplicate for seamless loop -->
+ <div class="mq-item"><p class="mq-text">300 leads in 48 hours - every one matched our ICP. Our sales team closed 8 deals from that list alone.</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#0066cc,#5751e1)">A</div><div><div class="mq-name">Alex Chen</div><div class="mq-role">Head of Sales · Growthly</div></div></div></div>
+ <div class="mq-item"><p class="mq-text">Our bounce rate dropped 45% in month one. The design is stunning - clients comment on it every call.</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#ff9500,#ff3b30)">M</div><div><div class="mq-name">Maria Torres</div><div class="mq-role">Founder · Bloom Agency</div></div></div></div>
+ <div class="mq-item"><p class="mq-text">LinkedIn views went from 200 to 15,000+ per post. Two enterprise deals came from content Usman wrote.</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#5751e1,#bf5af2)">J</div><div><div class="mq-name">James O'Brien</div><div class="mq-role">MD · Finity Group</div></div></div></div>
+ <div class="mq-item"><p class="mq-text">Fast, professional and incredibly talented. The attention to detail in design and data was impressive.</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#ff2d55,#ff9f0a)">P</div><div><div class="mq-name">Priya Kapoor</div><div class="mq-role">Co-founder · NovaSpark</div></div></div></div>
+ <div class="mq-item"><p class="mq-text">The Growth Bundle was the best investment this year. Leads, website, LinkedIn - ROI in week 3.</p><div class="mq-author"><div class="mq-av" style="background:linear-gradient(135deg,#28c76f,#0066cc)">R</div><div><div class="mq-name">Ravi Singh</div><div class="mq-role">CEO · ScaleStack</div></div></div></div>
+ </div>
+ </div>
 
-  <!-- ── BENTO REVIEWS GRID ── -->
-  <div class="bento-wrap rv">
-    <div class="bento-grid">
+ <!-- ── BENTO REVIEWS GRID ── -->
+ <div class="bento-wrap rv">
+ <div class="bento-grid">
 
-      <!-- Card 1 — dark filled — Sarah Mitchell (LinkedIn) -->
-      <div class="bc bc-1 rv d1">
-        <span class="bc-tag">LinkedIn</span>
-        
-        <div class="bc-stars">★★★★★</div>
-        <p class="bc-q">"Working with Usman completely transformed our LinkedIn presence. In 60 days our follower count doubled, inbound DMs tripled, and we closed two enterprise deals from content he wrote."</p>
-        <div class="bc-author">
-          <div class="bc-av" style="background:linear-gradient(135deg,#0066cc,#5751e1)">S</div>
-          <div><div class="bc-name">Sarah Mitchell</div><div class="bc-role">CEO, TechScale Solutions · UK</div></div>
-        </div>
-      </div>
+ <!-- Card 1 - dark filled - Sarah Mitchell (LinkedIn) -->
+ <div class="bc bc-1 rv d1">
+ <span class="bc-tag">LinkedIn</span>
+ 
+ <div class="bc-stars">★★★★★</div>
+ <p class="bc-q">Working with Usman completely transformed our LinkedIn presence. In 60 days our follower count doubled, inbound DMs tripled and we closed two enterprise deals from content he wrote.</p>
+ <div class="bc-author">
+ <div class="bc-av" style="background:linear-gradient(135deg,#0066cc,#5751e1)">S</div>
+ <div><div class="bc-name">Sarah Mitchell</div><div class="bc-role">CEO, TechScale Solutions · UK</div></div>
+ </div>
+ </div>
 
-      <!-- Card 2 — light glass — Alex Chen (Leads) -->
-      <div class="bc bc-2 rv d2">
-        <span class="bc-tag">Leads</span>
-        
-        <div class="bc-stars">★★★★★</div>
-        <p class="bc-q">"300 verified leads in 48 hours — zero bounces. Every contact matched our ICP perfectly. Our pipeline went from empty to 8 closed deals in three weeks."</p>
-        <div class="bc-author">
-          <div class="bc-av" style="background:linear-gradient(135deg,#0066cc,#28c76f)">A</div>
-          <div><div class="bc-name">Alex Chen</div><div class="bc-role">Head of Sales · Growthly · USA</div></div>
-        </div>
-      </div>
+ <!-- Card 2 - light glass - Alex Chen (Leads) -->
+ <div class="bc bc-2 rv d2">
+ <span class="bc-tag">Leads</span>
+ 
+ <div class="bc-stars">★★★★★</div>
+ <p class="bc-q">300 verified leads in 48 hours - zero bounces. Every contact matched our ICP perfectly. Our pipeline went from empty to 8 closed deals in three weeks.</p>
+ <div class="bc-author">
+ <div class="bc-av" style="background:linear-gradient(135deg,#0066cc,#28c76f)">A</div>
+ <div><div class="bc-name">Alex Chen</div><div class="bc-role">Head of Sales · Growthly · USA</div></div>
+ </div>
+ </div>
 
-      <!-- Card 3 — tall — James O'Brien (LinkedIn) -->
-      <div class="bc bc-3 rv d3">
-        <span class="bc-tag">LinkedIn</span>
-        
-        <div class="bc-stars">★★★★★</div>
-        <p class="bc-q">"I went from 200 views per post to averaging 15,000+ weekly. My content sounds exactly like me — but sharper and far more engaging. The inbound leads are a game changer."</p>
+ <!-- Card 3 - tall - James O'Brien (LinkedIn) -->
+ <div class="bc bc-3 rv d3">
+ <span class="bc-tag">LinkedIn</span>
+ 
+ <div class="bc-stars">★★★★★</div>
+ <p class="bc-q">I went from 200 views per post to averaging 15,000+ weekly. My content sounds exactly like me - but sharper and far more engaging. The inbound leads are a game changer.</p>
 
 
-        <div class="bc-author">
-          <div class="bc-av" style="background:linear-gradient(135deg,#5751e1,#bf5af2)">J</div>
-          <div><div class="bc-name">James O'Brien</div><div class="bc-role">MD · Finity Group · Ireland</div></div>
-        </div>
-      </div>
+ <div class="bc-author">
+ <div class="bc-av" style="background:linear-gradient(135deg,#5751e1,#bf5af2)">J</div>
+ <div><div class="bc-name">James O'Brien</div><div class="bc-role">MD · Finity Group · Ireland</div></div>
+ </div>
+ </div>
 
-      <!-- Card 4 — light glass — Priya Kapoor (Web) -->
-      <div class="bc bc-4 rv d2">
-        <span class="bc-tag">Web</span>
-        
-        <div class="bc-stars">★★★★★</div>
-        <p class="bc-q">"Fast, professional, incredibly talented. Full site in 11 days. The final product was well beyond what I expected. He's my go-to designer now."</p>
-        <div class="bc-author">
-          <div class="bc-av" style="background:linear-gradient(135deg,#ff2d55,#ff9f0a)">P</div>
-          <div><div class="bc-name">Priya Kapoor</div><div class="bc-role">Co-founder · NovaSpark · India</div></div>
-        </div>
-      </div>
+ <!-- Card 4 - light glass - Priya Kapoor (Web) -->
+ <div class="bc bc-4 rv d2">
+ <span class="bc-tag">Web</span>
+ 
+ <div class="bc-stars">★★★★★</div>
+ <p class="bc-q">Fast, professional, incredibly talented. Full site in 11 days. The final product was well beyond what I expected. He's my go-to designer now.</p>
+ <div class="bc-author">
+ <div class="bc-av" style="background:linear-gradient(135deg,#ff2d55,#ff9f0a)">P</div>
+ <div><div class="bc-name">Priya Kapoor</div><div class="bc-role">Co-founder · NovaSpark · India</div></div>
+ </div>
+ </div>
 
-      <!-- Card 5 — accent tint — Maria Torres (Web) -->
-      <div class="bc bc-5 rv d3">
-        <span class="bc-tag">Web</span>
-        
-        <div class="bc-stars">★★★★★</div>
-        <p class="bc-q">"Our new website is beautiful, lightning fast, and converts. Bounce rate down 45% in month one. Clients mention it in almost every first call now."</p>
-        <div class="bc-author">
-          <div class="bc-av" style="background:linear-gradient(135deg,#ff9500,#ff3b30)">M</div>
-          <div><div class="bc-name">Maria Torres</div><div class="bc-role">Founder · Bloom Agency · Spain</div></div>
-        </div>
-      </div>
+ <!-- Card 5 - accent tint - Maria Torres (Web) -->
+ <div class="bc bc-5 rv d3">
+ <span class="bc-tag">Web</span>
+ 
+ <div class="bc-stars">★★★★★</div>
+ <p class="bc-q">Our new website is beautiful, lightning fast and converts. Bounce rate down 45% in month one. Clients mention it in almost every first call now.</p>
+ <div class="bc-author">
+ <div class="bc-av" style="background:linear-gradient(135deg,#ff9500,#ff3b30)">M</div>
+ <div><div class="bc-name">Maria Torres</div><div class="bc-role">Founder · Bloom Agency · Spain</div></div>
+ </div>
+ </div>
 
-    </div>
-  </div>
+ </div>
+ </div>
 
-  <div class="results-bar rv"><div class="gc-flat results-inner"><div class="res-stat"><div class="res-num">500+</div><div class="res-label">Verified leads delivered</div></div><div class="res-stat"><div class="res-num">40+</div><div class="res-label">Websites shipped</div></div><div class="res-stat"><div class="res-num">3×</div><div class="res-label">Avg LinkedIn reach growth</div></div><div class="res-stat"><div class="res-num">96%</div><div class="res-label">Client retention rate</div></div></div></div>
+ <div class="results-bar rv"><div class="gc-flat results-inner"><div class="res-stat"><div class="res-num">500+</div><div class="res-label">Verified leads delivered</div></div><div class="res-stat"><div class="res-num">40+</div><div class="res-label">Websites shipped</div></div><div class="res-stat"><div class="res-num">3×</div><div class="res-label">Avg LinkedIn reach growth</div></div><div class="res-stat"><div class="res-num">96%</div><div class="res-label">Client retention rate</div></div></div></div>
 
-  <section class="faq-section rv">
-    <div class="faq-head"><span class="eyebrow">FAQ</span><h2 class="h-section">Questions? <em>Answered.</em></h2><p class="body-lg" style="max-width:520px;margin-top:12px">Everything you need to know before working together — answered honestly.</p></div>
-    <div class="faq-list">
-      <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">How quickly can I receive my lead list?<span class="faq-icon">+</span></button><div class="faq-body"><p>Most lead lists (up to 500) are delivered within 24–72 hours. Larger orders (1,000+) take 5–7 business days for full verification and enrichment. Rush delivery is available — just ask and I'll confirm the timeline upfront.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">What's your web design process and timeline?<span class="faq-icon">+</span></button><div class="faq-body"><p>After onboarding, wireframes are delivered in 3 days, a full design mockup in 7 days, and the live website in 2–3 weeks. I provide regular updates so you're never wondering what's happening.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">How does LinkedIn ghostwriting work — will it sound like me?<span class="faq-icon">+</span></button><div class="faq-body"><p>We start with a 60-minute voice discovery session. From that I build a personal style guide unique to you. Every post is written in your voice, reviewed by you before publishing, and refined until it feels 100% authentic.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">Do you offer revisions?<span class="faq-icon">+</span></button><div class="faq-body"><p>Absolutely. Web projects include 3 full rounds of revisions. Lead lists can be refined once. LinkedIn posts are revised unlimited times before publishing — your approval is required before anything goes live.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">What industries do you specialise in?<span class="faq-icon">+</span></button><div class="faq-body"><p>I work across B2B SaaS, professional services, consulting, agencies, finance, e-commerce, and coaching. My lead generation is especially effective in industries with clearly defined decision-makers on LinkedIn.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">How do payments and contracts work?<span class="faq-icon">+</span></button><div class="faq-body"><p>I accept PayPal, Stripe, and bank transfer. Projects require 50% upfront with the remainder on delivery. Monthly retainers are billed at the start of each month. All work is covered by a simple service agreement.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">Can I bundle services and save?<span class="faq-icon">+</span></button><div class="faq-body"><p>Yes — the Growth Bundle combines all three services at a bundled rate, saving ~$150/month. Custom bundles are also available. Just message me and we'll put something together that fits your budget and goals.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">What if I'm not happy with the results?<span class="faq-icon">+</span></button><div class="faq-body"><p>I stand behind my work. If a lead list doesn't meet the agreed quality criteria, I'll replace underperforming leads at no cost. For web and content, I won't close a project until you're genuinely satisfied.</p></div></div>
-    </div>
-  </section>
+ <section class="faq-section rv">
+ <div class="faq-head"><span class="eyebrow">FAQ</span><h2 class="h-section">Questions? <em>Answered.</em></h2><p class="body-lg" style="max-width:520px;margin-top:12px">Everything you need to know before working together - answered honestly.</p></div>
+ <div class="faq-list">
+ <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">How quickly can I receive my lead list?<span class="faq-icon">+</span></button><div class="faq-body"><p>Most lead lists (up to 500) are delivered within 24-72 hours. Larger orders (1,000+) take 5-7 business days for full verification and enrichment. Rush delivery is available - just ask and I'll confirm the timeline upfront.</p></div></div>
+ <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">What's your web design process and timeline?<span class="faq-icon">+</span></button><div class="faq-body"><p>After onboarding, wireframes are delivered in 3 days, a full design mockup in 7 days and the live website in 2-3 weeks. I provide regular updates so you're never wondering what's happening.</p></div></div>
+ <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">How does LinkedIn ghostwriting work - will it sound like me?<span class="faq-icon">+</span></button><div class="faq-body"><p>We start with a 60-minute voice discovery session. From that I build a personal style guide unique to you. Every post is written in your voice, reviewed by you before publishing and refined until it feels 100% authentic.</p></div></div>
+ <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">Do you offer revisions?<span class="faq-icon">+</span></button><div class="faq-body"><p>Absolutely. Web projects include 3 full rounds of revisions. Lead lists can be refined once. LinkedIn posts are revised unlimited times before publishing - your approval is required before anything goes live.</p></div></div>
+ <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">What industries do you specialise in?<span class="faq-icon">+</span></button><div class="faq-body"><p>I work across B2B SaaS, professional services, consulting, agencies, finance, e-commerce and coaching. My lead generation is especially effective in industries with clearly defined decision-makers on LinkedIn.</p></div></div>
+ <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">How do payments and contracts work?<span class="faq-icon">+</span></button><div class="faq-body"><p>I accept PayPal, Stripe and bank transfer. Projects require 50% upfront with the remainder on delivery. Monthly retainers are billed at the start of each month. All work is covered by a simple service agreement.</p></div></div>
+ <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">Can I bundle services and save?<span class="faq-icon">+</span></button><div class="faq-body"><p>Yes - the Growth Bundle combines all three services at a bundled rate, saving ~$150/month. Custom bundles are also available. Just message me and we'll put something together that fits your budget and goals.</p></div></div>
+ <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">What if I'm not happy with the results?<span class="faq-icon">+</span></button><div class="faq-body"><p>I stand behind my work. If a lead list doesn't meet the agreed quality criteria, I'll replace underperforming leads at no cost. For web and content, I won't close a project until you're genuinely satisfied.</p></div></div>
+ </div>
+ </section>
 
-  <section class="rev-cta rv"><div class="gc rev-cta-inner"><h2 class="h-section" style="font-size:clamp(28px,4vw,44px);margin-bottom:12px">Join 50+ satisfied <em>clients.</em></h2><p style="color:var(--txt2);font-size:15px;max-width:460px;margin:0 auto;line-height:1.65">Ready to see results like the ones above? Let's have a free 30-minute call and figure out how I can help your business grow.</p><div class="rev-cta-btns"><span class="btn btn-fill" style="font-size:15px;padding:15px 32px" onclick="go('contact')">📅 Book a Free Call</span><span class="btn btn-outline" style="font-size:15px;padding:15px 32px" onclick="go('contact')">✉️ Send a Message</span></div></div></section>
+ <section class="rev-cta rv"><div class="gc rev-cta-inner"><h2 class="h-section" style="font-size:clamp(28px,4vw,44px);margin-bottom:12px">Join 50+ satisfied <em>clients.</em></h2><p style="color:var(--txt2);font-size:15px;max-width:460px;margin:0 auto;line-height:1.65">Ready to see results like the ones above? Let's have a free 30-minute call and figure out how I can help your business grow.</p><div class="rev-cta-btns"><span class="btn btn-fill" style="font-size:15px;padding:15px 32px" onclick="go('contact')">📅 Book a Free Call</span><span class="btn btn-outline" style="font-size:15px;padding:15px 32px" onclick="go('contact')">✉️ Send a Message</span></div></div></section>
 
-  <footer class="hero-footer">
-    <div class="hf-bg-text">MORE</div>
-    <div class="hf-orb"></div>
-    <div class="hf-orb2"></div>
-    <div class="hf-content">
-      <div class="hf-socials">
-        <a href="#" class="hf-soc" aria-label="GitHub">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        </a>
-        <a href="#" class="hf-soc" aria-label="LinkedIn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="#" class="hf-soc" aria-label="Twitter">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-        </a>
-        <a href="#" class="hf-soc" aria-label="Instagram">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </a>
-      </div>
-      <a href="/cdn-cgi/l/email-protection#026a676e6e6d4277716f636c2c666774" class="hf-email"><span class="__cf_email__" data-cfemail="fd9598919192bd888e909c93d399988b">[email&#160;protected]</span></a>
-    </div>
-    <div class="hf-bottom">
-      <div class="hf-bottom-divider"></div>
-      <p class="hf-crafted">Crafted with <em class="heart">&#9829;</em> by Usman</p>
-      <p class="hf-copy">&#169; 2025 Usman. All rights reserved.</p>
-    </div>
-  </footer>
+ <footer class="hero-footer">
+ <div class="hf-bg-text">MORE</div>
+ <div class="hf-orb"></div>
+ <div class="hf-orb2"></div>
+ <div class="hf-content">
+ <div class="hf-socials">
+ <a href="https://github.com/usmankhan-pw" target="_blank" rel="noopener" class="hf-soc" aria-label="GitHub">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+ </a>
+ <a href="https://www.linkedin.com/in/usman-leadgen/" target="_blank" rel="noopener" class="hf-soc" aria-label="LinkedIn">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+ </a>
+ <a href="#" class="hf-soc" aria-label="Twitter">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+ </a>
+ <a href="#" class="hf-soc" aria-label="Instagram">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+ </a>
+ </div>
+ <a href="mailto:usman.leadgen@gmail.com" class="hf-email">usman.leadgen@gmail.com</a>
+ </div>
+ <div class="hf-bottom">
+ <div class="hf-bottom-divider"></div>
+ <p class="hf-crafted">Crafted with <em class="heart">&#9829;</em> by Usman</p>
+ <p class="hf-copy">&#169; 2026 Usman. All rights reserved.</p>
+ </div>
+ </footer>
 </div>
 
 <!-- ════════════════════════════════════════
-     PAGE 5: BLOG
+ PAGE 5: BLOG
 ════════════════════════════════════════ -->
 <div id="pg-blog" class="page">
-  <div class="blog-hero wrap rv">
-    <span class="eyebrow">Insights & Ideas</span>
-    <h1 class="h-display" style="margin-bottom:20px">Writing that <em>teaches.</em></h1>
-    <p class="body-lg" style="max-width:520px;margin-bottom:32px">Practical, no-fluff advice on lead generation, web design, and LinkedIn growth — lessons from 5 years and 50+ clients distilled into posts you can actually use.</p>
-    <div class="blog-filter">
-      <button class="fil-btn on" onclick="blogFilter('all',this)">All Posts</button>
-      <button class="fil-btn" onclick="blogFilter('leads',this)">🎯 Lead Gen</button>
-      <button class="fil-btn" onclick="blogFilter('web',this)">💻 Web Design</button>
-      <button class="fil-btn" onclick="blogFilter('linkedin',this)">✍️ LinkedIn</button>
-      <button class="fil-btn" onclick="blogFilter('growth',this)">📈 Growth</button>
-    </div>
-  </div>
+ <div class="blog-hero wrap rv">
+ <span class="eyebrow">Insights & Ideas</span>
+ <h1 class="h-display" style="margin-bottom:20px">Writing that <em>teaches.</em></h1>
+ <p class="body-lg" style="max-width:520px;margin-bottom:32px">Practical, no-fluff advice on lead generation, web design and LinkedIn growth - lessons from 5 years and 50+ clients distilled into posts you can actually use.</p>
+ <div class="blog-filter">
+ <button class="fil-btn on" onclick="blogFilter('all',this)">All Posts</button>
+ <button class="fil-btn" onclick="blogFilter('leads',this)">🎯 Lead Gen</button>
+ <button class="fil-btn" onclick="blogFilter('web',this)">💻 Web Design</button>
+ <button class="fil-btn" onclick="blogFilter('linkedin',this)">✍️ LinkedIn</button>
+ <button class="fil-btn" onclick="blogFilter('growth',this)">📈 Growth</button>
+ </div>
+ </div>
 
-  <div class="blog-feat-wrap rv">
-    <div class="gc blog-feat" data-tag="linkedin">
-      <div class="bf-content"><div class="bf-tag">LinkedIn · Featured</div><h2 class="bf-title">The Hook Formula That <em>Tripled</em> My Clients' LinkedIn Reach</h2><p class="bf-excerpt">After writing hundreds of posts for executives, founders, and consultants, I found a single repeatable hook formula that outperforms everything else — consistently. Here's the exact framework, the psychology behind it, and 8 real examples you can use today.</p><div class="bf-meta"><span>Usman</span><div class="bf-dot"></div><span>Mar 18, 2025</span><div class="bf-dot"></div><span>8 min read</span></div><a class="btn-ghost" style="margin-top:20px">Read article →</a></div>
-      <div class="bf-visual">✍️</div>
-    </div>
-  </div>
+ <div class="blog-feat-wrap rv">
+ <div class="gc blog-feat" data-tag="linkedin">
+ <div class="bf-content"><div class="bf-tag">LinkedIn · Featured</div><h2 class="bf-title">The Hook Formula That <em>Tripled</em> My Clients' LinkedIn Reach</h2><p class="bf-excerpt">After writing hundreds of posts for executives, founders and consultants, I found a single repeatable hook formula that outperforms everything else - consistently. Here's the exact framework, the psychology behind it and 8 real examples you can use today.</p><div class="bf-meta"><span>Usman</span><div class="bf-dot"></div><span>Mar 18, 2025</span><div class="bf-dot"></div><span>8 min read</span></div><a class="btn-ghost" style="margin-top:20px">Read article →</a></div>
+ <div class="bf-visual">✍️</div>
+ </div>
+ </div>
 
-  <div class="blog-grid-wrap rv">
-    <div class="blog-grid" id="blogGrid">
-      <div class="gc bc" data-tag="leads"><div class="bc-img" style="background:linear-gradient(135deg,rgba(0,102,204,.08),rgba(0,102,204,.03))">🎯</div><div class="blog-bc-tag">Lead Gen</div><div class="bc-title">How to Build a 500-Lead List in 24 Hours</div><div class="bc-excerpt">The exact tools, workflow and verification process I use to deliver quality leads fast — and how you can replicate it.</div><div class="bc-meta"><span>Feb 28, 2025</span><div class="bc-sep"></div><span>6 min</span></div><a class="btn-ghost" style="margin-top:12px">Read →</a></div>
-      <div class="gc bc" data-tag="web"><div class="bc-img" style="background:linear-gradient(135deg,rgba(40,199,111,.08),rgba(40,199,111,.03))">🖥️</div><div class="blog-bc-tag">Web Design</div><div class="bc-title">5 Design Decisions That Doubled Our Client's Conversion Rate</div><div class="bc-excerpt">Subtle changes to typography, CTA placement and structure that made a massive, measurable difference.</div><div class="bc-meta"><span>Feb 14, 2025</span><div class="bc-sep"></div><span>5 min</span></div><a class="btn-ghost" style="margin-top:12px">Read →</a></div>
-      <div class="gc bc" data-tag="linkedin"><div class="bc-img" style="background:linear-gradient(135deg,rgba(87,81,225,.08),rgba(87,81,225,.03))">💼</div><div class="blog-bc-tag">LinkedIn</div><div class="bc-title">Why Most LinkedIn Ghostwriters Fail Their Clients</div><div class="bc-excerpt">The uncomfortable truth about polished content that performs poorly — and what high-performing writing actually looks like.</div><div class="bc-meta"><span>Jan 30, 2025</span><div class="bc-sep"></div><span>7 min</span></div><a class="btn-ghost" style="margin-top:12px">Read →</a></div>
-    </div>
-  </div>
+ <div class="blog-grid-wrap rv">
+ <div class="blog-grid" id="blogGrid">
+ <div class="gc bc" data-tag="leads"><div class="bc-img" style="background:linear-gradient(135deg,rgba(0,102,204,.08),rgba(0,102,204,.03))">🎯</div><div class="blog-bc-tag">Lead Gen</div><div class="bc-title">How to Build a 500-Lead List in 24 Hours</div><div class="bc-excerpt">The exact tools, workflow and verification process I use to deliver quality leads fast - and how you can replicate it.</div><div class="bc-meta"><span>Feb 28, 2025</span><div class="bc-sep"></div><span>6 min</span></div><a class="btn-ghost" style="margin-top:12px">Read →</a></div>
+ <div class="gc bc" data-tag="web"><div class="bc-img" style="background:linear-gradient(135deg,rgba(40,199,111,.08),rgba(40,199,111,.03))">🖥️</div><div class="blog-bc-tag">Web Design</div><div class="bc-title">5 Design Decisions That Doubled Our Client's Conversion Rate</div><div class="bc-excerpt">Subtle changes to typography, CTA placement and structure that made a massive, measurable difference.</div><div class="bc-meta"><span>Feb 14, 2025</span><div class="bc-sep"></div><span>5 min</span></div><a class="btn-ghost" style="margin-top:12px">Read →</a></div>
+ <div class="gc bc" data-tag="linkedin"><div class="bc-img" style="background:linear-gradient(135deg,rgba(87,81,225,.08),rgba(87,81,225,.03))">💼</div><div class="blog-bc-tag">LinkedIn</div><div class="bc-title">Why Most LinkedIn Ghostwriters Fail Their Clients</div><div class="bc-excerpt">The uncomfortable truth about polished content that performs poorly - and what high-performing writing actually looks like.</div><div class="bc-meta"><span>Jan 30, 2025</span><div class="bc-sep"></div><span>7 min</span></div><a class="btn-ghost" style="margin-top:12px">Read →</a></div>
+ </div>
+ </div>
 
-  <div class="blog-grid-wrap rv" style="margin-top:14px">
-    <div class="blog-grid-2" id="blogGrid2">
-      <div class="gc bc" data-tag="leads"><div class="bc-img" style="background:linear-gradient(135deg,rgba(0,102,204,.08),rgba(0,102,204,.03))">🔍</div><div class="bc-body"><div class="blog-bc-tag">Lead Gen</div><div class="bc-title">Apollo vs Clay vs Hunter: Which Lead Tool Wins in 2025?</div><div class="bc-excerpt">Honest comparison of data quality, pricing, and ease of use after testing all three on the same ICP.</div><div class="bc-meta"><span>Jan 15, 2025</span><div class="bc-sep"></div><span>9 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
-      <div class="gc bc" data-tag="web"><div class="bc-img" style="background:linear-gradient(135deg,rgba(40,199,111,.08),rgba(40,199,111,.03))">🍎</div><div class="bc-body"><div class="blog-bc-tag">Web Design</div><div class="bc-title">Apple-Style UI: The Design Principles Behind the Aesthetic</div><div class="bc-excerpt">Breaking down what makes Apple's design language so effective and how to apply it to your projects.</div><div class="bc-meta"><span>Jan 3, 2025</span><div class="bc-sep"></div><span>6 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
-      <div class="gc bc" data-tag="growth"><div class="bc-img" style="background:linear-gradient(135deg,rgba(255,149,0,.08),rgba(255,149,0,.03))">📈</div><div class="bc-body"><div class="blog-bc-tag">Growth</div><div class="bc-title">The Full-Stack Freelancer: How I Built a 3-Service Business</div><div class="bc-excerpt">Leads + design + content. Why the combination is more powerful than any single service — and how I made it work.</div><div class="bc-meta"><span>Dec 28, 2024</span><div class="bc-sep"></div><span>10 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
-      <div class="gc bc" data-tag="linkedin"><div class="bc-img" style="background:linear-gradient(135deg,rgba(87,81,225,.08),rgba(87,81,225,.03))">🔎</div><div class="bc-body"><div class="blog-bc-tag">LinkedIn</div><div class="bc-title">The 10-Minute LinkedIn Profile Audit That Changes Everything</div><div class="bc-excerpt">Most profiles lose clients before they read a post. Fix these 7 critical issues this week.</div><div class="bc-meta"><span>Dec 20, 2024</span><div class="bc-sep"></div><span>4 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
-      <div class="gc bc" data-tag="growth"><div class="bc-img" style="background:linear-gradient(135deg,rgba(255,45,85,.08),rgba(255,45,85,.03))">🚀</div><div class="bc-body"><div class="blog-bc-tag">Growth</div><div class="bc-title">Cold Outreach in 2025: What Still Works and What Doesn't</div><div class="bc-excerpt">The landscape has changed. Here's what's actually getting replies today and what's being ignored.</div><div class="bc-meta"><span>Dec 10, 2024</span><div class="bc-sep"></div><span>8 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
-      <div class="gc bc" data-tag="web"><div class="bc-img" style="background:linear-gradient(135deg,rgba(40,199,111,.08),rgba(40,199,111,.03))">⚡</div><div class="bc-body"><div class="blog-bc-tag">Web Design</div><div class="bc-title">Why Your Website Speed is Killing Your Conversions</div><div class="bc-excerpt">A 1-second delay costs 7% in conversions. Here's the exact checklist I use on every site I build.</div><div class="bc-meta"><span>Dec 2, 2024</span><div class="bc-sep"></div><span>5 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
-    </div>
-  </div>
+ <div class="blog-grid-wrap rv" style="margin-top:14px">
+ <div class="blog-grid-2" id="blogGrid2">
+ <div class="gc bc" data-tag="leads"><div class="bc-img" style="background:linear-gradient(135deg,rgba(0,102,204,.08),rgba(0,102,204,.03))">🔍</div><div class="bc-body"><div class="blog-bc-tag">Lead Gen</div><div class="bc-title">Apollo vs Clay vs Hunter: Which Lead Tool Wins in 2025?</div><div class="bc-excerpt">Honest comparison of data quality, pricing and ease of use after testing all three on the same ICP.</div><div class="bc-meta"><span>Jan 15, 2025</span><div class="bc-sep"></div><span>9 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
+ <div class="gc bc" data-tag="web"><div class="bc-img" style="background:linear-gradient(135deg,rgba(40,199,111,.08),rgba(40,199,111,.03))">🍎</div><div class="bc-body"><div class="blog-bc-tag">Web Design</div><div class="bc-title">Apple-Style UI: The Design Principles Behind the Aesthetic</div><div class="bc-excerpt">Breaking down what makes Apple's design language so effective and how to apply it to your projects.</div><div class="bc-meta"><span>Jan 3, 2025</span><div class="bc-sep"></div><span>6 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
+ <div class="gc bc" data-tag="growth"><div class="bc-img" style="background:linear-gradient(135deg,rgba(255,149,0,.08),rgba(255,149,0,.03))">📈</div><div class="bc-body"><div class="blog-bc-tag">Growth</div><div class="bc-title">The Full-Stack Freelancer: How I Built a 3-Service Business</div><div class="bc-excerpt">Leads + design + content. Why the combination is more powerful than any single service - and how I made it work.</div><div class="bc-meta"><span>Dec 28, 2024</span><div class="bc-sep"></div><span>10 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
+ <div class="gc bc" data-tag="linkedin"><div class="bc-img" style="background:linear-gradient(135deg,rgba(87,81,225,.08),rgba(87,81,225,.03))">🔎</div><div class="bc-body"><div class="blog-bc-tag">LinkedIn</div><div class="bc-title">The 10-Minute LinkedIn Profile Audit That Changes Everything</div><div class="bc-excerpt">Most profiles lose clients before they read a post. Fix these 7 critical issues this week.</div><div class="bc-meta"><span>Dec 20, 2024</span><div class="bc-sep"></div><span>4 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
+ <div class="gc bc" data-tag="growth"><div class="bc-img" style="background:linear-gradient(135deg,rgba(255,45,85,.08),rgba(255,45,85,.03))">🚀</div><div class="bc-body"><div class="blog-bc-tag">Growth</div><div class="bc-title">Cold Outreach in 2025: What Still Works and What Doesn't</div><div class="bc-excerpt">The landscape has changed. Here's what's actually getting replies today and what's being ignored.</div><div class="bc-meta"><span>Dec 10, 2024</span><div class="bc-sep"></div><span>8 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
+ <div class="gc bc" data-tag="web"><div class="bc-img" style="background:linear-gradient(135deg,rgba(40,199,111,.08),rgba(40,199,111,.03))">⚡</div><div class="bc-body"><div class="blog-bc-tag">Web Design</div><div class="bc-title">Why Your Website Speed is Killing Your Conversions</div><div class="bc-excerpt">A 1-second delay costs 7% in conversions. Here's the exact checklist I use on every site I build.</div><div class="bc-meta"><span>Dec 2, 2024</span><div class="bc-sep"></div><span>5 min</span></div><a class="btn-ghost" style="margin-top:10px">Read →</a></div></div>
+ </div>
+ </div>
 
-  <div class="blog-nl rv">
-    <div class="gc-flat blog-nl-inner">
-      <div><span class="eyebrow">Stay in the Loop</span><h2 class="h-med">Get the good stuff<br/><em>in your inbox.</em></h2><p style="font-size:14px;color:var(--txt2);margin-top:10px;line-height:1.65">One email per week. Practical tips on leads, web design, and LinkedIn growth. No fluff, no spam — just actionable insights from the trenches.</p><div class="nl-form"><input class="nl-input" type="email" placeholder="your@email.com" id="nlEmail"/><button class="nl-btn" onclick="nlSubmit()">Subscribe →</button></div><div class="nl-note" id="nlNote">🔒 No spam. Unsubscribe any time. Join 800+ subscribers.</div></div>
-      <div class="nl-visual"><span style="font-size:72px;display:block;margin-bottom:16px">📬</span><p style="font-size:14px;color:var(--txt2)">Join 800+ founders and marketers who read Usman's weekly dispatch.</p><div style="display:flex;flex-direction:column;gap:10px;margin-top:20px"><div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--txt2)"><span style="color:var(--green);font-weight:700">✓</span>Lead gen tactics</div><div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--txt2)"><span style="color:var(--green);font-weight:700">✓</span>Web design tips</div><div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--txt2)"><span style="color:var(--green);font-weight:700">✓</span>LinkedIn growth plays</div><div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--txt2)"><span style="color:var(--green);font-weight:700">✓</span>Real case studies</div></div></div>
-    </div>
-  </div>
+ <div class="blog-nl rv">
+ <div class="gc-flat blog-nl-inner">
+ <div><span class="eyebrow">Stay in the Loop</span><h2 class="h-med">Get the good stuff<br/><em>in your inbox.</em></h2><p style="font-size:14px;color:var(--txt2);margin-top:10px;line-height:1.65">One email per week. Practical tips on leads, web design and LinkedIn growth. No fluff, no spam - just actionable insights from the trenches.</p><div class="nl-form"><input class="nl-input" type="email" placeholder="your@email.com" id="nlEmail"/><button class="nl-btn" onclick="nlSubmit()">Subscribe →</button></div><div class="nl-note" id="nlNote">🔒 No spam. Unsubscribe any time. Join 800+ subscribers.</div></div>
+ <div class="nl-visual"><span style="font-size:72px;display:block;margin-bottom:16px">📬</span><p style="font-size:14px;color:var(--txt2)">Join 800+ founders and marketers who read Usman's weekly dispatch.</p><div style="display:flex;flex-direction:column;gap:10px;margin-top:20px"><div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--txt2)"><span style="color:var(--green);font-weight:700">✓</span>Lead gen tactics</div><div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--txt2)"><span style="color:var(--green);font-weight:700">✓</span>Web design tips</div><div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--txt2)"><span style="color:var(--green);font-weight:700">✓</span>LinkedIn growth plays</div><div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--txt2)"><span style="color:var(--green);font-weight:700">✓</span>Real case studies</div></div></div>
+ </div>
+ </div>
 
-  <footer class="hero-footer">
-    <div class="hf-bg-text">MORE</div>
-    <div class="hf-orb"></div>
-    <div class="hf-orb2"></div>
-    <div class="hf-content">
-      <div class="hf-socials">
-        <a href="#" class="hf-soc" aria-label="GitHub">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        </a>
-        <a href="#" class="hf-soc" aria-label="LinkedIn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="#" class="hf-soc" aria-label="Twitter">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-        </a>
-        <a href="#" class="hf-soc" aria-label="Instagram">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </a>
-      </div>
-      <a href="/cdn-cgi/l/email-protection#3d55585151527d484e505c531359584b" class="hf-email"><span class="__cf_email__" data-cfemail="cea6aba2a2a18ebbbda3afa0e0aaabb8">[email&#160;protected]</span></a>
-    </div>
-    <div class="hf-bottom">
-      <div class="hf-bottom-divider"></div>
-      <p class="hf-crafted">Crafted with <em class="heart">&#9829;</em> by Usman</p>
-      <p class="hf-copy">&#169; 2025 Usman. All rights reserved.</p>
-    </div>
-  </footer>
+ <footer class="hero-footer">
+ <div class="hf-bg-text">MORE</div>
+ <div class="hf-orb"></div>
+ <div class="hf-orb2"></div>
+ <div class="hf-content">
+ <div class="hf-socials">
+ <a href="https://github.com/usmankhan-pw" target="_blank" rel="noopener" class="hf-soc" aria-label="GitHub">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+ </a>
+ <a href="https://www.linkedin.com/in/usman-leadgen/" target="_blank" rel="noopener" class="hf-soc" aria-label="LinkedIn">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+ </a>
+ <a href="#" class="hf-soc" aria-label="Twitter">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+ </a>
+ <a href="#" class="hf-soc" aria-label="Instagram">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+ </a>
+ </div>
+ <a href="mailto:usman.leadgen@gmail.com" class="hf-email">usman.leadgen@gmail.com</a>
+ </div>
+ <div class="hf-bottom">
+ <div class="hf-bottom-divider"></div>
+ <p class="hf-crafted">Crafted with <em class="heart">&#9829;</em> by Usman</p>
+ <p class="hf-copy">&#169; 2026 Usman. All rights reserved.</p>
+ </div>
+ </footer>
 </div>
 
 <!-- ════════════════════════════════════════
-     PAGE 6: CONTACT
+ PAGE 6: CONTACT
 ════════════════════════════════════════ -->
 <div id="pg-contact" class="page">
-  <div class="ct-hero wrap">
-    <div class="ct-hero-inner">
-      <div class="rv">
-        <span class="eyebrow">Get In Touch</span>
-        <h1 class="h-display" style="font-size:clamp(44px,7vw,72px);margin-bottom:20px">Let's build<br/>something <em>great.</em></h1>
-        <p class="body-lg" style="max-width:400px;margin-bottom:36px">Have a project in mind? Fill out the form or reach out directly — I respond within 24 hours, every time.</p>
-        <div class="ct-items">
-          <div class="ct-item"><div class="ct-ico">📧</div><div><div class="ct-label">Email</div><div class="ct-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dca9afb1bdb29cb9a4bdb1acb0b9f2bfb3b1">[email&#160;protected]</a></div></div></div>
-          <div class="ct-item"><div class="ct-ico">💼</div><div><div class="ct-label">LinkedIn</div><div class="ct-val">linkedin.com/in/usman</div></div></div>
-          <div class="ct-item"><div class="ct-ico">⏱️</div><div><div class="ct-label">Response Time</div><div class="ct-val">Within 24 hours</div></div></div>
-          <div class="ct-item"><div class="ct-ico">🌍</div><div><div class="ct-label">Availability</div><div class="ct-val">Open to worldwide clients</div></div></div>
-        </div>
-        <div class="ct-socials">
-          <a href="#" class="ct-soc"><svg viewBox="0 0 24 24"><path d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.981V9h3.084v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a1.795 1.795 0 1 1 0-3.59 1.795 1.795 0 0 1 0 3.59zM6.754 20.452H3.918V9h2.836v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
-          <a href="#" class="ct-soc"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.254 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>Twitter / X</a>
-        </div>
-      </div>
+ <div class="ct-hero wrap">
+ <div class="ct-hero-inner">
+ <div class="rv">
+ <span class="eyebrow">Get In Touch</span>
+ <h1 class="h-display" style="font-size:clamp(44px,7vw,72px);margin-bottom:20px">Let's build<br/>something <em>great.</em></h1>
+ <p class="body-lg" style="max-width:400px;margin-bottom:36px">Have a project in mind? Fill out the form or reach out directly - I respond within 24 hours, every time.</p>
+ <div class="ct-items">
+ <div class="ct-item"><div class="ct-ico">📧</div><div><div class="ct-label">Email</div><div class="ct-val"><a href="mailto:usman.leadgen@gmail.com" style="color:inherit">usman.leadgen@gmail.com</a></div></div></div>
+ <div class="ct-item"><div class="ct-ico">💼</div><div><div class="ct-label">LinkedIn</div><div class="ct-val"><a href="https://www.linkedin.com/in/usman-leadgen/" target="_blank" rel="noopener" style="color:inherit">linkedin.com/in/usman-leadgen</a></div></div></div>
+ <div class="ct-item"><div class="ct-ico">⏱️</div><div><div class="ct-label">Response Time</div><div class="ct-val">Within 24 hours</div></div></div>
+ <div class="ct-item"><div class="ct-ico">🌍</div><div><div class="ct-label">Availability</div><div class="ct-val">Open to worldwide clients</div></div></div>
+ </div>
+ <div class="ct-socials">
+ <a href="https://www.linkedin.com/in/usman-leadgen/" target="_blank" rel="noopener" class="ct-soc"><svg viewBox="0 0 24 24"><path d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.981V9h3.084v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a1.795 1.795 0 1 1 0-3.59 1.795 1.795 0 0 1 0 3.59zM6.754 20.452H3.918V9h2.836v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+ <a href="#" class="ct-soc"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.254 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>Twitter / X</a>
+ </div>
+ </div>
 
-      <div class="ct-form-card rv d2">
-        <div id="formInner">
-          <div class="form-title">Send me a message</div>
-          <div class="form-sub">Tell me about your project and I'll respond within 24 hours with a tailored reply.</div>
-          <div class="f-group"><label>Full Name</label><input type="text" placeholder="John Smith"/></div>
-          <div class="f-group"><label>Email Address *</label><input type="email" placeholder="john@company.com" id="ctEmail"/></div>
-          <div class="f-group"><label>Company</label><input type="text" placeholder="Acme Corp (optional)"/></div>
-          <div class="f-group"><label>Service Interested In</label><select><option value="">Select a service…</option><option>Lead Generation</option><option>Web Design & Development</option><option>LinkedIn Ghostwriting</option><option>Growth Bundle (All 3)</option><option>Something Else</option></select></div>
-          
-          <div class="f-group"><label>Your Message *</label><textarea placeholder="Tell me about your goals, timeline, and what you're looking to achieve…"></textarea></div>
-          <button class="btn btn-fill f-submit" onclick="ctSubmit()">Send Message →</button>
-          <div class="f-note">🔒 Your information is never shared or sold. I reply within 24 hours.</div>
-        </div>
-        <div class="f-success" id="formSuccess"><span class="f-success-ico">✅</span><h3>Message received!</h3><p>Thanks for reaching out — I'll reply to your email within 24 hours. Feel free to connect on LinkedIn in the meantime.</p><a href="#" class="btn btn-outline" style="margin-top:20px;font-size:14px;padding:12px 22px">Connect on LinkedIn →</a></div>
-      </div>
-    </div>
-  </div>
+ <div class="ct-form-card rv d2">
+ <div id="formInner">
+ <div class="form-title">Send me a message</div>
+ <div class="form-sub">Tell me about your project and I'll respond within 24 hours with a tailored reply.</div>
+ <div class="f-group"><label>Full Name</label><input type="text" placeholder="John Smith"/></div>
+ <div class="f-group"><label>Email Address *</label><input type="email" placeholder="john@company.com" id="ctEmail"/></div>
+ <div class="f-group"><label>Company</label><input type="text" placeholder="Acme Corp (optional)"/></div>
+ <div class="f-group"><label>Service Interested In</label><select><option value="">Select a service…</option><option>Lead Generation</option><option>Web Design & Development</option><option>LinkedIn Ghostwriting</option><option>Growth Bundle (All 3)</option><option>Something Else</option></select></div>
+ 
+ <div class="f-group"><label>Your Message *</label><textarea placeholder="Tell me about your goals, timeline and what you're looking to achieve…"></textarea></div>
+ <button class="btn btn-fill f-submit" onclick="ctSubmit()">Send Message →</button>
+ <div class="f-note">🔒 Your information is never shared or sold. I reply within 24 hours.</div>
+ </div>
+ <div class="f-success" id="formSuccess"><span class="f-success-ico">✅</span><h3>Message received!</h3><p>Thanks for reaching out - I'll reply to your email within 24 hours. Feel free to connect on LinkedIn in the meantime.</p><a href="#" class="btn btn-outline" style="margin-top:20px;font-size:14px;padding:12px 22px">Connect on LinkedIn →</a></div>
+ </div>
+ </div>
+ </div>
 
-  <section class="ct-map rv">
-    <div class="gc-flat ct-map-inner">
-      <div class="map-stat"><span class="eyebrow">Working Worldwide</span><h2 class="h-med" style="margin-bottom:20px">Available across<br/><em>every timezone.</em></h2><div class="ms-item"><div class="ms-ico">🕐</div><div class="ms-txt"><strong>Flexible hours</strong><br/>I adapt to your timezone for calls and updates</div></div><div class="ms-item"><div class="ms-ico">📅</div><div class="ms-txt"><strong>Quick onboarding</strong><br/>Most projects kick off within 48 hours of agreement</div></div><div class="ms-item"><div class="ms-ico">💬</div><div class="ms-txt"><strong>Always reachable</strong><br/>Email, LinkedIn, or Slack — whichever you prefer</div></div><div class="ms-item"><div class="ms-ico">🌐</div><div class="ms-txt"><strong>18+ countries served</strong><br/>From startups to established enterprises</div></div></div>
-      <div class="map-visual"><span style="font-size:72px;display:block;margin-bottom:12px">🌍</span><div class="map-grid"><div class="map-region"><strong>Americas</strong>USA · Canada</div><div class="map-region"><strong>Europe</strong>UK · Germany</div><div class="map-region"><strong>Asia</strong>India · UAE</div><div class="map-region"><strong>Middle East</strong>KSA · Kuwait</div><div class="map-region"><strong>Africa</strong>Nigeria · Kenya</div><div class="map-region"><strong>Pacific</strong>Australia · NZ</div></div></div>
-    </div>
-  </section>
+ <section class="ct-map rv">
+ <div class="gc-flat ct-map-inner">
+ <div class="map-stat"><span class="eyebrow">Working Worldwide</span><h2 class="h-med" style="margin-bottom:20px">Available across<br/><em>every timezone.</em></h2><div class="ms-item"><div class="ms-ico">🕐</div><div class="ms-txt"><strong>Flexible hours</strong><br/>I adapt to your timezone for calls and updates</div></div><div class="ms-item"><div class="ms-ico">📅</div><div class="ms-txt"><strong>Quick onboarding</strong><br/>Most projects kick off within 48 hours of agreement</div></div><div class="ms-item"><div class="ms-ico">💬</div><div class="ms-txt"><strong>Always reachable</strong><br/>Email, LinkedIn, or Slack - whichever you prefer</div></div><div class="ms-item"><div class="ms-ico">🌐</div><div class="ms-txt"><strong>18+ countries served</strong><br/>From startups to established enterprises</div></div></div>
+ <div class="map-visual"><span style="font-size:72px;display:block;margin-bottom:12px">🌍</span><div class="map-grid"><div class="map-region"><strong>Americas</strong>USA · Canada</div><div class="map-region"><strong>Europe</strong>UK · Germany</div><div class="map-region"><strong>Asia</strong>India · UAE</div><div class="map-region"><strong>Middle East</strong>KSA · Kuwait</div><div class="map-region"><strong>Africa</strong>Nigeria · Kenya</div><div class="map-region"><strong>Pacific</strong>Australia · NZ</div></div></div>
+ </div>
+ </section>
 
-  <section class="ct-faq rv"><span class="eyebrow">Before You Reach Out</span><h2 class="h-section" style="margin-bottom:36px">Common <em>questions.</em></h2><div class="faq-list"><div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">How do I get started?<span class="faq-icon">+</span></button><div class="faq-body"><p>Fill out the form above or email me directly. I respond within 24 hours to schedule a free 30-minute discovery call. No pressure, no pitch — just a real conversation about whether I can genuinely help.</p></div></div><div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">What information should I prepare?<span class="faq-icon">+</span></button><div class="faq-body"><p>The more context the better — your target audience, goals, timeline, and a rough budget. Don't worry if you don't have everything figured out. Half my clients come with a problem, not a solution, and we work it out together.</p></div></div><div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">Do you take on small projects?<span class="faq-icon">+</span></button><div class="faq-body"><p>Yes — I work with businesses of all sizes. My minimum engagement is a single lead list ($99) or a landing page ($499), so there's no barrier to getting started.</p></div></div><div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">What happens after I send the form?<span class="faq-icon">+</span></button><div class="faq-body"><p>You'll receive a confirmation email immediately. I personally review every message and reply within 24 hours with a tailored response. If your project is a good fit, I'll suggest a call. If not, I'll tell you honestly and point you in the right direction.</p></div></div></div></section>
+ <section class="ct-faq rv"><span class="eyebrow">Before You Reach Out</span><h2 class="h-section" style="margin-bottom:36px">Common <em>questions.</em></h2><div class="faq-list"><div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">How do I get started?<span class="faq-icon">+</span></button><div class="faq-body"><p>Fill out the form above or email me directly. I respond within 24 hours to schedule a free 30-minute discovery call. No pressure, no pitch - just a real conversation about whether I can genuinely help.</p></div></div><div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">What information should I prepare?<span class="faq-icon">+</span></button><div class="faq-body"><p>The more context the better - your target audience, goals, timeline and a rough budget. Don't worry if you don't have everything figured out. Half my clients come with a problem, not a solution and we work it out together.</p></div></div><div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">Do you take on small projects?<span class="faq-icon">+</span></button><div class="faq-body"><p>Yes - I work with businesses of all sizes. My minimum engagement is a single lead list ($99) or a landing page ($499), so there's no barrier to getting started.</p></div></div><div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">What happens after I send the form?<span class="faq-icon">+</span></button><div class="faq-body"><p>You'll receive a confirmation email immediately. I personally review every message and reply within 24 hours with a tailored response. If your project is a good fit, I'll suggest a call. If not, I'll tell you honestly and point you in the right direction.</p></div></div></div></section>
 
-  <footer class="hero-footer">
-    <div class="hf-bg-text">MORE</div>
-    <div class="hf-orb"></div>
-    <div class="hf-orb2"></div>
-    <div class="hf-content">
-      <div class="hf-socials">
-        <a href="#" class="hf-soc" aria-label="GitHub">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        </a>
-        <a href="#" class="hf-soc" aria-label="LinkedIn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="#" class="hf-soc" aria-label="Twitter">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-        </a>
-        <a href="#" class="hf-soc" aria-label="Instagram">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </a>
-      </div>
-      <a href="/cdn-cgi/l/email-protection#167e737a7a795663657b777838727360" class="hf-email"><span class="__cf_email__" data-cfemail="69010c050506291c1a040807470d0c1f">[email&#160;protected]</span></a>
-    </div>
-    <div class="hf-bottom">
-      <div class="hf-bottom-divider"></div>
-      <p class="hf-crafted">Crafted with <em class="heart">&#9829;</em> by Usman</p>
-      <p class="hf-copy">&#169; 2025 Usman. All rights reserved.</p>
-    </div>
-  </footer>
+ <footer class="hero-footer">
+ <div class="hf-bg-text">MORE</div>
+ <div class="hf-orb"></div>
+ <div class="hf-orb2"></div>
+ <div class="hf-content">
+ <div class="hf-socials">
+ <a href="https://github.com/usmankhan-pw" target="_blank" rel="noopener" class="hf-soc" aria-label="GitHub">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+ </a>
+ <a href="https://www.linkedin.com/in/usman-leadgen/" target="_blank" rel="noopener" class="hf-soc" aria-label="LinkedIn">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+ </a>
+ <a href="#" class="hf-soc" aria-label="Twitter">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+ </a>
+ <a href="#" class="hf-soc" aria-label="Instagram">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+ </a>
+ </div>
+ <a href="mailto:usman.leadgen@gmail.com" class="hf-email">usman.leadgen@gmail.com</a>
+ </div>
+ <div class="hf-bottom">
+ <div class="hf-bottom-divider"></div>
+ <p class="hf-crafted">Crafted with <em class="heart">&#9829;</em> by Usman</p>
+ <p class="hf-copy">&#169; 2026 Usman. All rights reserved.</p>
+ </div>
+ </footer>
 </div>
 
 <!-- ════════════════════════════════════════
-     SHARED JAVASCRIPT
+ SHARED JAVASCRIPT
 ════════════════════════════════════════ -->
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── Page Navigation ──
 const PGS = ['hero','about','services','reviews','blog','contact'];
 
 function go(id) {
-  PGS.forEach(p => {
-    document.getElementById('pg-'+p).classList.remove('on');
-    const nl = document.getElementById('nl-'+p);
-    if (nl) nl.classList.remove('on');
-  });
-  document.getElementById('pg-'+id).classList.add('on');
-  const nl = document.getElementById('nl-'+id);
-  if (nl) nl.classList.add('on');
-  window.scrollTo({top:0, behavior:'instant'});
-  setTimeout(initReveal, 80);
+ PGS.forEach(p => {
+ document.getElementById('pg-'+p).classList.remove('on');
+ const nl = document.getElementById('nl-'+p);
+ if (nl) nl.classList.remove('on');
+ });
+ document.getElementById('pg-'+id).classList.add('on');
+ const nl = document.getElementById('nl-'+id);
+ if (nl) nl.classList.add('on');
+ window.scrollTo({top:0, behavior:'instant'});
+ setTimeout(initReveal, 80);
 }
 
 // ── Slider Theme Toggle ──
@@ -1232,9 +1232,9 @@ const themeBtn = document.getElementById('themeBtn');
 const savedTheme = localStorage.getItem('usman-theme') || 'light';
 root.setAttribute('data-theme', savedTheme);
 themeBtn.addEventListener('click', () => {
-  const t = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-  root.setAttribute('data-theme', t);
-  localStorage.setItem('usman-theme', t);
+ const t = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+ root.setAttribute('data-theme', t);
+ localStorage.setItem('usman-theme', t);
 });
 
 // ── Mobile Hamburger ──
@@ -1242,94 +1242,94 @@ const burger = document.getElementById('burger');
 const mobMenu = document.getElementById('mob-menu');
 burger.addEventListener('click', e => { e.stopPropagation(); mobMenu.classList.toggle('open'); });
 document.addEventListener('click', e => {
-  if (!burger.contains(e.target) && !mobMenu.contains(e.target)) mobMenu.classList.remove('open');
+ if (!burger.contains(e.target) && !mobMenu.contains(e.target)) mobMenu.classList.remove('open');
 });
 function mobClose() { mobMenu.classList.remove('open'); }
 
 // ── FAQ Accordion ──
 function faqToggle(btn) {
-  const item = btn.closest('.faq-item');
-  const wasOpen = item.classList.contains('open');
-  // close all open items in this list with smooth reverse animation
-  item.closest('.faq-list').querySelectorAll('.faq-item.open').forEach(el => {
-    el.classList.add('closing');
-    el.classList.remove('open');
-    setTimeout(() => el.classList.remove('closing'), 420);
-  });
-  // open clicked item if it wasn't already open
-  if (!wasOpen) {
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => { item.classList.add('open'); });
-    });
-  }
+ const item = btn.closest('.faq-item');
+ const wasOpen = item.classList.contains('open');
+ // close all open items in this list with smooth reverse animation
+ item.closest('.faq-list').querySelectorAll('.faq-item.open').forEach(el => {
+ el.classList.add('closing');
+ el.classList.remove('open');
+ setTimeout(() => el.classList.remove('closing'), 420);
+ });
+ // open clicked item if it wasn't already open
+ if (!wasOpen) {
+ requestAnimationFrame(() => {
+ requestAnimationFrame(() => { item.classList.add('open'); });
+ });
+ }
 }
 
 // ── Blog Filter ──
 function blogFilter(tag, btn) {
-  document.querySelectorAll('.fil-btn').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
-  ['blogGrid','blogGrid2'].forEach(gId => {
-    const g = document.getElementById(gId);
-    if (!g) return;
-    g.querySelectorAll('.bc').forEach(card => {
-      card.style.display = (tag === 'all' || card.dataset.tag === tag) ? '' : 'none';
-    });
-  });
+ document.querySelectorAll('.fil-btn').forEach(b => b.classList.remove('on'));
+ btn.classList.add('on');
+ ['blogGrid','blogGrid2'].forEach(gId => {
+ const g = document.getElementById(gId);
+ if (!g) return;
+ g.querySelectorAll('.bc').forEach(card => {
+ card.style.display = (tag === 'all' || card.dataset.tag === tag) ? '' : 'none';
+ });
+ });
 }
 
 
 
 // ── Contact Form ──
 function ctSubmit() {
-  const email = document.getElementById('ctEmail');
-  if (!email || !email.value.includes('@')) {
-    if (email) { email.focus(); email.style.borderColor = '#ff3b30'; }
-    return;
-  }
-  document.getElementById('formInner').style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
+ const email = document.getElementById('ctEmail');
+ if (!email || !email.value.includes('@')) {
+ if (email) { email.focus(); email.style.borderColor = '#ff3b30'; }
+ return;
+ }
+ document.getElementById('formInner').style.display = 'none';
+ document.getElementById('formSuccess').style.display = 'block';
 }
 
 // ── Newsletter ──
 function nlSubmit() {
-  const em = document.getElementById('nlEmail');
-  if (!em || !em.value.includes('@')) {
-    if (em) { em.focus(); em.style.borderColor = '#ff3b30'; }
-    return;
-  }
-  const note = document.getElementById('nlNote');
-  note.textContent = '🎉 You\'re in! Welcome to the weekly dispatch.';
-  note.style.color = 'var(--green)';
-  em.value = '';
+ const em = document.getElementById('nlEmail');
+ if (!em || !em.value.includes('@')) {
+ if (em) { em.focus(); em.style.borderColor = '#ff3b30'; }
+ return;
+ }
+ const note = document.getElementById('nlNote');
+ note.textContent = '🎉 You\'re in! Welcome to the weekly dispatch.';
+ note.style.color = 'var(--green)';
+ em.value = '';
 }
 
 // ── Scroll Reveal ──
 function initReveal() {
-  const activePg = PGS.find(p => document.getElementById('pg-'+p).classList.contains('on'));
-  const els = document.querySelectorAll('#pg-'+activePg+' .rv');
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('vis'), i * 75);
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.07 });
-  els.forEach(el => { el.classList.remove('vis'); obs.observe(el); });
+ const activePg = PGS.find(p => document.getElementById('pg-'+p).classList.contains('on'));
+ const els = document.querySelectorAll('#pg-'+activePg+' .rv');
+ const obs = new IntersectionObserver((entries) => {
+ entries.forEach((e, i) => {
+ if (e.isIntersecting) {
+ setTimeout(() => e.target.classList.add('vis'), i * 75);
+ obs.unobserve(e.target);
+ }
+ });
+ }, { threshold: 0.07 });
+ els.forEach(el => { el.classList.remove('vis'); obs.observe(el); });
 }
 
 // ── Skill Bar Animation ──
 const barObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.querySelectorAll('.sk-fill').forEach(b => {
-        const w = b.style.width;
-        b.style.width = '0';
-        requestAnimationFrame(() => { setTimeout(() => b.style.width = w, 100); });
-      });
-      barObs.unobserve(e.target);
-    }
-  });
+ entries.forEach(e => {
+ if (e.isIntersecting) {
+ e.target.querySelectorAll('.sk-fill').forEach(b => {
+ const w = b.style.width;
+ b.style.width = '0';
+ requestAnimationFrame(() => { setTimeout(() => b.style.width = w, 100); });
+ });
+ barObs.unobserve(e.target);
+ }
+ });
 }, { threshold: 0.3 });
 document.querySelectorAll('.skills-grid').forEach(g => barObs.observe(g));
 
@@ -1337,166 +1337,166 @@ document.addEventListener('DOMContentLoaded', () => setTimeout(initReveal, 150))
 
 // ── TESTIMONIAL SLIDER ──
 (function(){
-  const DATA = [
-    {
-      starColor:'#facc15',
-      quote:'"Usman\'s system tripled our inbound pipeline in under 3 months. He didn\'t just run campaigns — he rebuilt our entire go-to-market motion. Best investment we made this year, by a wide margin."',
-      avatar:'https://framerusercontent.com/images/6XzhsZf3aeyx8kervEEstLcudfg.jpg?width=160',
-      name:'Arjun Mehta',
-      role:'Head of Revenue · Scalepath'
-    },
-    {
-      starColor:'#34d399',
-      quote:'"Our cost-per-lead dropped 60% while lead quality went way up. The ABM campaign landed us three enterprise contracts worth over $1.8M. Usman understands enterprise buyers better than most insiders do."',
-      avatar:'https://framerusercontent.com/images/KWIWRnobntyska9UpcNCRQbpJ50.png?width=160',
-      name:'Thomas Weber',
-      role:'Co-founder · NexaCorp'
-    },
-    {
-      starColor:'#60a5fa',
-      quote:'"The content system Usman built now drives more leads than all our paid channels combined, and it compounds every single month. ROAS went from 2.1× to 4.8× in 60 days. Genuinely transformational work."',
-      avatar:'https://framerusercontent.com/images/iGko9dIokPOUJkTBoanwq6EXY.jpg?width=160',
-      name:'Sarah Kim',
-      role:'CMO · PeopleHub'
-    }
-  ];
+ const DATA = [
+ {
+ starColor:'#facc15',
+ quote:'The data quality provided by Usman exceeds expectations. Usman\'s professionalism and expertise have been invaluable in meeting our needs. Highly recommend!',
+ avatar:'images/person1.jpg',
+ name:'Cathalijne Melle',
+ role:'Owner · Endpoint IT'
+ },
+ {
+ starColor:'#34d399',
+ quote:'Our cost-per-lead dropped 60% while lead quality went way up. The recent campaign helped us land two enterprise clients and his understanding of enterprise buyers really stood out.',
+ avatar:'images/person2.png',
+ name:'Shakir Hussain',
+ role:'Founder and CEO · ADLEM AMINA'
+ },
+ {
+ starColor:'#60a5fa',
+ quote:'Our experience has been very satisfactory. The team was very responsive and made us felt at ease with the quality of the data.',
+ avatar:'images/person3.png',
+ name:'Ayush Garg',
+ role:'Founder & CEO · LedgersCFO'
+ }
+ ];
 
-  const total   = DATA.length;
-  const track   = document.getElementById('tsTrack');
-  const outer   = document.getElementById('tsViewport');
-  const pillBox = document.getElementById('tsPillTrack');
-  if (!track || !outer || !pillBox) return;
+ const total = DATA.length;
+ const track = document.getElementById('tsTrack');
+ const outer = document.getElementById('tsViewport');
+ const pillBox = document.getElementById('tsPillTrack');
+ if (!track || !outer || !pillBox) return;
 
-  // build dot nav
-  for (let i = 0; i < total; i++) {
-    const b = document.createElement('button');
-    b.className = 'ts-pdot';
-    b.setAttribute('aria-label', 'Go to slide ' + (i+1));
-    b.addEventListener('click', () => dotGoTo(i));
-    pillBox.appendChild(b);
-  }
-  const pdots = pillBox.querySelectorAll('.ts-pdot');
+ // build dot nav
+ for (let i = 0; i < total; i++) {
+ const b = document.createElement('button');
+ b.className = 'ts-pdot';
+ b.setAttribute('aria-label', 'Go to slide ' + (i+1));
+ b.addEventListener('click', () => dotGoTo(i));
+ pillBox.appendChild(b);
+ }
+ const pdots = pillBox.querySelectorAll('.ts-pdot');
 
-  let cur = 0, dragging = false, startX = 0, lastX = 0, velX = 0, trackX = 0, autoTmr = null;
+ let cur = 0, dragging = false, startX = 0, lastX = 0, velX = 0, trackX = 0, autoTmr = null;
 
-  function mod(n,m){ return ((n%m)+m)%m; }
-  function slideW(){ return outer.offsetWidth * 0.52; }
-  function centreX(){ return outer.offsetWidth/2 - slideW()*2 - slideW()/2; }
+ function mod(n,m){ return ((n%m)+m)%m; }
+ function slideW(){ return outer.offsetWidth * 0.52; }
+ function centreX(){ return outer.offsetWidth/2 - slideW()*2 - slideW()/2; }
 
-  function getBg(){
-    return getComputedStyle(document.documentElement).getPropertyValue('--bg').trim() || '#f2f2f4';
-  }
+ function getBg(){
+ return getComputedStyle(document.documentElement).getPropertyValue('--bg').trim() || '#f2f2f4';
+ }
 
-  function makeSlide(idx, cls){
-    const d  = DATA[idx];
-    const el = document.createElement('div');
-    el.className = 'ts-slide ' + cls;
-    const stars = Array(5).fill(0).map(() =>
-      `<span class="ts-star" style="color:${d.starColor}">&#9733;</span>`
-    ).join('');
-    const bg = getBg();
-    el.innerHTML =
-      '<div class="ts-card-wrap" style="position:relative;overflow:visible">' +
-        '<div class="ts-stars-pill" style="box-shadow:0 0 0 5px '+bg+'">' + stars + '</div>' +
-        '<div class="ts-card">' +
-          '<p class="ts-quote">' + d.quote + '</p>' +
-          '<div class="ts-author">' +
-            '<div class="ts-av"><img src="'+d.avatar+'" alt="'+d.name+'" loading="lazy" width="40" height="40"/></div>' +
-            '<div>' +
-              '<div class="ts-aname">'+d.name+'</div>' +
-              '<div class="ts-arole">'+d.role+'</div>' +
-            '</div>' +
-          '</div>' +
-        '</div>' +
-      '</div>';
-    return el;
-  }
+ function makeSlide(idx, cls){
+ const d = DATA[idx];
+ const el = document.createElement('div');
+ el.className = 'ts-slide ' + cls;
+ const stars = Array(5).fill(0).map(() =>
+ `<span class="ts-star" style="color:${d.starColor}">&#9733;</span>`
+ ).join('');
+ const bg = getBg();
+ el.innerHTML =
+ '<div class="ts-card-wrap" style="position:relative;overflow:visible">' +
+ '<div class="ts-stars-pill" style="box-shadow:0 0 0 5px '+bg+'">' + stars + '</div>' +
+ '<div class="ts-card">' +
+ '<p class="ts-quote">' + d.quote + '</p>' +
+ '<div class="ts-author">' +
+ '<div class="ts-av"><img src="'+d.avatar+'" alt="'+d.name+'" loading="lazy" width="40" height="40"/></div>' +
+ '<div>' +
+ '<div class="ts-aname">'+d.name+'</div>' +
+ '<div class="ts-arole">'+d.role+'</div>' +
+ '</div>' +
+ '</div>' +
+ '</div>' +
+ '</div>';
+ return el;
+ }
 
-  function setTrack(x, animated){
-    trackX = x;
-    track.style.transition = animated ? 'transform .85s cubic-bezier(.22,1,.36,1)' : 'none';
-    track.style.transform  = 'translateX('+x+'px)';
-  }
+ function setTrack(x, animated){
+ trackX = x;
+ track.style.transition = animated ? 'transform .85s cubic-bezier(.22,1,.36,1)' : 'none';
+ track.style.transform = 'translateX('+x+'px)';
+ }
 
-  function buildWindow(){
-    track.innerHTML = '';
-    for (let i = -2; i <= 2; i++){
-      track.appendChild(makeSlide(mod(cur+i,total), i===0 ? 'ts-active' : 'ts-side'));
-    }
-    track.getBoundingClientRect();
-    setTrack(centreX(), false);
-    track.getBoundingClientRect();
-  }
+ function buildWindow(){
+ track.innerHTML = '';
+ for (let i = -2; i <= 2; i++){
+ track.appendChild(makeSlide(mod(cur+i,total), i===0 ? 'ts-active' : 'ts-side'));
+ }
+ track.getBoundingClientRect();
+ setTrack(centreX(), false);
+ track.getBoundingClientRect();
+ }
 
-  function updateDots(){
-    pdots.forEach((d,i) => d.classList.toggle('ts-active', i===cur));
-  }
+ function updateDots(){
+ pdots.forEach((d,i) => d.classList.toggle('ts-active', i===cur));
+ }
 
-  function slide(dir){
-    cur = mod(cur+dir, total);
-    updateDots();
-    track.innerHTML = '';
-    for (let i = -2; i <= 2; i++){
-      track.appendChild(makeSlide(mod(cur+i,total), i===0 ? 'ts-active' : 'ts-side'));
-    }
-    track.getBoundingClientRect();
-    setTrack(centreX() + dir*slideW(), false);
-    track.getBoundingClientRect();
-    setTrack(centreX(), true);
-  }
+ function slide(dir){
+ cur = mod(cur+dir, total);
+ updateDots();
+ track.innerHTML = '';
+ for (let i = -2; i <= 2; i++){
+ track.appendChild(makeSlide(mod(cur+i,total), i===0 ? 'ts-active' : 'ts-side'));
+ }
+ track.getBoundingClientRect();
+ setTrack(centreX() + dir*slideW(), false);
+ track.getBoundingClientRect();
+ setTrack(centreX(), true);
+ }
 
-  function dotGoTo(idx){
-    if (idx === cur) return;
-    clearInterval(autoTmr);
-    cur = idx; buildWindow(); updateDots(); resetAuto();
-  }
+ function dotGoTo(idx){
+ if (idx === cur) return;
+ clearInterval(autoTmr);
+ cur = idx; buildWindow(); updateDots(); resetAuto();
+ }
 
-  function resetAuto(){
-    clearInterval(autoTmr);
-    autoTmr = setInterval(() => slide(1), 5000);
-  }
+ function resetAuto(){
+ clearInterval(autoTmr);
+ autoTmr = setInterval(() => slide(1), 5000);
+ }
 
-  outer.addEventListener('pointerdown', e => {
-    dragging=true; startX=e.clientX; lastX=e.clientX; velX=0;
-    clearInterval(autoTmr);
-    track.style.transition='none';
-    track.style.transform='translateX('+trackX+'px)';
-    outer.setPointerCapture(e.pointerId);
-  });
-  outer.addEventListener('pointermove', e => {
-    if (!dragging) return;
-    velX = e.clientX-lastX; lastX=e.clientX; trackX+=velX;
-    track.style.transform='translateX('+trackX+'px)';
-  });
-  outer.addEventListener('pointerup', e => {
-    if (!dragging) return;
-    dragging=false;
-    const dx = e.clientX-startX;
-    if (Math.abs(dx)>45 || Math.abs(velX)>7) slide(dx<0?1:-1);
-    else setTrack(centreX(), true);
-    resetAuto();
-  });
-  outer.addEventListener('pointercancel', () => {
-    if (!dragging) return;
-    dragging=false; setTrack(centreX(),true); resetAuto();
-  });
-  outer.addEventListener('dragstart', e => e.preventDefault());
-  document.addEventListener('selectstart', e => {
-    if (outer.contains(e.target)) e.preventDefault();
-  });
+ outer.addEventListener('pointerdown', e => {
+ dragging=true; startX=e.clientX; lastX=e.clientX; velX=0;
+ clearInterval(autoTmr);
+ track.style.transition='none';
+ track.style.transform='translateX('+trackX+'px)';
+ outer.setPointerCapture(e.pointerId);
+ });
+ outer.addEventListener('pointermove', e => {
+ if (!dragging) return;
+ velX = e.clientX-lastX; lastX=e.clientX; trackX+=velX;
+ track.style.transform='translateX('+trackX+'px)';
+ });
+ outer.addEventListener('pointerup', e => {
+ if (!dragging) return;
+ dragging=false;
+ const dx = e.clientX-startX;
+ if (Math.abs(dx)>45 || Math.abs(velX)>7) slide(dx<0?1:-1);
+ else setTrack(centreX(), true);
+ resetAuto();
+ });
+ outer.addEventListener('pointercancel', () => {
+ if (!dragging) return;
+ dragging=false; setTrack(centreX(),true); resetAuto();
+ });
+ outer.addEventListener('dragstart', e => e.preventDefault());
+ document.addEventListener('selectstart', e => {
+ if (outer.contains(e.target)) e.preventDefault();
+ });
 
-  // sync star pill shadow on theme change
-  document.getElementById('themeBtn') && document.getElementById('themeBtn').addEventListener('click', () => {
-    setTimeout(() => {
-      const bg = getBg();
-      document.querySelectorAll('.ts-stars-pill').forEach(el => {
-        el.style.boxShadow = '0 0 0 5px '+bg;
-      });
-    }, 50);
-  });
+ // sync star pill shadow on theme change
+ document.getElementById('themeBtn') && document.getElementById('themeBtn').addEventListener('click', () => {
+ setTimeout(() => {
+ const bg = getBg();
+ document.querySelectorAll('.ts-stars-pill').forEach(el => {
+ el.style.boxShadow = '0 0 0 5px '+bg;
+ });
+ }, 50);
+ });
 
-  window.addEventListener('resize', () => { buildWindow(); updateDots(); });
-  buildWindow(); updateDots(); resetAuto();
+ window.addEventListener('resize', () => { buildWindow(); updateDots(); });
+ buildWindow(); updateDots(); resetAuto();
 })();
 
 </script>
